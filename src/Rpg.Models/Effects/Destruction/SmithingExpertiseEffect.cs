@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Destruction
 {
-    public class SmithingExpertiseEffect : Effect
+    public class SmithingExpertiseEffect : Effect<SmithingExpertiseEffect>
     {
         public SmithingExpertiseEffect() 
             : base("Smithing Expertise")

@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Alteration
 {
-    public class DetectLifeEffect : Effect
+    public class DetectLifeEffect : Effect<DetectLifeEffect>
     {
         public DetectLifeEffect() 
             : base("Detect Life")

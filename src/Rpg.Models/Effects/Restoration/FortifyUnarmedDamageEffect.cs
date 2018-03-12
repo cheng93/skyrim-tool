@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Restoration
 {
-    public class FortifyUnarmedDamageEffect : Effect
+    public class FortifyUnarmedDamageEffect : Effect<FortifyUnarmedDamageEffect>
     {
         public FortifyUnarmedDamageEffect() 
             : base("Fortify Unarmed Damage")

@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Alteration
 {
-    public class TransmuteMineralOreEffectEffect : Effect
+    public class TransmuteMineralOreEffectEffect : Effect<TransmuteMineralOreEffectEffect>
     {
         public TransmuteMineralOreEffectEffect() 
             : base("Transmute Mineral Ore")

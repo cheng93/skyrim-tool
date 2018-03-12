@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Restoration
 {
-    public class ResistPoisonEffect : Effect
+    public class ResistPoisonEffect : Effect<ResistPoisonEffect>
     {
         public ResistPoisonEffect()
             : base("Resist Poison")

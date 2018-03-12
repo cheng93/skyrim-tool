@@ -2,7 +2,7 @@ using Rpg.Models.Effects.Enums;
 
 namespace Rpg.Models.Effects.Restoration
 {
-    public class RegenerateAttributeEffect : Effect
+    public class RegenerateAttributeEffect : Effect<RegenerateAttributeEffect>
     {
         public RegenerateAttributeEffect(Attribute attribute)
             : base($"Regenerate {attribute.ToString()}")

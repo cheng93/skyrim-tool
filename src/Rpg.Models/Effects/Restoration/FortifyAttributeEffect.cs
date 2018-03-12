@@ -2,7 +2,7 @@ using Rpg.Models.Effects.Enums;
 
 namespace Rpg.Models.Effects.Restoration
 {
-    public class FortifyAttributeEffect : Effect
+    public class FortifyAttributeEffect : Effect<FortifyAttributeEffect>
     {
         public FortifyAttributeEffect(Attribute attribute)
             : base($"Fortify {attribute.ToString()}")

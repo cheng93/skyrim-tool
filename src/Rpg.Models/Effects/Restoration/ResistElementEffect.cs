@@ -2,7 +2,7 @@ using Rpg.Models.Effects.Enums;
 
 namespace Rpg.Models.Effects.Restoration
 {
-    public class ResistElementEffect : Effect
+    public class ResistElementEffect : Effect<ResistElementEffect>
     {
         public ResistElementEffect(Element element)
             : base($"Resist {element.ToString()}")

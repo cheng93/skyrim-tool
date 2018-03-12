@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Restoration
 {
-    public class RuneEffect : Effect
+    public class RuneEffect : Effect<RuneEffect>
     {
         public RuneEffect() 
             : base("Rune")

@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Conjuration
 {
-    public class ReanimateEffect : Effect
+    public class ReanimateEffect : Effect<ReanimateEffect>
     {
         public ReanimateEffect() 
             : base("Reanimate")

@@ -1,6 +1,9 @@
 namespace Rpg.Models.Effects
 {
-    public abstract class Effect
+    public interface IEffect<T> {}
+
+    public abstract class Effect<T> : IEffect<T>
+        where T : Effect<T>
     {
         protected Effect(string name)
         {

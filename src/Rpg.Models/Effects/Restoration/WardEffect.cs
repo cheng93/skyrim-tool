@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Restoration
 {
-    public class WardEffect : Effect
+    public class WardEffect : Effect<WardEffect>
     {
         public WardEffect() 
             : base("Ward")

@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Alteration
 {
-    public class WaterbreathingEffect : Effect
+    public class WaterbreathingEffect : Effect<WaterbreathingEffect>
     {
         public WaterbreathingEffect() 
             : base("Waterbreathing")

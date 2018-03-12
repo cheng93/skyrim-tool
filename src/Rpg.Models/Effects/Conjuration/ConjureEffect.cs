@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Conjuration
 {
-    public class ConjureEffect : Effect
+    public class ConjureEffect : Effect<ConjureEffect>
     {
         public ConjureEffect() 
             : base("Conjure")

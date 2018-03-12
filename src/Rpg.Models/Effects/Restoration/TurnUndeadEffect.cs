@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Restoration
 {
-    public class TurnUndeadEffect : Effect
+    public class TurnUndeadEffect : Effect<TurnUndeadEffect>
     {
         public TurnUndeadEffect() 
             : base("Turn Undead")

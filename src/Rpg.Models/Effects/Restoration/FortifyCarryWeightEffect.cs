@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Restoration
 {
-    public class FortifyCarryWeightEffect : Effect
+    public class FortifyCarryWeightEffect : Effect<FortifyCarryWeightEffect>
     {
         public FortifyCarryWeightEffect() 
             : base("Fortify Carry Weight")

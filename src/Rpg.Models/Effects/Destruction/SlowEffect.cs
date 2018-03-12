@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Destruction
 {
-    public class SlowEffect : Effect
+    public class SlowEffect : Effect<SlowEffect>
     {
         public SlowEffect() 
             : base("Slow")

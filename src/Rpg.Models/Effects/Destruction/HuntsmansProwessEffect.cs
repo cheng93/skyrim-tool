@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Destruction
 {
-    public class HuntsmansProwessEffect : Effect
+    public class HuntsmansProwessEffect : Effect<HuntsmansProwessEffect>
     {
         public HuntsmansProwessEffect() 
             : base("Huntsman's Prowess")

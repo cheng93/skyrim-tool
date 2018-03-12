@@ -2,7 +2,7 @@ using Rpg.Models.Effects.Enums;
 
 namespace Rpg.Models.Effects.Destruction
 {
-    public class AbsorbAttributeEffect : Effect
+    public class AbsorbAttributeEffect : Effect<AbsorbAttributeEffect>
     {
         public AbsorbAttributeEffect(Attribute attribute) 
             : base($"Absorb {attribute.ToString()}")

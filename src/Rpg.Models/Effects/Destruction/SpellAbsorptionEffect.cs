@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Destruction
 {
-    public class SpellAbsorptionEffect : Effect
+    public class SpellAbsorptionEffect : Effect<SpellAbsorptionEffect>
     {
         public SpellAbsorptionEffect() 
             : base("Spell Absorption")

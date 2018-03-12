@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Alteration
 {
-    public class LightEffect : Effect
+    public class LightEffect : Effect<LightEffect>
     {
         public LightEffect() 
             : base("Light")

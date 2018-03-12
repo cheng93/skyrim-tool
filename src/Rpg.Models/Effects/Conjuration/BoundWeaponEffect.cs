@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Conjuration
 {
-    public class BoundWeaponEffect : Effect
+    public class BoundWeaponEffect : Effect<BoundWeaponEffect>
     {
         public BoundWeaponEffect() 
             : base("Bound Weapon")

@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Illusion
 {
-    public class RallyEffect : Effect
+    public class RallyEffect : Effect<RallyEffect>
     {
         public RallyEffect() 
             : base("Rally")
