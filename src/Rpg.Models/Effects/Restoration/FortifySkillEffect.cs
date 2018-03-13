@@ -51,8 +51,6 @@ namespace Rpg.Models.Effects.Restoration
 
         public static readonly FortifySkillEffect FortifySneak = new FortifySkillEffect(Skill.Sneak);
 
-        public static readonly FortifySkillEffect FortifySpells = new FortifySkillEffect(Skill.Spells);
-
         public static readonly FortifySkillEffect FortifyTwoHanded = new FortifySkillEffect(Skill.TwoHanded);
     }
 }

@@ -25,7 +25,6 @@ namespace Rpg.Models.Common.Enums
         Restoration,
         Smithing,
         Sneak,
-        Spells,
         [Description("Two-Handed")]
         TwoHanded
     }
