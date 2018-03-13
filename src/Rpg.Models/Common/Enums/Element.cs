@@ -1,4 +1,4 @@
-namespace Rpg.Models.Effects.Enums
+namespace Rpg.Models.Common.Enums
 {
     public enum Element
     {

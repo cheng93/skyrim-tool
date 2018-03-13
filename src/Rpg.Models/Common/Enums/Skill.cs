@@ -1,4 +1,6 @@
-namespace Rpg.Models.Effects.Enums
+using System.ComponentModel;
+
+namespace Rpg.Models.Common.Enums
 {
     public enum Skill
     {
@@ -10,10 +12,13 @@ namespace Rpg.Models.Effects.Enums
         Conjuration,
         Destruction,
         Enchanting,
+        [Description("Heavy Armor")]
         HeavyArmor,
         Illusion,
+        [Description("Light Armor")]
         LightArmor,
         Lockpicking,
+        [Description("One-Handed")]
         OneHanded,
         Persuasion,
         Pickpocket,
@@ -21,6 +26,7 @@ namespace Rpg.Models.Effects.Enums
         Smithing,
         Sneak,
         Spells,
+        [Description("Two-Handed")]
         TwoHanded
     }
 }

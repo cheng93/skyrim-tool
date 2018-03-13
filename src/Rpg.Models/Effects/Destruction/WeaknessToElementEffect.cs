@@ -1,4 +1,4 @@
-using Rpg.Models.Effects.Enums;
+using Rpg.Models.Common.Enums;
 
 namespace Rpg.Models.Effects.Destruction
 {
