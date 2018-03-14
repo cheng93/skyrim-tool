@@ -1,3 +1,4 @@
+using Rpg.Models.Effects;
 using Rpg.Models.Effects.Restoration;
 using Rpg.Models.Extensions;
 
@@ -22,5 +23,29 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+    }
+
+    public static partial class AllAlchemyEffects
+    {
+        public static readonly RegenerateAttributeAlchemyEffect RegenerateHealth = new RegenerateAttributeAlchemyEffect(
+            AllEffects.Restoration.RegenerateHealth,
+            cost: 0.1,
+            duration: 300,
+            magnitude: 5
+        );
+
+        public static readonly RegenerateAttributeAlchemyEffect RegenerateMagicka = new RegenerateAttributeAlchemyEffect(
+            AllEffects.Restoration.RegenerateMagicka,
+            cost: 0.1,
+            duration: 300,
+            magnitude: 5
+        );
+
+        public static readonly RegenerateAttributeAlchemyEffect RegenerateStamina = new RegenerateAttributeAlchemyEffect(
+            AllEffects.Restoration.RegenerateStamina,
+            cost: 0.1,
+            duration: 300,
+            magnitude: 5
+        );
     }
 }

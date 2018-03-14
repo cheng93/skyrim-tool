@@ -24,13 +24,13 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Description { get; }
     }
 
-    public partial class AllAlchemyEffects
+    public static partial class AllAlchemyEffects
     {
         public static readonly CureDiseaseAlchemyEffect CureDisease = new CureDiseaseAlchemyEffect(
             AllEffects.Restoration.CureDisease,
-            0.5,
-            5,
-            0
+            cost: 0.5,
+            duration: 0,
+            magnitude: 5
         );
     }
 }

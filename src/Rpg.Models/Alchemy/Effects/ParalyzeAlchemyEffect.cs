@@ -1,3 +1,4 @@
+using Rpg.Models.Effects;
 using Rpg.Models.Effects.Alteration;
 
 namespace Rpg.Models.Alchemy.Effects
@@ -21,5 +22,15 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+    }
+
+    public static partial class AllAlchemyEffects
+    {
+        public static readonly ParalyzeAlchemyEffect Paralyze = new ParalyzeAlchemyEffect(
+            AllEffects.Alteration.Paralyze,
+            cost: 500,
+            duration: 1,
+            magnitude: 0
+        );
     }
 }

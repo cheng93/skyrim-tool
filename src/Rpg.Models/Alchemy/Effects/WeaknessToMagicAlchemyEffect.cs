@@ -1,3 +1,4 @@
+using Rpg.Models.Effects;
 using Rpg.Models.Effects.Destruction;
 
 namespace Rpg.Models.Alchemy.Effects
@@ -21,5 +22,15 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+    }
+
+    public static partial class AllAlchemyEffects
+    {
+        public static readonly WeaknessToMagicAlchemyEffect WeaknessToMagic = new WeaknessToMagicAlchemyEffect(
+            AllEffects.Destruction.WeaknessToMagic,
+            cost: 1,
+            duration: 30,
+            magnitude: 2
+        );
     }
 }

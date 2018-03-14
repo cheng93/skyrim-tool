@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using Rpg.Models.Common.Enums;
+using Rpg.Models.Effects;
 using Rpg.Models.Effects.Restoration;
 using Rpg.Models.Extensions;
 
@@ -38,5 +39,29 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+    }
+
+    public static partial class AllAlchemyEffects
+    {
+        public static readonly RestoreAttributeAlchemyEffect RestoreHealth = new RestoreAttributeAlchemyEffect(
+            AllEffects.Restoration.RestoreHealth,
+            cost: 0.5,
+            duration: 0,
+            magnitude: 5
+        );
+
+        public static readonly RestoreAttributeAlchemyEffect RestoreMagicka = new RestoreAttributeAlchemyEffect(
+            AllEffects.Restoration.RestoreMagicka,
+            cost: 0.6,
+            duration: 0,
+            magnitude: 5
+        );
+
+        public static readonly RestoreAttributeAlchemyEffect RestoreStamina = new RestoreAttributeAlchemyEffect(
+            AllEffects.Restoration.RestoreStamina,
+            cost: 0.6,
+            duration: 0,
+            magnitude: 5
+        );
     }
 }

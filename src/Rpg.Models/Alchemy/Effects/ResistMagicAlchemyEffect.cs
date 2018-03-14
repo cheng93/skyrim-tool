@@ -1,3 +1,4 @@
+using Rpg.Models.Effects;
 using Rpg.Models.Effects.Restoration;
 
 namespace Rpg.Models.Alchemy.Effects
@@ -21,5 +22,15 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+    }
+
+    public static partial class AllAlchemyEffects
+    {
+        public static readonly ResistMagicAlchemyEffect ResistMagic = new ResistMagicAlchemyEffect(
+            AllEffects.Restoration.ResistMagic,
+            cost: 1,
+            duration: 60,
+            magnitude: 1
+        );
     }
 }

@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using Rpg.Models.Common.Enums;
+using Rpg.Models.Effects;
 using Rpg.Models.Effects.Destruction;
 using Rpg.Models.Extensions;
 
@@ -38,5 +39,29 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+    }
+
+    public static partial class AllAlchemyEffects
+    {
+        public static readonly RavageAttributeAlchemyEffect RavageHealth = new RavageAttributeAlchemyEffect(
+            AllEffects.Destruction.RavageHealth,
+            cost: 0.4,
+            duration: 10,
+            magnitude: 2
+        );
+
+        public static readonly RavageAttributeAlchemyEffect RavageMagicka = new RavageAttributeAlchemyEffect(
+            AllEffects.Destruction.RavageMagicka,
+            cost: 1,
+            duration: 10,
+            magnitude: 2
+        );
+
+        public static readonly RavageAttributeAlchemyEffect RavageStamina = new RavageAttributeAlchemyEffect(
+            AllEffects.Destruction.RavageStamina,
+            cost: 1.6,
+            duration: 10,
+            magnitude: 2
+        );
     }
 }

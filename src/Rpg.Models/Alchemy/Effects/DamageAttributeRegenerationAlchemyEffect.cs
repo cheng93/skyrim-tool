@@ -2,13 +2,14 @@ using System.ComponentModel;
 using Rpg.Models.Effects.Destruction;
 using Rpg.Models.Common.Enums;
 using Rpg.Models.Extensions;
+using Rpg.Models.Effects;
 
 namespace Rpg.Models.Alchemy.Effects
 {
-    public class DamageAttributeRegenerationAlchemyEffect : AlchemyEffect<DamageAttributeEffect>
+    public class DamageAttributeRegenerationAlchemyEffect : AlchemyEffect<DamageAttributeRegenerationEffect>
     {
         public DamageAttributeRegenerationAlchemyEffect(
-            DamageAttributeEffect effect,
+            DamageAttributeRegenerationEffect effect,
             double cost,
             double duration,
             double magnitude)
@@ -41,5 +42,22 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+    }
+
+    public static partial class AllAlchemyEffects
+    {
+        public static readonly DamageAttributeRegenerationAlchemyEffect DamageMagickaRegeneration = new DamageAttributeRegenerationAlchemyEffect(
+            AllEffects.Destruction.DamageMagickaRegeneration,
+            cost: 0.5,
+            duration: 5,
+            magnitude: 100
+        );
+
+        public static readonly DamageAttributeRegenerationAlchemyEffect DamageStaminaRegeneration = new DamageAttributeRegenerationAlchemyEffect(
+            AllEffects.Destruction.DamageStaminaRegeneration,
+            cost: 0.3,
+            duration: 5,
+            magnitude: 100
+        );
     }
 }

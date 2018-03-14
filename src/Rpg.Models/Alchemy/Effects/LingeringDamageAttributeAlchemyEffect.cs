@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using Rpg.Models.Common.Enums;
+using Rpg.Models.Effects;
 using Rpg.Models.Effects.Destruction;
 using Rpg.Models.Extensions;
 
@@ -38,5 +39,29 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+    }
+
+    public static partial class AllAlchemyEffects
+    {
+        public static readonly LingeringDamageAttributeAlchemyEffect LingeringDamageHealth = new LingeringDamageAttributeAlchemyEffect(
+            AllEffects.Destruction.LingeringDamageHealth,
+            cost: 12,
+            duration: 10,
+            magnitude: 1
+        );
+
+        public static readonly LingeringDamageAttributeAlchemyEffect LingeringDamageMagicka = new LingeringDamageAttributeAlchemyEffect(
+            AllEffects.Destruction.LingeringDamageMagicka,
+            cost: 10,
+            duration: 10,
+            magnitude: 1
+        );
+
+        public static readonly LingeringDamageAttributeAlchemyEffect LingeringDamageStamina = new LingeringDamageAttributeAlchemyEffect(
+            AllEffects.Destruction.LingeringDamageStamina,
+            cost: 1.8,
+            duration: 10,
+            magnitude: 1
+        );
     }
 }
