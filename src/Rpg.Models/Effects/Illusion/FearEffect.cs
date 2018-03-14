@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Illusion
 
     public partial class IllusionEffects 
     {
-        public static readonly FearEffect Fear = new FearEffect();
+        public FearEffect Fear { get; } = new FearEffect();
     }
 }

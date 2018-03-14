@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects 
     {
-        public static readonly FortifyUnarmedDamageEffect FortifyUnarmedDamage = new FortifyUnarmedDamageEffect();
+        public FortifyUnarmedDamageEffect FortifyUnarmedDamage { get; } = new FortifyUnarmedDamageEffect();
     }
 }

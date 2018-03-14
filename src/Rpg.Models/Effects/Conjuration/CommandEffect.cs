@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Conjuration
 
     public partial class ConjurationEffects 
     {
-        public static readonly CommandEffect Command = new CommandEffect();
+        public CommandEffect Command { get; } = new CommandEffect();
     }
 }

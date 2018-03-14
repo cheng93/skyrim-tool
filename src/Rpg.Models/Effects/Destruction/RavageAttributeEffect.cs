@@ -15,10 +15,10 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly RavageAttributeEffect RavageHealth = new RavageAttributeEffect(Attribute.Health);
+        public RavageAttributeEffect RavageHealth { get; } = new RavageAttributeEffect(Attribute.Health);
 
-        public static readonly RavageAttributeEffect RavageMagicka = new RavageAttributeEffect(Attribute.Magicka);
+        public RavageAttributeEffect RavageMagicka { get; } = new RavageAttributeEffect(Attribute.Magicka);
 
-        public static readonly RavageAttributeEffect RavageStamina = new RavageAttributeEffect(Attribute.Stamina);
+        public RavageAttributeEffect RavageStamina { get; } = new RavageAttributeEffect(Attribute.Stamina);
     }
 }

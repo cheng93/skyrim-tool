@@ -15,10 +15,10 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects 
     {
-        public static readonly ResistElementEffect ResistFire = new ResistElementEffect(Element.Fire);
+        public ResistElementEffect ResistFire { get; } = new ResistElementEffect(Element.Fire);
 
-        public static readonly ResistElementEffect ResistFrost = new ResistElementEffect(Element.Frost);
+        public ResistElementEffect ResistFrost { get; } = new ResistElementEffect(Element.Frost);
 
-        public static readonly ResistElementEffect ResistShock = new ResistElementEffect(Element.Shock);
+        public ResistElementEffect ResistShock { get; } = new ResistElementEffect(Element.Shock);
     }
 }

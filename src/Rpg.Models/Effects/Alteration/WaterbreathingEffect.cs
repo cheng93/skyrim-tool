@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Alteration
 
     public partial class AlterationEffects 
     {
-        public static readonly WaterbreathingEffect Waterbreathing = new WaterbreathingEffect();
+        public WaterbreathingEffect Waterbreathing { get; } = new WaterbreathingEffect();
     }
 }

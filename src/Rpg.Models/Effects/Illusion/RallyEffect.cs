@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Illusion
 
     public partial class IllusionEffects 
     {
-        public static readonly RallyEffect Rally = new RallyEffect();
+        public RallyEffect Rally { get; } = new RallyEffect();
     }
 }

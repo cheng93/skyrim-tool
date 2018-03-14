@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Alteration
 
     public partial class AlterationEffects 
     {
-        public static readonly TelekinesisEffect Telekinesis = new TelekinesisEffect();
+        public TelekinesisEffect Telekinesis { get; } = new TelekinesisEffect();
     }
 }

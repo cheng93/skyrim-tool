@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly SmithingExpertiseEffect SmithingExpertise = new SmithingExpertiseEffect();
+        public SmithingExpertiseEffect SmithingExpertise { get; } = new SmithingExpertiseEffect();
     }
 }

@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects 
     {
-        public static readonly FortifyCarryWeightEffect FortifyCarryWeight = new FortifyCarryWeightEffect();
+        public FortifyCarryWeightEffect FortifyCarryWeight { get; } = new FortifyCarryWeightEffect();
     }
 }

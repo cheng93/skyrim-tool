@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Alteration
 
     public partial class AlterationEffects 
     {
-        public static readonly ArmorEffect Armor = new ArmorEffect();
+        public ArmorEffect Armor { get; } = new ArmorEffect();
     }
 }

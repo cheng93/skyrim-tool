@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Conjuration
 
     public partial class ConjurationEffects 
     {
-        public static readonly BoundWeaponEffect BoundWeapon = new BoundWeaponEffect();
+        public BoundWeaponEffect BoundWeapon { get; } = new BoundWeaponEffect();
     }
 }

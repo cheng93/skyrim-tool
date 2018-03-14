@@ -15,10 +15,10 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly WeaknessToElementEffect WeaknessToFire = new WeaknessToElementEffect(Element.Fire);
+        public WeaknessToElementEffect WeaknessToFire { get; } = new WeaknessToElementEffect(Element.Fire);
 
-        public static readonly WeaknessToElementEffect WeaknessToFrost = new WeaknessToElementEffect(Element.Frost);
+        public WeaknessToElementEffect WeaknessToFrost { get; } = new WeaknessToElementEffect(Element.Frost);
 
-        public static readonly WeaknessToElementEffect WeaknessToShock = new WeaknessToElementEffect(Element.Shock);
+        public WeaknessToElementEffect WeaknessToShock { get; } = new WeaknessToElementEffect(Element.Shock);
     }
 }

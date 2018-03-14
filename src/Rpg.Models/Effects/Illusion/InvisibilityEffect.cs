@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Illusion
 
     public partial class IllusionEffects 
     {
-        public static readonly InvisibilityEffect Invisibility = new InvisibilityEffect();
+        public InvisibilityEffect Invisibility { get; } = new InvisibilityEffect();
     }
 }

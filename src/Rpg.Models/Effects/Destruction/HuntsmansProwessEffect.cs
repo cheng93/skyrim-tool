@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly HuntsmansProwessEffect HuntsmansProwess = new HuntsmansProwessEffect();
+        public HuntsmansProwessEffect HuntsmansProwess { get; } = new HuntsmansProwessEffect();
     }
 }

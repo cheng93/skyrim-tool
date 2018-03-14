@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Conjuration
 
     public partial class ConjurationEffects 
     {
-        public static readonly ReanimateEffect Reanimate = new ReanimateEffect();
+        public ReanimateEffect Reanimate { get; } = new ReanimateEffect();
     }
 }

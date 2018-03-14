@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Illusion
 
     public partial class IllusionEffects 
     {
-        public static readonly PacifyEffect Pacify = new PacifyEffect();
+        public PacifyEffect Pacify { get; } = new PacifyEffect();
     }
 }

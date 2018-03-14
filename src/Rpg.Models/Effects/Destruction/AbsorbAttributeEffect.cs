@@ -15,10 +15,10 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly AbsorbAttributeEffect AbsorbHealth = new AbsorbAttributeEffect(Attribute.Health);
+        public AbsorbAttributeEffect AbsorbHealth { get; } = new AbsorbAttributeEffect(Attribute.Health);
 
-        public static readonly AbsorbAttributeEffect AbsorbMagicka = new AbsorbAttributeEffect(Attribute.Magicka);
+        public AbsorbAttributeEffect AbsorbMagicka { get; } = new AbsorbAttributeEffect(Attribute.Magicka);
 
-        public static readonly AbsorbAttributeEffect AbsorbStamina = new AbsorbAttributeEffect(Attribute.Stamina);
+        public AbsorbAttributeEffect AbsorbStamina { get; } = new AbsorbAttributeEffect(Attribute.Stamina);
     }
 }

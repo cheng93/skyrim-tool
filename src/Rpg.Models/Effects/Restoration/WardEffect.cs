@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects 
     {
-        public static readonly WardEffect Ward = new WardEffect();
+        public WardEffect Ward { get; } = new WardEffect();
     }
 }

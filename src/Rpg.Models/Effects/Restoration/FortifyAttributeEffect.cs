@@ -15,10 +15,10 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects 
     {
-        public static readonly FortifyAttributeEffect FortifyHealth = new FortifyAttributeEffect(Attribute.Health);
+        public FortifyAttributeEffect FortifyHealth { get; } = new FortifyAttributeEffect(Attribute.Health);
 
-        public static readonly FortifyAttributeEffect FortifyMagicka = new FortifyAttributeEffect(Attribute.Magicka);
+        public FortifyAttributeEffect FortifyMagicka { get; } = new FortifyAttributeEffect(Attribute.Magicka);
 
-        public static readonly FortifyAttributeEffect FortifyStamina = new FortifyAttributeEffect(Attribute.Stamina);
+        public FortifyAttributeEffect FortifyStamina { get; } = new FortifyAttributeEffect(Attribute.Stamina);
     }
 }

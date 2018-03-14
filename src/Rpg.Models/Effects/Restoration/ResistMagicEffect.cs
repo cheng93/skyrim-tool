@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects
     {
-        public static readonly ResistMagicEffect ResistMagic = new ResistMagicEffect();
+        public ResistMagicEffect ResistMagic { get; } = new ResistMagicEffect();
     }
 }

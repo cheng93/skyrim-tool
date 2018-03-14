@@ -15,10 +15,10 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly DamageAttributeRegenerationEffect DamageHealthRegeneration = new DamageAttributeRegenerationEffect(Attribute.Health);
+        public DamageAttributeRegenerationEffect DamageHealthRegeneration { get; } = new DamageAttributeRegenerationEffect(Attribute.Health);
 
-        public static readonly DamageAttributeRegenerationEffect DamageMagickaRegeneration = new DamageAttributeRegenerationEffect(Attribute.Magicka);
+        public DamageAttributeRegenerationEffect DamageMagickaRegeneration { get; } = new DamageAttributeRegenerationEffect(Attribute.Magicka);
 
-        public static readonly DamageAttributeRegenerationEffect DamageStaminaRegeneration = new DamageAttributeRegenerationEffect(Attribute.Stamina);
+        public DamageAttributeRegenerationEffect DamageStaminaRegeneration { get; } = new DamageAttributeRegenerationEffect(Attribute.Stamina);
     }
 }

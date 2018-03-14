@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects 
     {
-        public static readonly TurnUndeadEffect TurnUndead = new TurnUndeadEffect();
+        public TurnUndeadEffect TurnUndead { get; } = new TurnUndeadEffect();
     }
 }

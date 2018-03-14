@@ -15,42 +15,42 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects 
     {
-        public static readonly FortifySkillEffect FortifyAlchemy = new FortifySkillEffect(Skill.Alchemy);
+        public FortifySkillEffect FortifyAlchemy { get; } = new FortifySkillEffect(Skill.Alchemy);
 
-        public static readonly FortifySkillEffect FortifyAlteration = new FortifySkillEffect(Skill.Alteration);
+        public FortifySkillEffect FortifyAlteration { get; } = new FortifySkillEffect(Skill.Alteration);
 
-        public static readonly FortifySkillEffect FortifyArchery = new FortifySkillEffect(Skill.Archery);
+        public FortifySkillEffect FortifyArchery { get; } = new FortifySkillEffect(Skill.Archery);
 
-        public static readonly FortifySkillEffect FortifyBarter = new FortifySkillEffect(Skill.Barter);
+        public FortifySkillEffect FortifyBarter { get; } = new FortifySkillEffect(Skill.Barter);
 
-        public static readonly FortifySkillEffect FortifyBlock = new FortifySkillEffect(Skill.Block);
+        public FortifySkillEffect FortifyBlock { get; } = new FortifySkillEffect(Skill.Block);
 
-        public static readonly FortifySkillEffect FortifyConjuration = new FortifySkillEffect(Skill.Conjuration);
+        public FortifySkillEffect FortifyConjuration { get; } = new FortifySkillEffect(Skill.Conjuration);
 
-        public static readonly FortifySkillEffect FortifyDestruction = new FortifySkillEffect(Skill.Destruction);
+        public FortifySkillEffect FortifyDestruction { get; } = new FortifySkillEffect(Skill.Destruction);
 
-        public static readonly FortifySkillEffect FortifyEnchanting = new FortifySkillEffect(Skill.Enchanting);
+        public FortifySkillEffect FortifyEnchanting { get; } = new FortifySkillEffect(Skill.Enchanting);
 
-        public static readonly FortifySkillEffect FortifyHeavyArmor = new FortifySkillEffect(Skill.HeavyArmor);
+        public FortifySkillEffect FortifyHeavyArmor { get; } = new FortifySkillEffect(Skill.HeavyArmor);
 
-        public static readonly FortifySkillEffect FortifyIllusion = new FortifySkillEffect(Skill.Illusion);
+        public FortifySkillEffect FortifyIllusion { get; } = new FortifySkillEffect(Skill.Illusion);
 
-        public static readonly FortifySkillEffect FortifyLightArmor = new FortifySkillEffect(Skill.LightArmor);
+        public FortifySkillEffect FortifyLightArmor { get; } = new FortifySkillEffect(Skill.LightArmor);
 
-        public static readonly FortifySkillEffect FortifyLockpicking = new FortifySkillEffect(Skill.Lockpicking);
+        public FortifySkillEffect FortifyLockpicking { get; } = new FortifySkillEffect(Skill.Lockpicking);
 
-        public static readonly FortifySkillEffect FortifyOneHanded = new FortifySkillEffect(Skill.OneHanded);
+        public FortifySkillEffect FortifyOneHanded { get; } = new FortifySkillEffect(Skill.OneHanded);
 
-        public static readonly FortifySkillEffect FortifyPersuasion = new FortifySkillEffect(Skill.Persuasion);
+        public FortifySkillEffect FortifyPersuasion { get; } = new FortifySkillEffect(Skill.Persuasion);
 
-        public static readonly FortifySkillEffect FortifyPickpocket = new FortifySkillEffect(Skill.Pickpocket);
+        public FortifySkillEffect FortifyPickpocket { get; } = new FortifySkillEffect(Skill.Pickpocket);
 
-        public static readonly FortifySkillEffect FortifyRestoration = new FortifySkillEffect(Skill.Restoration);
+        public FortifySkillEffect FortifyRestoration { get; } = new FortifySkillEffect(Skill.Restoration);
 
-        public static readonly FortifySkillEffect FortifySmithing = new FortifySkillEffect(Skill.Smithing);
+        public FortifySkillEffect FortifySmithing { get; } = new FortifySkillEffect(Skill.Smithing);
 
-        public static readonly FortifySkillEffect FortifySneak = new FortifySkillEffect(Skill.Sneak);
+        public FortifySkillEffect FortifySneak { get; } = new FortifySkillEffect(Skill.Sneak);
 
-        public static readonly FortifySkillEffect FortifyTwoHanded = new FortifySkillEffect(Skill.TwoHanded);
+        public FortifySkillEffect FortifyTwoHanded { get; } = new FortifySkillEffect(Skill.TwoHanded);
     }
 }

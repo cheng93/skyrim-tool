@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly RuneEffect Rune = new RuneEffect();
+        public RuneEffect Rune { get; } = new RuneEffect();
     }
 }

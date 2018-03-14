@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects 
     {
-        public static readonly CureDiseaseEffect CureDisease = new CureDiseaseEffect();
+        public CureDiseaseEffect CureDisease { get; } = new CureDiseaseEffect();
     }
 }

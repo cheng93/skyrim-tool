@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Alteration
 
     public partial class AlterationEffects 
     {
-        public static readonly DetectLifeEffect DetectLife = new DetectLifeEffect();
+        public DetectLifeEffect DetectLife { get; } = new DetectLifeEffect();
     }
 }

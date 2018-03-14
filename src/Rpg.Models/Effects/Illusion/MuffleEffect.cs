@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Illusion
 
     public partial class IllusionEffects 
     {
-        public static readonly MuffleEffect Muffle = new MuffleEffect();
+        public MuffleEffect Muffle { get; } = new MuffleEffect();
     }
 }

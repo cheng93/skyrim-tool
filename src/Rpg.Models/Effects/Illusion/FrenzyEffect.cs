@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Illusion
 
     public partial class IllusionEffects 
     {
-        public static readonly FrenzyEffect Frenzy = new FrenzyEffect();
+        public FrenzyEffect Frenzy { get; } = new FrenzyEffect();
     }
 }

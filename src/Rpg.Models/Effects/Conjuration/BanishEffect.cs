@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Conjuration
 
     public partial class ConjurationEffects 
     {
-        public static readonly BanishEffect Banish = new BanishEffect();
+        public BanishEffect Banish { get; } = new BanishEffect();
     }
 }

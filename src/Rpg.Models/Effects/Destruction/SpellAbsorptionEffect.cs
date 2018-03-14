@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly SpellAbsorptionEffect SpellAbsorption = new SpellAbsorptionEffect();
+        public SpellAbsorptionEffect SpellAbsorption { get; } = new SpellAbsorptionEffect();
     }
 }

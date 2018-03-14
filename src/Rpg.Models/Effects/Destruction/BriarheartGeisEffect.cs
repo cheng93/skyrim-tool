@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly BriarheartGeisEffect BriarheartGeis = new BriarheartGeisEffect();
+        public BriarheartGeisEffect BriarheartGeis { get; } = new BriarheartGeisEffect();
     }
 }

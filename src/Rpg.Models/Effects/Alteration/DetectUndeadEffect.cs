@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Alteration
 
     public partial class AlterationEffects 
     {
-        public static readonly DetectUndeadEffect DetectUndead = new DetectUndeadEffect();
+        public DetectUndeadEffect DetectUndead { get; } = new DetectUndeadEffect();
     }
 }

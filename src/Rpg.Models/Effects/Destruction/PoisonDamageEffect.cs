@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly PoisonDamageEffect PoisonDamage = new PoisonDamageEffect();
+        public PoisonDamageEffect PoisonDamage { get; } = new PoisonDamageEffect();
     }
 }

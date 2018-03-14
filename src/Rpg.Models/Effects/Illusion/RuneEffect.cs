@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Illusion
 
     public partial class IllusionEffects 
     {
-        public static readonly RuneEffect Rune = new RuneEffect();
+        public RuneEffect Rune { get; } = new RuneEffect();
     }
 }

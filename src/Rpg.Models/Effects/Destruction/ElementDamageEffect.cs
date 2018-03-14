@@ -15,10 +15,10 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly ElementDamageEffect FireDamage = new ElementDamageEffect(Element.Fire);
+        public ElementDamageEffect FireDamage { get; } = new ElementDamageEffect(Element.Fire);
 
-        public static readonly ElementDamageEffect FrostDamage = new ElementDamageEffect(Element.Frost);
+        public ElementDamageEffect FrostDamage { get; } = new ElementDamageEffect(Element.Frost);
 
-        public static readonly ElementDamageEffect ShockDamage = new ElementDamageEffect(Element.Shock);
+        public ElementDamageEffect ShockDamage { get; } = new ElementDamageEffect(Element.Shock);
     }
 }

@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Conjuration
 
     public partial class ConjurationEffects 
     {
-        public static readonly FierySoulTrapEffect FierySoulTrap = new FierySoulTrapEffect();
+        public FierySoulTrapEffect FierySoulTrap { get; } = new FierySoulTrapEffect();
     }
 }

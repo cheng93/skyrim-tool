@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects
     {
-        public static readonly ResistPoisonEffect ResistPoison = new ResistPoisonEffect();
+        public ResistPoisonEffect ResistPoison { get; } = new ResistPoisonEffect();
     }
 }

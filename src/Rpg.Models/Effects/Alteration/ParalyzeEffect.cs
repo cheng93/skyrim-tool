@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Alteration
 
     public partial class AlterationEffects 
     {
-        public static readonly ParalyzeEffect Paralyze = new ParalyzeEffect();
+        public ParalyzeEffect Paralyze { get; } = new ParalyzeEffect();
     }
 }

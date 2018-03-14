@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Illusion
 
     public partial class IllusionEffects 
     {
-        public static readonly ClairvoyanceEffect Clairvoyance = new ClairvoyanceEffect();
+        public ClairvoyanceEffect Clairvoyance { get; } = new ClairvoyanceEffect();
     }
 }

@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly WeaknessToPoisonEffect WeaknessToPoison = new WeaknessToPoisonEffect();
+        public WeaknessToPoisonEffect WeaknessToPoison { get; } = new WeaknessToPoisonEffect();
     }
 }

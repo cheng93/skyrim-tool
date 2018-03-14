@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Alteration
 
     public partial class AlterationEffects 
     {
-        public static readonly LightEffect Light = new LightEffect();
+        public LightEffect Light { get; } = new LightEffect();
     }
 }

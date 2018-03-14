@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly SlowEffect Slow = new SlowEffect();
+        public SlowEffect Slow { get; } = new SlowEffect();
     }
 }

@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Restoration
 
     public partial class RestorationEffects 
     {
-        public static readonly FortifyShoutEffect FortifyShout = new FortifyShoutEffect();
+        public FortifyShoutEffect FortifyShout { get; } = new FortifyShoutEffect();
     }
 }

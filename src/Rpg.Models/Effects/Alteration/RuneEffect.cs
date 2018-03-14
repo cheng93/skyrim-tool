@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Alteration
 
     public partial class AlterationEffects 
     {
-        public static readonly RuneEffect Rune = new RuneEffect();
+        public RuneEffect Rune { get; } = new RuneEffect();
     }
 }

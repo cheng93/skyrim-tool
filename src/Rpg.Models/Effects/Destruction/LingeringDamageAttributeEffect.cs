@@ -15,10 +15,10 @@ namespace Rpg.Models.Effects.Destruction
 
     public partial class DestructionEffects 
     {
-        public static readonly LingeringDamageAttributeEffect LingeringDamageHealth = new LingeringDamageAttributeEffect(Attribute.Health);
+        public LingeringDamageAttributeEffect LingeringDamageHealth { get; } = new LingeringDamageAttributeEffect(Attribute.Health);
 
-        public static readonly LingeringDamageAttributeEffect LingeringDamageMagicka = new LingeringDamageAttributeEffect(Attribute.Magicka);
+        public LingeringDamageAttributeEffect LingeringDamageMagicka { get; } = new LingeringDamageAttributeEffect(Attribute.Magicka);
 
-        public static readonly LingeringDamageAttributeEffect LingeringDamageStamina = new LingeringDamageAttributeEffect(Attribute.Stamina);
+        public LingeringDamageAttributeEffect LingeringDamageStamina { get; } = new LingeringDamageAttributeEffect(Attribute.Stamina);
     }
 }

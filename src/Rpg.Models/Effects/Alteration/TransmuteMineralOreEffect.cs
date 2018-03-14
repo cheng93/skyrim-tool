@@ -10,6 +10,6 @@ namespace Rpg.Models.Effects.Alteration
 
     public partial class AlterationEffects 
     {
-        public static readonly TransmuteMineralOreEffectEffect TransmuteMineralOreEffect = new TransmuteMineralOreEffectEffect();
+        public TransmuteMineralOreEffectEffect TransmuteMineralOreEffect { get; } = new TransmuteMineralOreEffectEffect();
     }
 }
