@@ -6,7 +6,7 @@ using Rpg.Models.Effects.Restoration;
 
 namespace Rpg.Models.Effects
 {
-    public static class Effects
+    public static class AllEffects
     {
         public static readonly AlterationEffects Alteration = new AlterationEffects();
 
