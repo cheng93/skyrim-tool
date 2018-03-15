@@ -3,7 +3,7 @@ using Rpg.Models.Common;
 
 namespace Rpg.Models.Alchemy
 {
-    public interface IIngredient
+    public interface IIngredient : IHasName
     {
         IAlchemyEffect PrimaryEffect { get; }
 
@@ -16,7 +16,7 @@ namespace Rpg.Models.Alchemy
         IEnumerable<IAlchemyEffect> CombinedEffects { get; }
     }
 
-    public abstract class Ingredient : IIngredient, IHasName
+    public abstract class Ingredient : IIngredient
     {
         public abstract string Name { get; }
 
