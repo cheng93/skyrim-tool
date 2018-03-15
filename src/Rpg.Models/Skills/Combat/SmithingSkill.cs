@@ -1,6 +1,8 @@
+using Rpg.Models.Specializations;
+
 namespace Rpg.Models.Skills.Combat
 {
-    public class SmithingSkill : CombatSkill
+    public class SmithingSkill : Skill<CombatSpecialization>
     {
         public SmithingSkill()
             : base("Smithing")

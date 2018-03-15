@@ -1,6 +1,8 @@
+using Rpg.Models.Specializations;
+
 namespace Rpg.Models.Skills.Stealth
 {
-    public class LockpickingSkill : StealthSkill
+    public class LockpickingSkill : Skill<StealthSpecialization>
     {
         public LockpickingSkill()
             : base("Lockpicking")

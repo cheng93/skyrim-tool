@@ -1,6 +1,8 @@
+using Rpg.Models.Specializations;
+
 namespace Rpg.Models.Skills.Combat
 {
-    public class BlockSkill : CombatSkill
+    public class BlockSkill : Skill<CombatSpecialization>
     {
         public BlockSkill()
             : base("Block")

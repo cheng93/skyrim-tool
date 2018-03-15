@@ -1,6 +1,8 @@
+using Rpg.Models.Specializations;
+
 namespace Rpg.Models.Skills.Magic
 {
-    public class ConjurationSkill : MagicSkill
+    public class ConjurationSkill : Skill<MagicSpecialization>
     {
         public ConjurationSkill()
             : base("Conjuration")

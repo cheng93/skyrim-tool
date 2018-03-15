@@ -1,6 +1,8 @@
+using Rpg.Models.Specializations;
+
 namespace Rpg.Models.Skills.Combat
 {
-    public class TwoHandedSkill : CombatSkill
+    public class TwoHandedSkill : Skill<CombatSpecialization>
     {
         public TwoHandedSkill()
             : base("Two-Handed")

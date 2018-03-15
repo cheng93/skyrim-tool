@@ -1,6 +1,8 @@
+using Rpg.Models.Specializations;
+
 namespace Rpg.Models.Skills.Magic
 {
-    public class RestorationSkill : MagicSkill
+    public class RestorationSkill : Skill<MagicSpecialization>
     {
         public RestorationSkill()
             : base("Restoration")

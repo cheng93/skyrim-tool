@@ -1,6 +1,8 @@
+using Rpg.Models.Specializations;
+
 namespace Rpg.Models.Skills.Stealth
 {
-    public class AlchemySkill : StealthSkill
+    public class AlchemySkill : Skill<StealthSpecialization>
     {
         public AlchemySkill()
             : base("Alchemy")

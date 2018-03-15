@@ -1,6 +1,8 @@
+using Rpg.Models.Specializations;
+
 namespace Rpg.Models.Skills.Stealth
 {
-    public class LightArmorSkill : StealthSkill
+    public class LightArmorSkill : Skill<StealthSpecialization>
     {
         public LightArmorSkill()
             : base("Light Armor")

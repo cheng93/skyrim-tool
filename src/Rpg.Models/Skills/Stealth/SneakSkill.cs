@@ -1,6 +1,8 @@
+using Rpg.Models.Specializations;
+
 namespace Rpg.Models.Skills.Stealth
 {
-    public class SneakSkill : StealthSkill
+    public class SneakSkill : Skill<StealthSpecialization>
     {
         public SneakSkill()
             : base("Sneak")

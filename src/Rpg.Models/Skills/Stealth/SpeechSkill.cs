@@ -1,6 +1,8 @@
+using Rpg.Models.Specializations;
+
 namespace Rpg.Models.Skills.Stealth
 {
-    public class SpeechSkill : StealthSkill
+    public class SpeechSkill : Skill<StealthSpecialization>
     {
         public SpeechSkill()
             : base("Speech")
