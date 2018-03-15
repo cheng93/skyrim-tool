@@ -3,7 +3,12 @@ using Rpg.Models.Specializations;
 
 namespace Rpg.Models.Skills
 {
-    public interface ISkill<T> : IHasName
+    public interface ISkill : IHasName
+    {
+        
+    }
+
+    public interface ISkill<T> : ISkill
         where T : ISpecialization
     {
         
