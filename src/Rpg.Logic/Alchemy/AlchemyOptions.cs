@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Rpg.Models.Perks;
 using Rpg.Models.Skills.Stealth;
 
@@ -10,7 +8,7 @@ namespace Rpg.Logic.Alchemy
     {
         IIngredientCollection Ingredients { get; set; }
 
-        IEnumerable<IPerk<AlchemySkill>> Perks { get; set; }
+        IAlchemyPerkCollection Perks { get; set; }
     }
 
     public class AlchemyOptions : IAlchemyOptions
@@ -30,9 +28,9 @@ namespace Rpg.Logic.Alchemy
             }
         }
 
-        private IEnumerable<IPerk<AlchemySkill>> perks = Enumerable.Empty<IPerk<AlchemySkill>>();
+        private IAlchemyPerkCollection perks = new AlchemyPerkCollection();
 
-        public IEnumerable<IPerk<AlchemySkill>> Perks
+        public IAlchemyPerkCollection Perks
         {
             get => perks;
             set

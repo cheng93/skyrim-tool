@@ -24,13 +24,10 @@ namespace Rpg.Logic.Alchemy
 
         private IAlchemyOptions alchemyOptions = new AlchemyOptions();
 
-        private List<IPerk<AlchemySkill>> perks = new List<IPerk<AlchemySkill>>();
-
         private readonly IPotionFactory potionFactory;
 
         public IPotion Build()
         {
-            alchemyOptions.Perks = perks;
             return potionFactory.Create(alchemyOptions);
         }
 
@@ -42,7 +39,7 @@ namespace Rpg.Logic.Alchemy
 
         public IPotionBuilder Perk(IPerk<AlchemySkill> perk)
         {
-            perks.Add(perk);
+            alchemyOptions.Perks.Add(perk);
             return this;
         }
     }
