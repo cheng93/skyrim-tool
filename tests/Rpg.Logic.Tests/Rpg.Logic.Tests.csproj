@@ -12,4 +12,9 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Rpg.Logic\Rpg.Logic.csproj" />
+    <ProjectReference Include="..\..\src\Rpg.Models\Rpg.Models.csproj" />
+  </ItemGroup>
+
 </Project>
