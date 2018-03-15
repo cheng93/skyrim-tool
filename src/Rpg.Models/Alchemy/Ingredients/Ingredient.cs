@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Rpg.Models.Alchemy.Effects;
 using Rpg.Models.Common;
 
-namespace Rpg.Models.Alchemy
+namespace Rpg.Models.Alchemy.Ingredients
 {
     public interface IIngredient : IHasName
     {

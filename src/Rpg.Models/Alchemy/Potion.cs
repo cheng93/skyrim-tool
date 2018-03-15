@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Rpg.Models.Alchemy.Effects;
 using Rpg.Models.Common;
 
 namespace Rpg.Models.Alchemy

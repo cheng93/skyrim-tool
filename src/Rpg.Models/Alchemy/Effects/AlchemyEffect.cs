@@ -1,7 +1,7 @@
 using Rpg.Models.Common;
 using Rpg.Models.Effects;
 
-namespace Rpg.Models.Alchemy
+namespace Rpg.Models.Alchemy.Effects
 {
     public interface IAlchemyEffect : IHasName, IHasDescription
     {
