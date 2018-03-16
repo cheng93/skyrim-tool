@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
+using FluentValidation.Results;
 using Rpg.Models.Alchemy.Ingredients;
 using Rpg.Models.Perks;
 using Rpg.Models.Skills.Stealth;
@@ -34,6 +35,26 @@ namespace Rpg.Logic.Alchemy
             return perks
                 .GroupBy(x => x.GetType())
                 .All(x => x.Count() == 1);
+        }
+    }
+
+    public interface IAlchemyOptionsValidator
+    {
+        void ValidateAndThrow(IAlchemyOptions options);
+    }
+
+    public class AlchemyOptionsValidatorWrapper : IAlchemyOptionsValidator
+    {
+        public AlchemyOptionsValidatorWrapper(IValidator<IAlchemyOptions> validator)
+        {
+            this.validator = validator;
+        }
+
+        private readonly IValidator<IAlchemyOptions> validator;
+
+        public void ValidateAndThrow(IAlchemyOptions options)
+        {
+            validator.ValidateAndThrow(options);
         }
     }
 }
