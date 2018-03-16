@@ -21,7 +21,7 @@ namespace Rpg.Logic.Alchemy
         IPotion Build();
     }
 
-    public class PotionBuilder : IPotionBuilder
+    internal class PotionBuilder : IPotionBuilder
     {
         public PotionBuilder(IPotionFactory potionFactory, IAlchemyOptionsValidator validator)
         {

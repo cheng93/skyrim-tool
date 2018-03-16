@@ -2,12 +2,12 @@ using Rpg.Models.Alchemy;
 
 namespace Rpg.Logic.Alchemy
 {
-    public interface IPotionFactory
+    internal interface IPotionFactory
     {
         IPotion Create(IAlchemyOptions options);
     }
 
-    public class PotionFactory : IPotionFactory
+    internal class PotionFactory : IPotionFactory
     {
         public IPotion Create(IAlchemyOptions options)
         {

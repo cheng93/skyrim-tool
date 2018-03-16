@@ -8,7 +8,7 @@ using Rpg.Models.Skills.Stealth;
 
 namespace Rpg.Logic.Alchemy
 {
-    public class AlchemyOptionsValidator : AbstractValidator<IAlchemyOptions>
+    internal class AlchemyOptionsValidator : AbstractValidator<IAlchemyOptions>
     {
         public AlchemyOptionsValidator()
         {
@@ -38,12 +38,12 @@ namespace Rpg.Logic.Alchemy
         }
     }
 
-    public interface IAlchemyOptionsValidator
+    internal interface IAlchemyOptionsValidator
     {
         void ValidateAndThrow(IAlchemyOptions options);
     }
 
-    public class AlchemyOptionsValidatorWrapper : IAlchemyOptionsValidator
+    internal class AlchemyOptionsValidatorWrapper : IAlchemyOptionsValidator
     {
         public AlchemyOptionsValidatorWrapper(IValidator<IAlchemyOptions> validator)
         {

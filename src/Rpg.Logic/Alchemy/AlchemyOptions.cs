@@ -7,14 +7,14 @@ using Rpg.Models.Skills.Stealth;
 
 namespace Rpg.Logic.Alchemy
 {
-    public interface IAlchemyOptions
+    internal interface IAlchemyOptions
     {
         IEnumerable<IIngredient> Ingredients { get; set; }
 
         IEnumerable<IPerk<AlchemySkill>> Perks { get; set; }
     }
 
-    public class AlchemyOptions : IAlchemyOptions
+    internal class AlchemyOptions : IAlchemyOptions
     {
         private IEnumerable<IIngredient> ingredients = Enumerable.Empty<IIngredient>();
 
