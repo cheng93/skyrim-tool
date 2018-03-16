@@ -11,9 +11,9 @@ namespace Rpg.Logic.Tests.Alchemy.AlchemyOptionsValidatorTests
 {
     public class Test
     {
-        public AlchemyOptionsValidator Subject = new AlchemyOptionsValidator();
+        private readonly AlchemyOptionsValidator Subject = new AlchemyOptionsValidator();
 
-        private Mock<IAlchemyOptions> alchemyOptions = new Mock<IAlchemyOptions>();
+        private readonly Mock<IAlchemyOptions> alchemyOptions = new Mock<IAlchemyOptions>();
 
         [Fact]
         public void ValidOptions()
