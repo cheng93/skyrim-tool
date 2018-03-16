@@ -24,22 +24,28 @@ namespace Rpg.Logic.Alchemy
 
         private IAlchemyOptions alchemyOptions = new AlchemyOptions();
 
+        private List<IIngredient> ingredients = new List<IIngredient>();
+
+        private List<IPerk<AlchemySkill>> perks = new List<IPerk<AlchemySkill>>();
+
         private readonly IPotionFactory potionFactory;
 
         public IPotion Build()
         {
+            alchemyOptions.Ingredients = ingredients;
+            alchemyOptions.Perks = perks;
             return potionFactory.Create(alchemyOptions);
         }
 
         public IPotionBuilder Ingredient(IIngredient ingredient)
         {
-            alchemyOptions.Ingredients.Add(ingredient);
+            ingredients.Add(ingredient);
             return this;
         }
 
         public IPotionBuilder Perk(IPerk<AlchemySkill> perk)
         {
-            alchemyOptions.Perks.Add(perk);
+            perks.Add(perk);
             return this;
         }
     }
