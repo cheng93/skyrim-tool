@@ -11,7 +11,7 @@ namespace Rpg.Logic.Tests.Alchemy.AlchemyOptionsValidatorTests
 {
     public class Test
     {
-        private readonly AlchemyOptionsValidator Subject = new AlchemyOptionsValidator();
+        private readonly AlchemyOptionsValidator subject = new AlchemyOptionsValidator();
 
         private readonly Mock<IAlchemyOptions> alchemyOptions = new Mock<IAlchemyOptions>();
 
@@ -30,7 +30,7 @@ namespace Rpg.Logic.Tests.Alchemy.AlchemyOptionsValidatorTests
             alchemyOptions.Setup(x => x.Ingredients)
                 .Returns(ingredients);
 
-            var validationResult = Subject.Validate(alchemyOptions.Object);
+            var validationResult = subject.Validate(alchemyOptions.Object);
             validationResult.IsValid.Should().BeTrue();
         }
 
@@ -48,7 +48,7 @@ namespace Rpg.Logic.Tests.Alchemy.AlchemyOptionsValidatorTests
             alchemyOptions.Setup(x => x.Ingredients)
                 .Returns(ingredients);
 
-            var validationResult = Subject.Validate(alchemyOptions.Object);
+            var validationResult = subject.Validate(alchemyOptions.Object);
             validationResult.IsValid.Should().BeFalse();
             validationResult.Errors.Count.Should().Be(1);
             validationResult.Errors[0].PropertyName.Should().Be(nameof(IAlchemyOptions.Ingredients));
@@ -71,7 +71,7 @@ namespace Rpg.Logic.Tests.Alchemy.AlchemyOptionsValidatorTests
             alchemyOptions.Setup(x => x.Ingredients)
                 .Returns(ingredients);
 
-            var validationResult = Subject.Validate(alchemyOptions.Object);
+            var validationResult = subject.Validate(alchemyOptions.Object);
             validationResult.IsValid.Should().BeFalse();
             validationResult.Errors.Count.Should().Be(1);
             validationResult.Errors[0].PropertyName.Should().Be(nameof(IAlchemyOptions.Ingredients));
@@ -98,7 +98,7 @@ namespace Rpg.Logic.Tests.Alchemy.AlchemyOptionsValidatorTests
             alchemyOptions.Setup(x => x.Ingredients)
                 .Returns(ingredients);
 
-            var validationResult = Subject.Validate(alchemyOptions.Object);
+            var validationResult = subject.Validate(alchemyOptions.Object);
             validationResult.IsValid.Should().BeFalse();
             validationResult.Errors.Count.Should().Be(1);
             validationResult.Errors[0].PropertyName.Should().Be(nameof(IAlchemyOptions.Perks));

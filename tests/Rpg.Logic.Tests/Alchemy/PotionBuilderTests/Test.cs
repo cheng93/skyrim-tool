@@ -12,10 +12,10 @@ namespace Rpg.Logic.Tests.Alchemy.PotionBuilderTests
     {
         public Test()
         {
-            Subject = new PotionBuilder(potionFactory.Object, validator.Object);
+            subject = new PotionBuilder(potionFactory.Object, validator.Object);
         }
 
-        private readonly PotionBuilder Subject;
+        private readonly PotionBuilder subject;
 
         private readonly Mock<IPotionFactory> potionFactory = new Mock<IPotionFactory>();
 
@@ -39,7 +39,7 @@ namespace Rpg.Logic.Tests.Alchemy.PotionBuilderTests
 
             var alchemyOptions = It.IsAny<IAlchemyOptions>();
 
-            var potion = Subject.Validate().Build();
+            var potion = subject.Validate().Build();
 
             potionFactory.Verify(x => x.Create(options), Times.Once);
         }
@@ -53,7 +53,7 @@ namespace Rpg.Logic.Tests.Alchemy.PotionBuilderTests
 
             var alchemyOptions = It.IsAny<IAlchemyOptions>();
 
-            Action action = () => Subject.Validate().Build();
+            Action action = () => subject.Validate().Build();
 
             action.Should().Throw<ValidationException>();
         }
