@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
 using Rpg.Models.Effects.Restoration;
 using Rpg.Models.Extensions;
@@ -14,8 +16,9 @@ namespace Rpg.Models.Alchemy.Effects
             : base(effect, cost, duration, magnitude)
         {
             IsPositiveEffect = true;
-            Name = $"Resist {effect.Element.ToPresentableString()}";
-            Description = $"Resist {Magnitude}% of {effect.Element.ToPresentableString().ToLowerInvariant()} damage for {Duration} seconds.";
+            Name = $"Resist {Effect.Element.ToPresentableString()}";
+            Description = $"Resist {Magnitude}% of {Effect.Element.ToPresentableString().ToLowerInvariant()} damage for {Duration} seconds.";
+            Id = idMap[Effect.Element];
         }
 
         public override bool IsPositiveEffect { get; }
@@ -23,6 +26,15 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+
+        public override string Id { get; }
+
+        private static Dictionary<Element, string> idMap = new Dictionary<Element, string>()
+        {
+            {Element.Fire, "0003EAEA"},
+            {Element.Frost, "0003EAEB"},
+            {Element.Shock, "0003EAEC"}
+        };
     }
 
     public static partial class AllAlchemyEffects

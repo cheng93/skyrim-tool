@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
@@ -18,6 +19,7 @@ namespace Rpg.Models.Alchemy.Effects
             IsPositiveEffect = true;
             Name = $"Fortify {Effect.Attribute.ToPresentableString()}";
             Description = $"{Effect.Attribute.ToPresentableString()} is increased by {Magnitude} points for {Duration} seconds.";
+            Id = idMap[Effect.Attribute];
         }
 
         public override bool IsPositiveEffect { get; }
@@ -25,6 +27,15 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+
+        public override string Id { get; }
+
+        private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
+        {
+            { Attribute.Health, "0003EAF3"},
+            { Attribute.Magicka, "0003EAF8"},
+            { Attribute.Stamina, "0003EAF9"}
+        };
     }
 
     public static partial class AllAlchemyEffects

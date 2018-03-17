@@ -19,6 +19,7 @@ namespace Rpg.Models.Alchemy.Effects
             IsPositiveEffect = alchemyEffect.IsPositiveEffect;
             Name = alchemyEffect.Name;
             Description = alchemyEffect.Description;
+            Id = alchemyEffect.Id;
         }
 
         public override bool IsPositiveEffect { get; }
@@ -26,5 +27,7 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+
+        public override string Id { get; }
     }
 }

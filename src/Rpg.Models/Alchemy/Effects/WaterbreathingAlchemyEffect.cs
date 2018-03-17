@@ -22,6 +22,8 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+
+        public override string Id { get; } = "0003AC2D";
     }
 
     public static partial class AllAlchemyEffects

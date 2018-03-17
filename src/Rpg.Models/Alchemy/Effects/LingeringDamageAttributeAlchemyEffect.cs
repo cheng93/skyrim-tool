@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
@@ -18,6 +19,7 @@ namespace Rpg.Models.Alchemy.Effects
             IsPositiveEffect = false;
             Name = $"Lingering Damage {Effect.Attribute.ToPresentableString()}";
             Description = GetDescription(Effect.Attribute);
+            Id = idMap[Effect.Attribute];
         }
 
         public override bool IsPositiveEffect { get; }
@@ -25,6 +27,8 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+
+        public override string Id { get; } = "";
 
         private string GetDescription(Attribute attribute)
         {
@@ -39,6 +43,13 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+
+        private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
+        {
+            { Attribute.Health, "0010AA4A"},
+            { Attribute.Magicka, "0010DE5F"},
+            { Attribute.Stamina, "0010DE5E"}
+        };
     }
 
     public static partial class AllAlchemyEffects

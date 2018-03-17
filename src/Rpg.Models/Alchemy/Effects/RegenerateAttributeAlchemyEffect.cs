@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
 using Rpg.Models.Effects.Restoration;
 using Rpg.Models.Extensions;
@@ -16,6 +18,7 @@ namespace Rpg.Models.Alchemy.Effects
             IsPositiveEffect = true;
             Name = $"Regenerate {Effect.Attribute.ToPresentableString()}";
             Description = $"{Effect.Attribute.ToPresentableString()} regenerates {Magnitude}% faster for {Duration} seconds.";
+            Id = idMap[Effect.Attribute];
         }
 
         public override bool IsPositiveEffect { get; }
@@ -23,6 +26,15 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+
+        public override string Id { get; } = "";
+
+        private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
+        {
+            { Attribute.Health, "0003EB06"},
+            { Attribute.Magicka, "0003EB07"},
+            { Attribute.Stamina, "0003EB08"}
+        };
     }
 
     public static partial class AllAlchemyEffects

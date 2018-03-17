@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
 using Rpg.Models.Effects.Destruction;
 using Rpg.Models.Extensions;
@@ -16,6 +18,7 @@ namespace Rpg.Models.Alchemy.Effects
             IsPositiveEffect = false;
             Name = $"Weakness To {Effect.Element.ToPresentableString()}";
             Description = $"Target is {Magnitude}% weaker to {Effect.Element.ToPresentableString().ToLowerInvariant()} for {Duration} seconds.";
+            Id = idMap[Effect.Element];
         }
 
         public override bool IsPositiveEffect { get; }
@@ -23,6 +26,15 @@ namespace Rpg.Models.Alchemy.Effects
         public override string Name { get; }
 
         public override string Description { get; }
+
+        public override string Id { get; }
+
+        private static Dictionary<Element, string> idMap = new Dictionary<Element, string>()
+        {
+            {Element.Fire, "00073F2D"},
+            {Element.Frost, "00073F2E"},
+            {Element.Shock, "00073F2F"}
+        };
     }
 
     public static partial class AllAlchemyEffects
