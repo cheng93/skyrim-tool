@@ -5,22 +5,38 @@ namespace Rpg.Models.Extensions
 {
     public static class AlchemyEffectExtensions
     {
-        public static AlchemyEffect<T> ScaleCost<T>(this AlchemyEffect<T> effect, double factor)
-            where T : IEffect
+        private static T Scale<T>(
+            this T effect,
+            double costFactor = 1,
+            double durationFactor = 1,
+            double magnitudeFactor = 1)
+            where T : AlchemyEffect, new()
         {
-            return new ScalingAlchemyEffect<T>(effect, costFactor: factor);
+            return new T()
+            {
+                Effect = effect.Effect,
+                Cost = effect.Cost * costFactor,
+                Duration = effect.Duration * durationFactor,
+                Magnitude = effect.Magnitude * magnitudeFactor
+            };
         }
 
-        public static AlchemyEffect<T> ScaleDuration<T>(this AlchemyEffect<T> effect, double factor)
-            where T : IEffect
+        public static T ScaleCost<T>(this T effect, double factor)
+            where T : AlchemyEffect, new()
         {
-            return new ScalingAlchemyEffect<T>(effect, durationFactor: factor);
+            return effect.Scale<T>(costFactor: factor);
         }
 
-        public static AlchemyEffect<T> ScaleMagnitude<T>(this AlchemyEffect<T> effect, double factor)
-            where T : IEffect
+        public static T ScaleDuration<T>(this T effect, double factor)
+            where T : AlchemyEffect, new()
         {
-            return new ScalingAlchemyEffect<T>(effect, magnitudeFactor: factor);
+            return effect.Scale<T>(durationFactor: factor);
+        }
+
+        public static T ScaleMagnitude<T>(this T effect, double factor)
+            where T : AlchemyEffect, new()
+        {
+            return effect.Scale<T>(magnitudeFactor: factor);
         }
     }
 }
