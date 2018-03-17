@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Illusion
 {
-    public class FrenzyEffect : Effect<FrenzyEffect>
+    public class FrenzyEffect : Effect
     {
         public FrenzyEffect() 
             : base("Frenzy")

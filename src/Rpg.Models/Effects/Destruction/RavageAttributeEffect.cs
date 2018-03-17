@@ -2,7 +2,7 @@ using Rpg.Models.Common.Enums;
 
 namespace Rpg.Models.Effects.Destruction
 {
-    public class RavageAttributeEffect : Effect<RavageAttributeEffect>
+    public class RavageAttributeEffect : Effect
     {
         public RavageAttributeEffect(Attribute attribute) 
             : base($"Ravage {attribute.ToString()}")

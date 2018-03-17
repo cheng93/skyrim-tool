@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Alteration
 {
-    public class ParalyzeEffect : Effect<ParalyzeEffect>
+    public class ParalyzeEffect : Effect
     {
         public ParalyzeEffect() 
             : base("Paralyze")

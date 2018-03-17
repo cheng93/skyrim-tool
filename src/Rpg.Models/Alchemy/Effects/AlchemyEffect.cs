@@ -16,7 +16,7 @@ namespace Rpg.Models.Alchemy.Effects
     }
 
     public abstract class AlchemyEffect<T> : IAlchemyEffect, IEquatable<AlchemyEffect<T>>
-        where T : Effect<T>
+        where T : IEffect
     {
         public AlchemyEffect(
             T effect,

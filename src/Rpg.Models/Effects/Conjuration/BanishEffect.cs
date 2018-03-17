@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Conjuration
 {
-    public class BanishEffect : Effect<BanishEffect>
+    public class BanishEffect : Effect
     {
         public BanishEffect() 
             : base("Banish")

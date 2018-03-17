@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Alteration
 {
-    public class ArmorEffect : Effect<ArmorEffect>
+    public class ArmorEffect : Effect
     {
         public ArmorEffect() 
             : base("Armor")

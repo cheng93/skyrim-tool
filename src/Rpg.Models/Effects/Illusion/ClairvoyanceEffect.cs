@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Illusion
 {
-    public class ClairvoyanceEffect : Effect<ClairvoyanceEffect>
+    public class ClairvoyanceEffect : Effect
     {
         public ClairvoyanceEffect() 
             : base("Clairvoyance")

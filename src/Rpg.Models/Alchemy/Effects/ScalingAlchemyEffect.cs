@@ -3,7 +3,7 @@ using Rpg.Models.Effects;
 namespace Rpg.Models.Alchemy.Effects
 {
     public class ScalingAlchemyEffect<T> : AlchemyEffect<T>
-        where T : Effect<T>
+        where T : IEffect
     {
         public ScalingAlchemyEffect(
             AlchemyEffect<T> alchemyEffect,

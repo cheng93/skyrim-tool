@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Illusion
 {
-    public class FearEffect : Effect<FearEffect>
+    public class FearEffect : Effect
     {
         public FearEffect() 
             : base("Fear")

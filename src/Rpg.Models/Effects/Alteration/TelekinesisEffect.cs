@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Alteration
 {
-    public class TelekinesisEffect : Effect<TelekinesisEffect>
+    public class TelekinesisEffect : Effect
     {
         public TelekinesisEffect() 
             : base("Telekinesis")

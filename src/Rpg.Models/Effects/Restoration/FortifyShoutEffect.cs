@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Restoration
 {
-    public class FortifyShoutEffect : Effect<FortifyShoutEffect>
+    public class FortifyShoutEffect : Effect
     {
         public FortifyShoutEffect() 
             : base("Fortify Shout")

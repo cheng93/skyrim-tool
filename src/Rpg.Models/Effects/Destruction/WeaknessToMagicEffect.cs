@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Destruction
 {
-    public class WeaknessToMagicEffect : Effect<WeaknessToMagicEffect>
+    public class WeaknessToMagicEffect : Effect
     {
         public WeaknessToMagicEffect() 
             : base("Weakness To Magic")

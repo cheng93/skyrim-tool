@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Restoration
 {
-    public class CurePoisonEffect : Effect<CurePoisonEffect>
+    public class CurePoisonEffect : Effect
     {
         public CurePoisonEffect() 
             : base("Cure Poison")

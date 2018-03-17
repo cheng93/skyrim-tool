@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Conjuration
 {
-    public class CommandEffect : Effect<CommandEffect>
+    public class CommandEffect : Effect
     {
         public CommandEffect() 
             : base("Command")

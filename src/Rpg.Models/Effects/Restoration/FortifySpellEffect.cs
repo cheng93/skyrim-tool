@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Restoration
 {
-    public class FortifySpellEffect : Effect<FortifySpellEffect>
+    public class FortifySpellEffect : Effect
     {
         public FortifySpellEffect() 
             : base("Fortify Spell")

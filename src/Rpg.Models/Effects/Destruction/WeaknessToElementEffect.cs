@@ -2,7 +2,7 @@ using Rpg.Models.Common.Enums;
 
 namespace Rpg.Models.Effects.Destruction
 {
-    public class WeaknessToElementEffect : Effect<WeaknessToElementEffect>
+    public class WeaknessToElementEffect : Effect
     {
         public WeaknessToElementEffect(Element element) 
             : base($"Weakness To {element}")
