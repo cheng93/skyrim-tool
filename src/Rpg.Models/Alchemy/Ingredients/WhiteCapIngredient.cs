@@ -3,11 +3,11 @@ using Rpg.Models.Alchemy.Effects;
 
 namespace Rpg.Models.Alchemy.Ingredients
 {
-    public class whiteCapIngredient : Ingredient
+    public class WhiteCapIngredient : Ingredient
     {
-        public whiteCapIngredient()
+        public WhiteCapIngredient()
         {
-            Name = "white Cap";
+            Name = "White Cap";
             PrimaryEffect = AllAlchemyEffects.WeaknessToFrost;
             SecondaryEffect = AllAlchemyEffects.FortifyHeavyArmor;
             TertiaryEffect = AllAlchemyEffects.RestoreMagicka;
@@ -27,6 +27,6 @@ namespace Rpg.Models.Alchemy.Ingredients
 
     public static partial class AllIngredients
     {
-        public static readonly whiteCapIngredient whiteCap = new whiteCapIngredient();
+        public static readonly WhiteCapIngredient WhiteCap = new WhiteCapIngredient();
     }
 }
