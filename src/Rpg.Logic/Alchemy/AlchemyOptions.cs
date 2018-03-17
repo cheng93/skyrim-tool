@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Rpg.Logic.Common.Constants;
 using Rpg.Models.Alchemy.Ingredients;
 using Rpg.Models.Perks;
 using Rpg.Models.Skills.Stealth;
@@ -9,6 +10,8 @@ namespace Rpg.Logic.Alchemy
 {
     internal interface IAlchemyOptions
     {
+        int AlchemyLevel { get; set; }
+
         IEnumerable<IIngredient> Ingredients { get; set; }
 
         IEnumerable<IPerk<AlchemySkill>> Perks { get; set; }
@@ -16,6 +19,8 @@ namespace Rpg.Logic.Alchemy
 
     internal class AlchemyOptions : IAlchemyOptions
     {
+        public int AlchemyLevel { get; set; } = SkillConstants.MinLevel;
+
         private IEnumerable<IIngredient> ingredients = Enumerable.Empty<IIngredient>();
 
         public IEnumerable<IIngredient> Ingredients

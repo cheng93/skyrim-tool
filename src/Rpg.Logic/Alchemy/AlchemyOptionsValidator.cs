@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FluentValidation;
 using FluentValidation.Results;
+using Rpg.Logic.Common.Constants;
 using Rpg.Models.Alchemy.Ingredients;
 using Rpg.Models.Perks;
 using Rpg.Models.Skills.Stealth;
@@ -12,6 +13,9 @@ namespace Rpg.Logic.Alchemy
     {
         public AlchemyOptionsValidator()
         {
+            this.RuleFor(x => x.AlchemyLevel)
+                .InclusiveBetween(SkillConstants.MinLevel, SkillConstants.MaxLevel);
+
             this.RuleFor(x => x.Ingredients)
                 .Must(ValidateIngredients);
 
