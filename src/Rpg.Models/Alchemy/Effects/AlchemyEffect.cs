@@ -13,18 +13,22 @@ namespace Rpg.Models.Alchemy.Effects
         double Magnitude { get; }
 
         bool IsPositiveEffect { get; }
+
+        IEffect Effect { get; }
     }
 
-    public abstract class AlchemyEffect<T> : IAlchemyEffect, IEquatable<AlchemyEffect<T>>
-        where T : IEffect
+    public abstract class AlchemyEffect : IAlchemyEffect, IEquatable<AlchemyEffect>
     {
-        public AlchemyEffect(
-            T effect,
+        protected AlchemyEffect()
+        {
+        }
+
+        protected AlchemyEffect(
+            IEffect effect,
             double cost,
             double duration,
             double magnitude)
         {
-            Effect = effect;
             Cost = cost;
             Duration = duration;
             Magnitude = magnitude;
@@ -38,22 +42,22 @@ namespace Rpg.Models.Alchemy.Effects
 
         public abstract string Id { get; }
 
-        public T Effect { get; }
+        public IEffect Effect { get; internal set; }
 
-        public double Cost { get; }
+        public double Cost { get; internal set; }
 
-        public double Duration { get; }
+        public double Duration { get; internal set; }
 
-        public double Magnitude { get; }
+        public double Magnitude { get; internal set; }
 
         public override bool Equals(object obj)
         {
-            return obj is AlchemyEffect<T> effect
+            return obj is AlchemyEffect effect
                 ? Equals(effect)
                 : false;
         }
 
-        public bool Equals(AlchemyEffect<T> other)
+        public bool Equals(AlchemyEffect other)
         {
             return other != null
                 ? Id == other.Id
@@ -61,5 +65,25 @@ namespace Rpg.Models.Alchemy.Effects
         }
 
         public override int GetHashCode() => Id.GetHashCode();
+    }
+
+    public abstract class AlchemyEffect<T> : AlchemyEffect
+        where T : IEffect
+    {
+        protected AlchemyEffect()
+        {
+        }
+
+        public AlchemyEffect(
+            T effect,
+            double cost,
+            double duration,
+            double magnitude)
+            : base(effect, cost, duration, magnitude)
+        {
+            Effect = effect;
+        }
+
+        public new T Effect { get; internal set; }
     }
 }
