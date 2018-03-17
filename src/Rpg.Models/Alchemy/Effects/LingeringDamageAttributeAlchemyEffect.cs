@@ -20,19 +20,15 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = false;
-            Name = $"Lingering Damage {Effect.Attribute.ToPresentableString()}";
-            Description = GetDescription(Effect.Attribute);
-            Id = idMap[Effect.Attribute];
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name => $"Lingering Damage {Effect.Attribute.ToPresentableString()}";
 
-        public override string Description { get; }
+        public override string Description => GetDescription(Effect.Attribute);
 
-        public override string Id { get; } = "";
+        public override string Id => idMap[Effect.Attribute];
 
         private string GetDescription(Attribute attribute)
         {

@@ -16,16 +16,13 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = false;
-            Name = "Waterbreathing";
-            Description = $"Can breathe underwater for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name { get; } = "Waterbreathing";
 
-        public override string Description { get; }
+        public override string Description => $"Can breathe underwater for {Duration} seconds.";
 
         public override string Id { get; } = "0003AC2D";
     }

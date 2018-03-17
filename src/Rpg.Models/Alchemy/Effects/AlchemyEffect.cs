@@ -17,7 +17,7 @@ namespace Rpg.Models.Alchemy.Effects
         IEffect Effect { get; }
     }
 
-    public abstract class AlchemyEffect : IAlchemyEffect, IEquatable<AlchemyEffect>
+    public abstract class AlchemyEffect : IAlchemyEffect
     {
         protected AlchemyEffect()
         {
@@ -29,6 +29,7 @@ namespace Rpg.Models.Alchemy.Effects
             double duration,
             double magnitude)
         {
+            Effect = effect;
             Cost = cost;
             Duration = duration;
             Magnitude = magnitude;
@@ -53,14 +54,7 @@ namespace Rpg.Models.Alchemy.Effects
         public override bool Equals(object obj)
         {
             return obj is AlchemyEffect effect
-                ? Equals(effect)
-                : false;
-        }
-
-        public bool Equals(AlchemyEffect other)
-        {
-            return other != null
-                ? Id == other.Id
+                ? Id == effect.Id
                 : false;
         }
 
@@ -81,9 +75,8 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            Effect = effect;
         }
 
-        public new T Effect { get; internal set; }
+        public new T Effect => (T) base.Effect;
     }
 }

@@ -16,16 +16,13 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = false;
-            Name = "Frenzy";
-            Description = $"Creatures and people up to level {Magnitude} will attack anything nearby for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name { get; } = "Frenzy";
 
-        public override string Description { get; }
+        public override string Description => $"Creatures and people up to level {Magnitude} will attack anything nearby for {Duration} seconds.";
 
         public override string Id { get; } = "00073F29";
     }

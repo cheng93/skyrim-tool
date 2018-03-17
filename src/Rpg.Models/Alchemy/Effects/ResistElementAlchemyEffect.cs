@@ -19,19 +19,15 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = true;
-            Name = $"Resist {Effect.Element.ToPresentableString()}";
-            Description = $"Resist {Magnitude}% of {Effect.Element.ToPresentableString().ToLowerInvariant()} damage for {Duration} seconds.";
-            Id = idMap[Effect.Element];
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name => $"Resist {Effect.Element.ToPresentableString()}";
 
-        public override string Description { get; }
+        public override string Description => $"Resist {Magnitude}% of {Effect.Element.ToPresentableString().ToLowerInvariant()} damage for {Duration} seconds.";
 
-        public override string Id { get; }
+        public override string Id => idMap[Effect.Element];
 
         private static Dictionary<Element, string> idMap = new Dictionary<Element, string>()
         {

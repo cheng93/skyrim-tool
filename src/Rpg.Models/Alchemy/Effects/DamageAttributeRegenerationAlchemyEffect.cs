@@ -24,20 +24,15 @@ namespace Rpg.Models.Alchemy.Effects
             {
                 throw new InvalidEnumArgumentException();
             }
-    
-            IsPositiveEffect = false;
-            Name = $"Damage {Effect.Attribute.ToPresentableString()} Regen";
-            Description = GetDescription(Effect.Attribute);
-            Id = idMap[Effect.Attribute];
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name => $"Damage {Effect.Attribute.ToPresentableString()} Regen";
 
-        public override string Description { get; }
+        public override string Description => GetDescription(Effect.Attribute);
 
-        public override string Id { get; }
+        public override string Id => idMap[Effect.Attribute];
 
         private string GetDescription(Attribute attribute)
         {

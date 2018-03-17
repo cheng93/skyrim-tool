@@ -26,19 +26,15 @@ namespace Rpg.Models.Alchemy.Effects
                 case Skill.Persuasion:
                     throw new InvalidEnumArgumentException();
             }
-            IsPositiveEffect = true;
-            Name = GetName(Effect.Skill);
-            Description = GetDescription(Effect.Skill);
-            Id = idMap[Effect.Skill];
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name => GetName(Effect.Skill);
 
-        public override string Description { get; }
+        public override string Description => GetDescription(Effect.Skill);
 
-        public override string Id { get; } = "";
+        public override string Id => idMap[Effect.Skill];
 
         private string GetName(Skill skill)
         {

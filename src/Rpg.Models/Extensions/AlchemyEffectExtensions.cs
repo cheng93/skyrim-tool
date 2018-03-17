@@ -21,19 +21,19 @@ namespace Rpg.Models.Extensions
             };
         }
 
-        public static T ScaleCost<T>(this T effect, double factor)
+        internal static T ScaleCost<T>(this T effect, double factor)
             where T : AlchemyEffect, new()
         {
             return effect.Scale<T>(costFactor: factor);
         }
 
-        public static T ScaleDuration<T>(this T effect, double factor)
+        internal static T ScaleDuration<T>(this T effect, double factor)
             where T : AlchemyEffect, new()
         {
             return effect.Scale<T>(durationFactor: factor);
         }
 
-        public static T ScaleMagnitude<T>(this T effect, double factor)
+        internal static T ScaleMagnitude<T>(this T effect, double factor)
             where T : AlchemyEffect, new()
         {
             return effect.Scale<T>(magnitudeFactor: factor);
