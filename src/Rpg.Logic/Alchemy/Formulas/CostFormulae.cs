@@ -15,11 +15,7 @@ namespace Rpg.Logic.Alchemy.Formulas
                 ? duration / 10
                 : 1;
 
-            var additionalFactor = magnitude == 0
-                ? 0.0794328
-                : 1;
-    
-            return Math.Floor(effect.Cost * Math.Pow(magnitudeFactor * durationFactor, 1.1) * additionalFactor);
+            return Math.Floor(effect.Cost * Math.Pow(magnitudeFactor * durationFactor, 1.1));
         }
     }
 }

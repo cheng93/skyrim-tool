@@ -30,10 +30,10 @@ namespace Rpg.Logic.Alchemy.Formulas
             var perkFactor = PerksFormulae.GetPerks(effect, options.Perks);
 
             var baseMagnitude = MagnitudeFormulae.GetMagnitude(effect, baseFactor);
-            var magnitude = baseMagnitude * perkFactor;
+            var magnitude = MagnitudeFormulae.GetMagnitude(effect, baseFactor * perkFactor);
 
             var baseDuration = DurationFormulae.GetDuration(effect, baseFactor);
-            var duration = baseDuration * perkFactor;
+            var duration = DurationFormulae.GetDuration(effect, baseFactor * perkFactor);
 
             var baseCost = CostFormulae.GetCost(effect, baseMagnitude, baseDuration);
             var cost = CostFormulae.GetCost(effect, magnitude, duration);

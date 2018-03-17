@@ -12,7 +12,7 @@ namespace Rpg.Logic.Alchemy.Formulas
                 ? powerFactor
                 : 1;
 
-            return Math.Round(Math.Max(effect.Duration, 0) * durationFactor);
+            return Math.Round(Math.Max(effect.Duration, 0) * durationFactor, MidpointRounding.AwayFromZero);
         }
     }
 }
