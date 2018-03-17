@@ -5,6 +5,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class WeaknessToMagicAlchemyEffect : AlchemyEffect<WeaknessToMagicEffect>
     {
+        public WeaknessToMagicAlchemyEffect()
+        {
+        }
+
         public WeaknessToMagicAlchemyEffect(
             WeaknessToMagicEffect effect,
             double cost,

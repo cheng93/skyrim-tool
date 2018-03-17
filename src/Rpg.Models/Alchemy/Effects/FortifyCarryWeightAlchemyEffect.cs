@@ -5,6 +5,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class FortifyCarryWeightAlchemyEffect : AlchemyEffect<FortifyCarryWeightEffect>
     {
+        public FortifyCarryWeightAlchemyEffect()
+        {
+        }
+
         public FortifyCarryWeightAlchemyEffect(
             FortifyCarryWeightEffect effect,
             double cost,

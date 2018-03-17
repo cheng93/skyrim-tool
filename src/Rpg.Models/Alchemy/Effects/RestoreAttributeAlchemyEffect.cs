@@ -9,6 +9,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class RestoreAttributeAlchemyEffect : AlchemyEffect<RestoreAttributeEffect>
     {
+        public RestoreAttributeAlchemyEffect()
+        {
+        }
+
         public RestoreAttributeAlchemyEffect(
             RestoreAttributeEffect effect,
             double cost,

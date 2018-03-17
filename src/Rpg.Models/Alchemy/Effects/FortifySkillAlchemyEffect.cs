@@ -9,6 +9,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class FortifySkillAlchemyEffect : AlchemyEffect<FortifySkillEffect>
     {
+        public FortifySkillAlchemyEffect()
+        {
+        }
+
         public FortifySkillAlchemyEffect(
             FortifySkillEffect effect,
             double cost,

@@ -5,6 +5,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class WaterbreathingAlchemyEffect : AlchemyEffect<WaterbreathingEffect>
     {
+        public WaterbreathingAlchemyEffect()
+        {
+        }
+
         public WaterbreathingAlchemyEffect(
             WaterbreathingEffect effect,
             double cost,

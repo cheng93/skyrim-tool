@@ -8,6 +8,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class ResistElementAlchemyEffect : AlchemyEffect<ResistElementEffect>
     {
+        public ResistElementAlchemyEffect()
+        {
+        }
+
         public ResistElementAlchemyEffect(
             ResistElementEffect effect,
             double cost,

@@ -5,6 +5,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class InvisibilityAlchemyEffect : AlchemyEffect<InvisibilityEffect>
     {
+        public InvisibilityAlchemyEffect()
+        {
+        }
+
         public InvisibilityAlchemyEffect(
             InvisibilityEffect effect,
             double cost,

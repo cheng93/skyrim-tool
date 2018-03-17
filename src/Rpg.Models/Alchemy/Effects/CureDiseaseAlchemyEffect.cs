@@ -5,6 +5,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class CureDiseaseAlchemyEffect : AlchemyEffect<CureDiseaseEffect>
     {
+        public CureDiseaseAlchemyEffect()
+        {
+        }
+
         public CureDiseaseAlchemyEffect(
             CureDiseaseEffect effect,
             double cost,

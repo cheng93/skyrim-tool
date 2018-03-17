@@ -5,6 +5,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class SlowAlchemyEffect : AlchemyEffect<SlowEffect>
     {
+        public SlowAlchemyEffect()
+        {
+        }
+
         public SlowAlchemyEffect(
             SlowEffect effect,
             double cost,

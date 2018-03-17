@@ -9,6 +9,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class DamageAttributeAlchemyEffect : AlchemyEffect<DamageAttributeEffect>
     {
+        public DamageAttributeAlchemyEffect()
+        {
+        }
+
         public DamageAttributeAlchemyEffect(
             DamageAttributeEffect effect,
             double cost,

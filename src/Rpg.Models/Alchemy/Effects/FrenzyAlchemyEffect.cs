@@ -5,6 +5,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class FrenzyAlchemyEffect : AlchemyEffect<FrenzyEffect>
     {
+        public FrenzyAlchemyEffect()
+        {
+        }
+
         public FrenzyAlchemyEffect(
             FrenzyEffect effect,
             double cost,

@@ -5,6 +5,10 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class FearAlchemyEffect : AlchemyEffect<FearEffect>
     {
+        public FearAlchemyEffect()
+        {
+        }
+
         public FearAlchemyEffect(
             FearEffect effect,
             double cost,
