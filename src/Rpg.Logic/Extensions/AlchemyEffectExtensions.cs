@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Rpg.Models.Alchemy.Effects;
 
-namespace Rpg.Models.Extensions
+namespace Rpg.Logic.Extensions
 {
     public static class AlchemyEffectExtensions
     {
@@ -16,6 +16,5 @@ namespace Rpg.Models.Extensions
         public static bool PowerAffectsDuration(this IAlchemyEffect e) => durationAffects.Contains(e);
 
         public static bool PowerAffectsMagnitude(this IAlchemyEffect e) => !durationAffects.Contains(e);
-        
     }
 }

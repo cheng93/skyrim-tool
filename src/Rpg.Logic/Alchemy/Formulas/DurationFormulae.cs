@@ -1,4 +1,5 @@
 using System;
+using Rpg.Logic.Extensions;
 using Rpg.Models.Alchemy.Effects;
 using Rpg.Models.Extensions;
 
