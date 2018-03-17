@@ -1,3 +1,4 @@
+using System;
 using Rpg.Models.Common;
 using Rpg.Models.Effects;
 
@@ -14,7 +15,7 @@ namespace Rpg.Models.Alchemy.Effects
         bool IsPositiveEffect { get; }
     }
 
-    public abstract class AlchemyEffect<T> : IAlchemyEffect
+    public abstract class AlchemyEffect<T> : IAlchemyEffect, IEquatable<AlchemyEffect<T>>
         where T : Effect<T>
     {
         public AlchemyEffect(
@@ -44,5 +45,21 @@ namespace Rpg.Models.Alchemy.Effects
         public double Duration { get; }
 
         public double Magnitude { get; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is AlchemyEffect<T> effect
+                ? Equals(effect)
+                : false;
+        }
+
+        public bool Equals(AlchemyEffect<T> other)
+        {
+            return other != null
+                ? Id == other.Id
+                : false;
+        }
+
+        public override int GetHashCode() => Id.GetHashCode();
     }
 }
