@@ -35,6 +35,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static RegenerateAttributeAlchemyEffect Create(this RegenerateAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new RegenerateAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly RegenerateAttributeAlchemyEffect RegenerateHealth = new RegenerateAttributeAlchemyEffect(
             AllEffects.Restoration.RegenerateHealth,
             cost: 0.1,

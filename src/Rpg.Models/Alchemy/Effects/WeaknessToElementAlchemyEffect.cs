@@ -35,6 +35,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static WeaknessToElementAlchemyEffect Create(this WeaknessToElementAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new WeaknessToElementAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly WeaknessToElementAlchemyEffect WeaknessToFire = new WeaknessToElementAlchemyEffect(
             AllEffects.Destruction.WeaknessToFire,
             cost: 0.6,

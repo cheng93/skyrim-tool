@@ -25,6 +25,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static FearAlchemyEffect Create(this FearAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new FearAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly FearAlchemyEffect Fear = new FearAlchemyEffect(
             AllEffects.Illusion.Fear,
             cost: 5,

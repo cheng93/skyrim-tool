@@ -25,6 +25,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static WaterbreathingAlchemyEffect Create(this WaterbreathingAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new WaterbreathingAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly WaterbreathingAlchemyEffect Waterbreathing = new WaterbreathingAlchemyEffect(
             AllEffects.Alteration.Waterbreathing,
             cost: 30,

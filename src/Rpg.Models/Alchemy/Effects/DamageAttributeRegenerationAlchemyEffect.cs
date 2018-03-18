@@ -51,6 +51,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static DamageAttributeRegenerationAlchemyEffect Create(this DamageAttributeRegenerationAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new DamageAttributeRegenerationAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly DamageAttributeRegenerationAlchemyEffect DamageMagickaRegeneration = new DamageAttributeRegenerationAlchemyEffect(
             AllEffects.Destruction.DamageMagickaRegeneration,
             cost: 0.5,

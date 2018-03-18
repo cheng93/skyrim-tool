@@ -25,6 +25,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static FrenzyAlchemyEffect Create(this FrenzyAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new FrenzyAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly FrenzyAlchemyEffect Frenzy = new FrenzyAlchemyEffect(
             AllEffects.Illusion.Frenzy,
             cost: 15,

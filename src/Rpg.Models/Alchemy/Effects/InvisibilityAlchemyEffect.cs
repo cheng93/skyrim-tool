@@ -25,6 +25,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static InvisibilityAlchemyEffect Create(this InvisibilityAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new InvisibilityAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly InvisibilityAlchemyEffect Invisibility = new InvisibilityAlchemyEffect(
             AllEffects.Illusion.Invisibility,
             cost: 100,

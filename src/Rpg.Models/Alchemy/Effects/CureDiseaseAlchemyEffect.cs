@@ -25,6 +25,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static CureDiseaseAlchemyEffect Create(this CureDiseaseAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new CureDiseaseAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly CureDiseaseAlchemyEffect CureDisease = new CureDiseaseAlchemyEffect(
             AllEffects.Restoration.CureDisease,
             cost: 0.5,

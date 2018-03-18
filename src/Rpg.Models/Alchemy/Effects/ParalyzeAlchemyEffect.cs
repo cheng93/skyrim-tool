@@ -25,6 +25,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static ParalyzeAlchemyEffect Create(this ParalyzeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new ParalyzeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly ParalyzeAlchemyEffect Paralyze = new ParalyzeAlchemyEffect(
             AllEffects.Alteration.Paralyze,
             cost: 500,

@@ -50,6 +50,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static LingeringDamageAttributeAlchemyEffect Create(this LingeringDamageAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new LingeringDamageAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly LingeringDamageAttributeAlchemyEffect LingeringDamageHealth = new LingeringDamageAttributeAlchemyEffect(
             AllEffects.Destruction.LingeringDamageHealth,
             cost: 12,

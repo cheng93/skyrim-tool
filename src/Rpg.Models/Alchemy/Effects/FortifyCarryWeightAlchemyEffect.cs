@@ -25,6 +25,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static FortifyCarryWeightAlchemyEffect Create(this FortifyCarryWeightAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new FortifyCarryWeightAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly FortifyCarryWeightAlchemyEffect FortifyCarryWeight = new FortifyCarryWeightAlchemyEffect(
             AllEffects.Restoration.FortifyCarryWeight,
             cost: 0.15,

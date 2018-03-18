@@ -25,6 +25,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static SlowAlchemyEffect Create(this SlowAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new SlowAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly SlowAlchemyEffect Slow = new SlowAlchemyEffect(
             AllEffects.Destruction.Slow,
             cost: 1,

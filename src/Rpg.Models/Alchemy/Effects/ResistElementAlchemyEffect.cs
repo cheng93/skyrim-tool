@@ -35,6 +35,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static ResistElementAlchemyEffect Create(this ResistElementAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new ResistElementAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly ResistElementAlchemyEffect ResistFire = new ResistElementAlchemyEffect(
             AllEffects.Restoration.ResistFire,
             cost: 0.5,

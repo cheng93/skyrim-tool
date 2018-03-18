@@ -105,6 +105,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static FortifySkillAlchemyEffect Create(this FortifySkillAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new FortifySkillAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly FortifySkillAlchemyEffect FortifyAlteration = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyAlteration,
             cost: 0.2,

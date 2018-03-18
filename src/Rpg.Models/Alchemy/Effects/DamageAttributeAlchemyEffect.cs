@@ -50,6 +50,11 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
+        internal static DamageAttributeAlchemyEffect Create(this DamageAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new DamageAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly DamageAttributeAlchemyEffect DamageHealth = new DamageAttributeAlchemyEffect(
             AllEffects.Destruction.DamageHealth,
             cost: 3,
