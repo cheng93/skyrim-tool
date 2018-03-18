@@ -12,20 +12,24 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = true;
-            Name = "Invibility";
-            Description = $"Invisibility for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name { get; } = "Invisibility";
 
-        public override string Description { get; }
+        public override string Description => $"Invisibility for {Duration} seconds.";
+
+        public override string Id { get; } = "0003EB3D";
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static InvisibilityAlchemyEffect Create(this InvisibilityAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new InvisibilityAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly InvisibilityAlchemyEffect Invisibility = new InvisibilityAlchemyEffect(
             AllEffects.Illusion.Invisibility,
             cost: 100,

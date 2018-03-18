@@ -3,6 +3,7 @@ using Rpg.Models.Effects.Destruction;
 using Rpg.Models.Common.Enums;
 using Rpg.Models.Extensions;
 using Rpg.Models.Effects;
+using System.Collections.Generic;
 
 namespace Rpg.Models.Alchemy.Effects
 {
@@ -14,17 +15,16 @@ namespace Rpg.Models.Alchemy.Effects
             double duration,
             double magnitude) 
             : base(effect, cost, duration, magnitude)
-        {    
-            IsPositiveEffect = false;
-            Name = $"Damage {Effect.Attribute.ToPresentableString()}";
-            Description = GetDescription(Effect.Attribute);
+        {
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name => $"Damage {Effect.Attribute.ToPresentableString()}";
 
-        public override string Description { get; }
+        public override string Description => GetDescription(Effect.Attribute);
+
+        public override string Id => idMap[Effect.Attribute];
 
         private string GetDescription(Attribute attribute)
         {
@@ -39,10 +39,22 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+
+        private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
+        {
+            { Attribute.Health, "0003EB42"},
+            { Attribute.Magicka, "0003A2B6"},
+            { Attribute.Stamina, "0003A2C6"}
+        };
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static DamageAttributeAlchemyEffect Create(this DamageAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new DamageAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly DamageAttributeAlchemyEffect DamageHealth = new DamageAttributeAlchemyEffect(
             AllEffects.Destruction.DamageHealth,
             cost: 3,

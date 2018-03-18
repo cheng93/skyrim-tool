@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using Rpg.Models.Alchemy.Effects;
 using Rpg.Models.Common;
 
-namespace Rpg.Models.Alchemy
+namespace Rpg.Models.Alchemy.Ingredients
 {
-    public interface IIngredient
+    public interface IIngredient : IHasName
     {
         IAlchemyEffect PrimaryEffect { get; }
 
@@ -16,7 +17,7 @@ namespace Rpg.Models.Alchemy
         IEnumerable<IAlchemyEffect> CombinedEffects { get; }
     }
 
-    public abstract class Ingredient : IIngredient, IHasName
+    public abstract class Ingredient : IIngredient
     {
         public abstract string Name { get; }
 

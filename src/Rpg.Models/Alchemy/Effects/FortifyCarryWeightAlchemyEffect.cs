@@ -12,20 +12,24 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = true;
-            Name = "Fortify Carry Weight";
-            Description = $"Carrying capacity increases by {Magnitude} for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name { get; } = "Fortify Carry Weight";
 
-        public override string Description { get; }
+        public override string Description => $"Carrying capacity increases by {Magnitude} for {Duration} seconds.";
+
+        public override string Id { get; } = "0003EB01";
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static FortifyCarryWeightAlchemyEffect Create(this FortifyCarryWeightAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new FortifyCarryWeightAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly FortifyCarryWeightAlchemyEffect FortifyCarryWeight = new FortifyCarryWeightAlchemyEffect(
             AllEffects.Restoration.FortifyCarryWeight,
             cost: 0.15,

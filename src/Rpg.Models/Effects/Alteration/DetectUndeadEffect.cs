@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Alteration
 {
-    public class DetectUndeadEffect : Effect<DetectUndeadEffect>
+    public class DetectUndeadEffect : Effect
     {
         public DetectUndeadEffect() 
             : base("Detect Undead")

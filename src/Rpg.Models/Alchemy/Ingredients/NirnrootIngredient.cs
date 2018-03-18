@@ -1,6 +1,6 @@
 using Rpg.Models.Effects;
 using Rpg.Models.Alchemy.Effects;
-using Rpg.Models.Alchemy.Extensions;
+using Rpg.Models.Extensions;
 
 namespace Rpg.Models.Alchemy.Ingredients
 {

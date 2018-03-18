@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
@@ -15,16 +16,15 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = false;
-            Name = $"Ravage {Effect.Attribute.ToPresentableString()}";
-            Description = GetDescription(Effect.Attribute);
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name => $"Ravage {Effect.Attribute.ToPresentableString()}";
 
-        public override string Description { get; }
+        public override string Description => GetDescription(Effect.Attribute);
+
+        public override string Id => idMap[Effect.Attribute];
 
         private string GetDescription(Attribute attribute)
         {
@@ -39,10 +39,22 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+
+        private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
+        {
+            { Attribute.Health, "00073F26"},
+            { Attribute.Magicka, "00073F27"},
+            { Attribute.Stamina, "00073F23"}
+        };
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static RavageAttributeAlchemyEffect Create(this RavageAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new RavageAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly RavageAttributeAlchemyEffect RavageHealth = new RavageAttributeAlchemyEffect(
             AllEffects.Destruction.RavageHealth,
             cost: 0.4,

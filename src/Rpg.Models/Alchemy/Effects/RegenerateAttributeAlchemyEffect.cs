@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
 using Rpg.Models.Effects.Restoration;
 using Rpg.Models.Extensions;
@@ -13,20 +15,31 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = true;
-            Name = $"Regenerate {Effect.Attribute.ToPresentableString()}";
-            Description = $"{Effect.Attribute.ToPresentableString()} regenerates {Magnitude}% faster for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name => $"Regenerate {Effect.Attribute.ToPresentableString()}";
 
-        public override string Description { get; }
+        public override string Description => $"{Effect.Attribute.ToPresentableString()} regenerates {Magnitude}% faster for {Duration} seconds.";
+
+        public override string Id => idMap[Effect.Attribute];
+
+        private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
+        {
+            { Attribute.Health, "0003EB06"},
+            { Attribute.Magicka, "0003EB07"},
+            { Attribute.Stamina, "0003EB08"}
+        };
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static RegenerateAttributeAlchemyEffect Create(this RegenerateAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new RegenerateAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly RegenerateAttributeAlchemyEffect RegenerateHealth = new RegenerateAttributeAlchemyEffect(
             AllEffects.Restoration.RegenerateHealth,
             cost: 0.1,

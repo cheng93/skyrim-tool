@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Destruction
 {
-    public class WeaknessToPoisonEffect : Effect<WeaknessToPoisonEffect>
+    public class WeaknessToPoisonEffect : Effect
     {
         public WeaknessToPoisonEffect() 
             : base("Weakness To Poison")

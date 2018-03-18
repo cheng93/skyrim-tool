@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Destruction
 {
-    public class LightDamageEffect : Effect<LightDamageEffect>
+    public class LightDamageEffect : Effect
     {
         public LightDamageEffect() 
             : base("Light Damage")

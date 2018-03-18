@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
@@ -15,26 +16,25 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            switch(Effect.Skill)
+            switch (Effect.Skill)
             {
                 case Skill.Alchemy:
                 case Skill.Persuasion:
                     throw new InvalidEnumArgumentException();
             }
-            IsPositiveEffect = true;
-            Name = GetName(Effect.Skill);
-            Description = GetDescription(Effect.Skill);
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name => GetName(Effect.Skill);
 
-        public override string Description { get; }
+        public override string Description => GetDescription(Effect.Skill);
+
+        public override string Id => idMap[Effect.Skill];
 
         private string GetName(Skill skill)
         {
-            switch(skill)
+            switch (skill)
             {
                 case Skill.Archery:
                     return "Fortify Marksman";
@@ -45,7 +45,7 @@ namespace Rpg.Models.Alchemy.Effects
 
         private string GetDescription(Skill skill)
         {
-            switch(skill)
+            switch (skill)
             {
                 case Skill.Alteration:
                 case Skill.Conjuration:
@@ -80,10 +80,36 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+
+        private static Dictionary<Skill, string> idMap = new Dictionary<Skill, string>()
+        {
+            {Skill.Alteration, "0003EB24"},
+            {Skill.Archery, "0003EB1B"},
+            {Skill.Barter, "0003EB23"},
+            {Skill.Block, "0003EB1C"},
+            {Skill.Conjuration, "0003EB25"},
+            {Skill.Destruction, "0003EB26"},
+            {Skill.Enchanting, "0003EB29"},
+            {Skill.HeavyArmor, "0003EB1E"},
+            {Skill.Illusion, "0003EB27"},
+            {Skill.LightArmor, "0003EB1F"},
+            {Skill.Lockpicking, "0003EB21"},
+            {Skill.OneHanded, "0003EB19"},
+            {Skill.Pickpocket, "0003EB20"},
+            {Skill.Restoration, "0003EB28"},
+            {Skill.Smithing, "0003EB1D"},
+            {Skill.Sneak, "0003EB22"},
+            {Skill.TwoHanded, "0003EB1A"}
+        };
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static FortifySkillAlchemyEffect Create(this FortifySkillAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new FortifySkillAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly FortifySkillAlchemyEffect FortifyAlteration = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyAlteration,
             cost: 0.2,

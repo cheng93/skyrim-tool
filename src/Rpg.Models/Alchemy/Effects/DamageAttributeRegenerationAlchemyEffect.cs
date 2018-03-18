@@ -3,6 +3,7 @@ using Rpg.Models.Effects.Destruction;
 using Rpg.Models.Common.Enums;
 using Rpg.Models.Extensions;
 using Rpg.Models.Effects;
+using System.Collections.Generic;
 
 namespace Rpg.Models.Alchemy.Effects
 {
@@ -19,17 +20,15 @@ namespace Rpg.Models.Alchemy.Effects
             {
                 throw new InvalidEnumArgumentException();
             }
-    
-            IsPositiveEffect = false;
-            Name = $"Damage {Effect.Attribute.ToPresentableString()} Regen";
-            Description = GetDescription(Effect.Attribute);
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name => $"Damage {Effect.Attribute.ToPresentableString()} Regen";
 
-        public override string Description { get; }
+        public override string Description => GetDescription(Effect.Attribute);
+
+        public override string Id => idMap[Effect.Attribute];
 
         private string GetDescription(Attribute attribute)
         {
@@ -42,10 +41,21 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+
+        private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
+        {
+            { Attribute.Magicka, "00073F2B"},
+            { Attribute.Stamina, "00073F2C"}
+        };
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static DamageAttributeRegenerationAlchemyEffect Create(this DamageAttributeRegenerationAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new DamageAttributeRegenerationAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly DamageAttributeRegenerationAlchemyEffect DamageMagickaRegeneration = new DamageAttributeRegenerationAlchemyEffect(
             AllEffects.Destruction.DamageMagickaRegeneration,
             cost: 0.5,

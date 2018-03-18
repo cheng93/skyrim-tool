@@ -12,20 +12,24 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = true;
-            Name = "Resist Poison";
-            Description = $"Resist {Magnitude}% of poison for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name { get; } = "Resist Poison";
 
-        public override string Description { get; }
+        public override string Description => $"Resist {Magnitude}% of poison for {Duration} seconds.";
+
+        public override string Id { get; } = "00090041";
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static ResistPoisonAlchemyEffect Create(this ResistPoisonAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new ResistPoisonAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly ResistPoisonAlchemyEffect ResistPoison = new ResistPoisonAlchemyEffect(
             AllEffects.Restoration.ResistPoison,
             cost: 0.5,

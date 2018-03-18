@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Destruction
 {
-    public class BriarheartGeisEffect : Effect<BriarheartGeisEffect>
+    public class BriarheartGeisEffect : Effect
     {
         public BriarheartGeisEffect() 
             : base("Briarheart Geis")

@@ -2,10 +2,11 @@ using Rpg.Models.Common;
 
 namespace Rpg.Models.Effects
 {
-    public interface IEffect<T> {}
+    public interface IEffect : IHasName
+    {
+    }
 
-    public abstract class Effect<T> : IEffect<T>, IHasName
-        where T : Effect<T>
+    public abstract class Effect : IEffect
     {
         protected Effect(string name)
         {

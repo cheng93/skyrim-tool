@@ -1,6 +1,6 @@
 using Rpg.Models.Effects;
 using Rpg.Models.Alchemy.Effects;
-using Rpg.Models.Alchemy.Extensions;
+using Rpg.Models.Extensions;
 
 namespace Rpg.Models.Alchemy.Ingredients
 {
@@ -9,10 +9,10 @@ namespace Rpg.Models.Alchemy.Ingredients
         public BearClawsIngredient()
         {
             Name = "Bear Claws";
-            PrimaryEffect = AllAlchemyEffects.DamageStamina.ScaleMagnitude(0.8);
-            SecondaryEffect = AllAlchemyEffects.FortifyConjuration;
-            TertiaryEffect = AllAlchemyEffects.DamageMagickaRegeneration;
-            QuaternaryEffect = AllAlchemyEffects.FortifyEnchanting;
+            PrimaryEffect = AllAlchemyEffects.RestoreStamina.ScaleMagnitude(0.8);
+            SecondaryEffect = AllAlchemyEffects.FortifyHealth;
+            TertiaryEffect = AllAlchemyEffects.FortifyOneHanded;
+            QuaternaryEffect = AllAlchemyEffects.DamageMagickaRegeneration;
         }
 
         public override string Name { get; }

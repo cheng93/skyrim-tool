@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Illusion
 {
-    public class MuffleEffect : Effect<MuffleEffect>
+    public class MuffleEffect : Effect
     {
         public MuffleEffect() 
             : base("Muffle")

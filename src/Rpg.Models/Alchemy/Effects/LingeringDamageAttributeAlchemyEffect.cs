@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
@@ -15,16 +16,15 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = false;
-            Name = $"Lingering Damage {Effect.Attribute.ToPresentableString()}";
-            Description = GetDescription(Effect.Attribute);
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name => $"Lingering Damage {Effect.Attribute.ToPresentableString()}";
 
-        public override string Description { get; }
+        public override string Description => GetDescription(Effect.Attribute);
+
+        public override string Id => idMap[Effect.Attribute];
 
         private string GetDescription(Attribute attribute)
         {
@@ -39,10 +39,22 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+
+        private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
+        {
+            { Attribute.Health, "0010AA4A"},
+            { Attribute.Magicka, "0010DE5F"},
+            { Attribute.Stamina, "0010DE5E"}
+        };
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static LingeringDamageAttributeAlchemyEffect Create(this LingeringDamageAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new LingeringDamageAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly LingeringDamageAttributeAlchemyEffect LingeringDamageHealth = new LingeringDamageAttributeAlchemyEffect(
             AllEffects.Destruction.LingeringDamageHealth,
             cost: 12,

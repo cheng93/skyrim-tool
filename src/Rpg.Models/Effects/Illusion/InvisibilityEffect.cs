@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Illusion
 {
-    public class InvisibilityEffect : Effect<InvisibilityEffect>
+    public class InvisibilityEffect : Effect
     {
         public InvisibilityEffect() 
             : base("Invisibility")

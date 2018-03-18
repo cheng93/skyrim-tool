@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
@@ -15,20 +16,31 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = true;
-            Name = $"Fortify {Effect.Attribute.ToPresentableString()}";
-            Description = $"{Effect.Attribute.ToPresentableString()} is increased by {Magnitude} points for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name => $"Fortify {Effect.Attribute.ToPresentableString()}";
 
-        public override string Description { get; }
+        public override string Description => $"{Effect.Attribute.ToPresentableString()} is increased by {Magnitude} points for {Duration} seconds.";
+
+        public override string Id => idMap[Effect.Attribute];
+
+        private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
+        {
+            { Attribute.Health, "0003EAF3"},
+            { Attribute.Magicka, "0003EAF8"},
+            { Attribute.Stamina, "0003EAF9"}
+        };
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static FortifyAttributeAlchemyEffect Create(this FortifyAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new FortifyAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly FortifyAttributeAlchemyEffect FortifyHealth = new FortifyAttributeAlchemyEffect(
             AllEffects.Restoration.FortifyHealth,
             cost: 0.35,

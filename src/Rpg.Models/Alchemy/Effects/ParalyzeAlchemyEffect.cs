@@ -12,20 +12,24 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = false;
-            Name = "Paralysis";
-            Description = $"Target is paralyzed for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name { get; } = "Paralysis";
 
-        public override string Description { get; }
+        public override string Description => $"Target is paralyzed for {Duration} seconds.";
+
+        public override string Id { get; } = "00073F30";
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static ParalyzeAlchemyEffect Create(this ParalyzeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new ParalyzeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly ParalyzeAlchemyEffect Paralyze = new ParalyzeAlchemyEffect(
             AllEffects.Alteration.Paralyze,
             cost: 500,

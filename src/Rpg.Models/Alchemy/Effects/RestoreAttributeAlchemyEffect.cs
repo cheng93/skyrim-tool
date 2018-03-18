@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.ComponentModel;
 using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
@@ -15,20 +16,19 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = true;
-            Name = $"Restore {effect.Attribute.ToPresentableString()}";
-            Description = GetDescription(effect.Attribute);
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name => $"Restore {Effect.Attribute.ToPresentableString()}";
 
-        public override string Description { get; }
+        public override string Description => GetDescription(Effect.Attribute);
 
-        private string  GetDescription(Attribute attribute)
+        public override string Id => idMap[Effect.Attribute];
+
+        private string GetDescription(Attribute attribute)
         {
-            switch(attribute)
+            switch (attribute)
             {
                 case Attribute.Health:
                 case Attribute.Magicka:
@@ -39,10 +39,22 @@ namespace Rpg.Models.Alchemy.Effects
                     throw new InvalidEnumArgumentException();
             }
         }
+
+        private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
+        {
+            { Attribute.Health, "0003EB15"},
+            { Attribute.Magicka, "0003EB17"},
+            { Attribute.Stamina, "0003EB16"}
+        };
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static RestoreAttributeAlchemyEffect Create(this RestoreAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new RestoreAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly RestoreAttributeAlchemyEffect RestoreHealth = new RestoreAttributeAlchemyEffect(
             AllEffects.Restoration.RestoreHealth,
             cost: 0.5,

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Rpg.Models.Common.Enums;
 using Rpg.Models.Effects;
 using Rpg.Models.Effects.Destruction;
 using Rpg.Models.Extensions;
@@ -13,20 +15,31 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = false;
-            Name = $"Weakness To {Effect.Element.ToPresentableString()}";
-            Description = $"Target is {Magnitude}% weaker to {Effect.Element.ToPresentableString().ToLowerInvariant()} for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name => $"Weakness To {Effect.Element.ToPresentableString()}";
 
-        public override string Description { get; }
+        public override string Description => $"Target is {Magnitude}% weaker to {Effect.Element.ToPresentableString().ToLowerInvariant()} for {Duration} seconds.";
+
+        public override string Id => idMap[Effect.Element];
+
+        private static Dictionary<Element, string> idMap = new Dictionary<Element, string>()
+        {
+            {Element.Fire, "00073F2D"},
+            {Element.Frost, "00073F2E"},
+            {Element.Shock, "00073F2F"}
+        };
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static WeaknessToElementAlchemyEffect Create(this WeaknessToElementAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new WeaknessToElementAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly WeaknessToElementAlchemyEffect WeaknessToFire = new WeaknessToElementAlchemyEffect(
             AllEffects.Destruction.WeaknessToFire,
             cost: 0.6,

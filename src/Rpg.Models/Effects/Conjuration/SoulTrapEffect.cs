@@ -1,6 +1,6 @@
 namespace Rpg.Models.Effects.Conjuration
 {
-    public class SoulTrapEffect : Effect<SoulTrapEffect>
+    public class SoulTrapEffect : Effect
     {
         public SoulTrapEffect() 
             : base("Soul Trap")

@@ -12,20 +12,24 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = false;
-            Name = "Weakness To Poison";
-            Description = $"Target is {Magnitude}% weaker to poison for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name { get; } = "Weakness To Poison";
 
-        public override string Description { get; }
+        public override string Description => $"Target is {Magnitude}% weaker to poison for {Duration} seconds.";
+
+        public override string Id { get; } = "00090042";
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static WeaknessToPoisonAlchemyEffect Create(this WeaknessToPoisonAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new WeaknessToPoisonAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly WeaknessToPoisonAlchemyEffect WeaknessToPoison = new WeaknessToPoisonAlchemyEffect(
             AllEffects.Destruction.WeaknessToPoison,
             cost: 1,

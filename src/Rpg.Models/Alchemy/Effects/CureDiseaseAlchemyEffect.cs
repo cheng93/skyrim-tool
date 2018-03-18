@@ -12,20 +12,24 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = true;
-            Name = "Cure Disease";
-            Description = "Cures all diseases.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = true;
 
-        public override string Name { get; }
+        public override string Name { get; } = "Cure Disease";
 
-        public override string Description { get; }
+        public override string Description { get; } = "Cures all diseases.";
+
+        public override string Id { get; } = "000AE722";
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static CureDiseaseAlchemyEffect Create(this CureDiseaseAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new CureDiseaseAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly CureDiseaseAlchemyEffect CureDisease = new CureDiseaseAlchemyEffect(
             AllEffects.Restoration.CureDisease,
             cost: 0.5,

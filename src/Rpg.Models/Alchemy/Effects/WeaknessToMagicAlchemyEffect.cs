@@ -12,20 +12,24 @@ namespace Rpg.Models.Alchemy.Effects
             double magnitude)
             : base(effect, cost, duration, magnitude)
         {
-            IsPositiveEffect = false;
-            Name = "Weakness To Magic";
-            Description = $"Target is {Magnitude}% weaker to magic for {Duration} seconds.";
         }
 
-        public override bool IsPositiveEffect { get; }
+        public override bool IsPositiveEffect { get; } = false;
 
-        public override string Name { get; }
+        public override string Name { get; } = "Weakness To Magic";
 
-        public override string Description { get; }
+        public override string Description => $"Target is {Magnitude}% weaker to magic for {Duration} seconds.";
+
+        public override string Id { get; } = "00073F51";
     }
 
     public static partial class AllAlchemyEffects
     {
+        internal static WeaknessToMagicAlchemyEffect Create(this WeaknessToMagicAlchemyEffect e, double cost, double duration, double magnitude)
+        {
+            return new WeaknessToMagicAlchemyEffect(e.Effect, cost, duration, magnitude);
+        }
+
         public static readonly WeaknessToMagicAlchemyEffect WeaknessToMagic = new WeaknessToMagicAlchemyEffect(
             AllEffects.Destruction.WeaknessToMagic,
             cost: 1,
