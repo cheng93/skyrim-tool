@@ -37,13 +37,13 @@ namespace Rpg.Models.Alchemy.Effects
 
         public abstract string Id { get; }
 
-        public IEffect Effect { get; internal set; }
+        public IEffect Effect { get; }
 
-        public double Cost { get; internal set; }
+        public double Cost { get; }
 
-        public double Duration { get; internal set; }
+        public double Duration { get; }
 
-        public double Magnitude { get; internal set; }
+        public double Magnitude { get; }
 
         public override bool Equals(object obj)
         {
