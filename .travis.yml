@@ -11,4 +11,5 @@ install:
 
 script:
   - dotnet build --no-restore -c Release
-  - dotnet test
+  - dotnet test ./tests/Rpg.Models.Tests/Rpg.Models.Tests.csproj --no-build --no-restore -c Release
+  - dotnet test ./tests/Rpg.Logic.Tests/Rpg.Logic.Tests.csproj --no-build --no-restore -c Release
