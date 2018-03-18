@@ -10,6 +10,8 @@ namespace Rpg.Logic.Tests.Alchemy.Formulas.AlchemyFormulaeTests
 {
     public abstract class Base
     {
+        private protected AlchemyFormulae Subject = new AlchemyFormulae();
+
         private protected Mock<IAlchemyOptions> Options { get; } = new Mock<IAlchemyOptions>();
 
         protected void TestAndAssert(
@@ -19,7 +21,7 @@ namespace Rpg.Logic.Tests.Alchemy.Formulas.AlchemyFormulaeTests
             double duration,
             double magnitude)
         {
-            var results = AlchemyFormulae.GetResults(effect, Options.Object);
+            var results = Subject.GetResults(effect, Options.Object);
             results.BaseCost.Should().Be(baseCost);
             results.Cost.Should().Be(cost);
             results.Duration.Should().Be(duration);

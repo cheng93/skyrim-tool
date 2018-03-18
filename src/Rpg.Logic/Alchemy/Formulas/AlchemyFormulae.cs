@@ -22,9 +22,14 @@ namespace Rpg.Logic.Alchemy.Formulas
         public double Magnitude { get; }
     }
 
-    internal static class AlchemyFormulae
+    internal interface IAlchemyFormulae
     {
-        public static AlchemyFormulaeResults GetResults(IAlchemyEffect effect, IAlchemyOptions options)
+        AlchemyFormulaeResults GetResults(IAlchemyEffect effect, IAlchemyOptions options);
+    }
+
+    internal class AlchemyFormulae : IAlchemyFormulae
+    {
+        public AlchemyFormulaeResults GetResults(IAlchemyEffect effect, IAlchemyOptions options)
         {
             var baseFactor = BaseFormulae.GetBase(effect, options);
             var perkFactor = PerksFormulae.GetPerks(effect, options.Perks);
