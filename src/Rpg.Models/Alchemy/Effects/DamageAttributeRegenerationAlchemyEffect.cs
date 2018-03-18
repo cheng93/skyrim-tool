@@ -26,6 +26,8 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name => $"Damage {Effect.Attribute.ToPresentableString()} Regen";
 
+        public override string Description => GetDescription(Effect.Attribute);
+
         public override string Id => idMap[Effect.Attribute];
 
         private string GetDescription(Attribute attribute)

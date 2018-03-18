@@ -21,6 +21,8 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name => $"Regenerate {Effect.Attribute.ToPresentableString()}";
 
+        public override string Description => $"{Effect.Attribute.ToPresentableString()} regenerates {Magnitude}% faster for {Duration} seconds.";
+
         public override string Id => idMap[Effect.Attribute];
 
         private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()

@@ -18,7 +18,7 @@ namespace Rpg.Models.Alchemy
         {
             Effects = effects;
             Name = name;
-            //Description = string.Join(", ", effects.Select(x => x.Description));
+            Description = string.Join(", ", effects.Select(x => x.Description));
                 
         }
 

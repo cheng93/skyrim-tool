@@ -21,6 +21,8 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name => $"Resist {Effect.Element.ToPresentableString()}";
 
+        public override string Description => $"Resist {Magnitude}% of {Effect.Element.ToPresentableString().ToLowerInvariant()} damage for {Duration} seconds.";
+
         public override string Id => idMap[Effect.Element];
 
         private static Dictionary<Element, string> idMap = new Dictionary<Element, string>()

@@ -18,6 +18,8 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name { get; } = "Cure Disease";
 
+        public override string Description { get; } = "Cures all diseases.";
+
         public override string Id { get; } = "000AE722";
     }
 

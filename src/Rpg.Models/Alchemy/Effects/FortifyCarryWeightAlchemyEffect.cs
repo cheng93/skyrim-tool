@@ -18,6 +18,8 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name { get; } = "Fortify Carry Weight";
 
+        public override string Description => $"Carrying capacity increases by {Magnitude} for {Duration} seconds.";
+
         public override string Id { get; } = "0003EB01";
     }
 

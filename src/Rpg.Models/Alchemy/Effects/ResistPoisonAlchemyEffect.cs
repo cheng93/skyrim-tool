@@ -18,6 +18,8 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name { get; } = "Resist Poison";
 
+        public override string Description => $"Resist {Magnitude}% of poison for {Duration} seconds.";
+
         public override string Id { get; } = "00090041";
     }
 

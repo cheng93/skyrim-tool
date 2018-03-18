@@ -22,7 +22,23 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name => $"Lingering Damage {Effect.Attribute.ToPresentableString()}";
 
+        public override string Description => GetDescription(Effect.Attribute);
+
         public override string Id => idMap[Effect.Attribute];
+
+        private string GetDescription(Attribute attribute)
+        {
+            switch(attribute)
+            {
+                case Attribute.Health:
+                    return $"Causes {Magnitude} points of poison damage for {Duration} seconds.";
+                case Attribute.Magicka:
+                case Attribute.Stamina:
+                    return $"Drains the target's {attribute.ToPresentableString()} by {Magnitude} points per second for {Duration} seconds.";
+                default:
+                    throw new InvalidEnumArgumentException();
+            }
+        }
 
         private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()
         {

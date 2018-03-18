@@ -22,6 +22,8 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name => $"Fortify {Effect.Attribute.ToPresentableString()}";
 
+        public override string Description => $"{Effect.Attribute.ToPresentableString()} is increased by {Magnitude} points for {Duration} seconds.";
+
         public override string Id => idMap[Effect.Attribute];
 
         private static readonly Dictionary<Attribute, string> idMap = new Dictionary<Attribute, string>()

@@ -21,6 +21,8 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name => $"Weakness To {Effect.Element.ToPresentableString()}";
 
+        public override string Description => $"Target is {Magnitude}% weaker to {Effect.Element.ToPresentableString().ToLowerInvariant()} for {Duration} seconds.";
+
         public override string Id => idMap[Effect.Element];
 
         private static Dictionary<Element, string> idMap = new Dictionary<Element, string>()

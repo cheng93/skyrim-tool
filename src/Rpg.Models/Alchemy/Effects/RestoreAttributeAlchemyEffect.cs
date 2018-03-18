@@ -22,6 +22,8 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name => $"Restore {Effect.Attribute.ToPresentableString()}";
 
+        public override string Description => GetDescription(Effect.Attribute);
+
         public override string Id => idMap[Effect.Attribute];
 
         private string GetDescription(Attribute attribute)
