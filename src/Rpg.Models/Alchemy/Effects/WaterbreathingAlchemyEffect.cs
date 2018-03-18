@@ -22,8 +22,6 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name { get; } = "Waterbreathing";
 
-        public override string Description => $"Can breathe underwater for {Duration} seconds.";
-
         public override string Id { get; } = "0003AC2D";
     }
 

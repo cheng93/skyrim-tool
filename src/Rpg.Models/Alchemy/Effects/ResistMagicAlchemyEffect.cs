@@ -22,8 +22,6 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name { get; } = "Resist Magic";
 
-        public override string Description => $"Resist {Magnitude}% of magic for {Duration} seconds.";
-
         public override string Id { get; } = "00039E51";
     }
 

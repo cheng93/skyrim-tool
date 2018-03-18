@@ -22,8 +22,6 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name { get; } = "Invisibility";
 
-        public override string Description => $"Invisibility for {Duration} seconds.";
-
         public override string Id { get; } = "0003EB3D";
     }
 

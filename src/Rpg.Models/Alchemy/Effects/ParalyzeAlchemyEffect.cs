@@ -22,8 +22,6 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name { get; } = "Paralysis";
 
-        public override string Description => $"Target is paralyzed for {Duration} seconds.";
-
         public override string Id { get; } = "00073F30";
     }
 

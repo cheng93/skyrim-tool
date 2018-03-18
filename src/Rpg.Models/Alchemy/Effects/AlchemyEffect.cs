@@ -4,7 +4,7 @@ using Rpg.Models.Effects;
 
 namespace Rpg.Models.Alchemy.Effects
 {
-    public interface IAlchemyEffect : IHasName, IHasDescription, IHasId
+    public interface IAlchemyEffect : IHasName, IHasId
     {
         double Cost { get; }
 
@@ -38,8 +38,6 @@ namespace Rpg.Models.Alchemy.Effects
         public abstract bool IsPositiveEffect { get; }
 
         public abstract string Name { get; }
-
-        public abstract string Description { get; }
 
         public abstract string Id { get; }
 

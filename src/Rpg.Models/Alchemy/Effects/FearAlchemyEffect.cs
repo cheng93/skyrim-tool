@@ -22,8 +22,6 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name { get; } = "Fear";
 
-        public override string Description => $"Creatures and people up to level {Magnitude} flee from combat for {Duration} seconds.";
-
         public override string Id { get; } = "00073F20";
     }
 

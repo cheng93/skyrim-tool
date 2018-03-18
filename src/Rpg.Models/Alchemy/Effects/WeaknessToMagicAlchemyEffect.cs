@@ -22,8 +22,6 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name { get; } = "Weakness To Magic";
 
-        public override string Description => $"Target is {Magnitude}% weaker to magic for {Duration} seconds.";
-
         public override string Id { get; } = "00073F51";
     }
 

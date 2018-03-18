@@ -22,8 +22,6 @@ namespace Rpg.Models.Alchemy.Effects
 
         public override string Name { get; } = "Slow";
 
-        public override string Description => $"Target moves at 50% speed for {Duration} seconds.";
-
         public override string Id { get; } = "00073F25";
     }
 
