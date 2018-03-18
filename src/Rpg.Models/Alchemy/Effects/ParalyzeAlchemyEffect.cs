@@ -5,10 +5,6 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class ParalyzeAlchemyEffect : AlchemyEffect<ParalyzeEffect>
     {
-        public ParalyzeAlchemyEffect()
-        {
-        }
-
         public ParalyzeAlchemyEffect(
             ParalyzeEffect effect,
             double cost,

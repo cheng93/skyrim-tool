@@ -9,10 +9,6 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class LingeringDamageAttributeAlchemyEffect : AlchemyEffect<LingeringDamageAttributeEffect>
     {
-        public LingeringDamageAttributeAlchemyEffect()
-        {
-        }
-
         public LingeringDamageAttributeAlchemyEffect(
             LingeringDamageAttributeEffect effect,
             double cost,

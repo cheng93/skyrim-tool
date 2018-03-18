@@ -8,10 +8,6 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class RegenerateAttributeAlchemyEffect : AlchemyEffect<RegenerateAttributeEffect>
     {
-        public RegenerateAttributeAlchemyEffect()
-        {
-        }
-
         public RegenerateAttributeAlchemyEffect(
             RegenerateAttributeEffect effect,
             double cost,

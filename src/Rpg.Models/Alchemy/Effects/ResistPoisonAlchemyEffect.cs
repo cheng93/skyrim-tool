@@ -5,10 +5,6 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class ResistPoisonAlchemyEffect : AlchemyEffect<ResistPoisonEffect>
     {
-        public ResistPoisonAlchemyEffect()
-        {
-        }
-
         public ResistPoisonAlchemyEffect(
             ResistPoisonEffect effect,
             double cost,

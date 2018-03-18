@@ -8,10 +8,6 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public class WeaknessToElementAlchemyEffect : AlchemyEffect<WeaknessToElementEffect>
     {
-        public WeaknessToElementAlchemyEffect()
-        {
-        }
-
         public WeaknessToElementAlchemyEffect(
             WeaknessToElementEffect effect,
             double cost,
