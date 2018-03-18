@@ -19,10 +19,6 @@ namespace Rpg.Models.Alchemy.Effects
 
     public abstract class AlchemyEffect : IAlchemyEffect
     {
-        protected AlchemyEffect()
-        {
-        }
-
         protected AlchemyEffect(
             IEffect effect,
             double cost,
@@ -62,10 +58,6 @@ namespace Rpg.Models.Alchemy.Effects
     public abstract class AlchemyEffect<T> : AlchemyEffect
         where T : class, IEffect
     {
-        protected AlchemyEffect()
-        {
-        }
-
         public AlchemyEffect(
             T effect,
             double cost,
