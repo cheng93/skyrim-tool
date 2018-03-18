@@ -1,0 +1,14 @@
+language: csharp
+mono: none
+dotnet: 2.1.101
+solution: Rpg.sln
+
+notifications:
+  email: false
+
+install:
+  - dotnet restore
+
+script:
+  - dotnet build --no-restore -c Release
+  - dotnet test
