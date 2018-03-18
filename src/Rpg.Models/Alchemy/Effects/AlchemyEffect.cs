@@ -62,7 +62,7 @@ namespace Rpg.Models.Alchemy.Effects
     }
 
     public abstract class AlchemyEffect<T> : AlchemyEffect
-        where T : IEffect
+        where T : class, IEffect
     {
         protected AlchemyEffect()
         {

@@ -3,7 +3,7 @@ using Rpg.Models.Effects;
 namespace Rpg.Models.Alchemy.Effects
 {
     public class ScalingAlchemyEffect<T> : AlchemyEffect<T>
-        where T : IEffect
+        where T : class, IEffect
     {
         public ScalingAlchemyEffect(
             AlchemyEffect<T> alchemyEffect,
@@ -18,15 +18,12 @@ namespace Rpg.Models.Alchemy.Effects
         {
             IsPositiveEffect = alchemyEffect.IsPositiveEffect;
             Name = alchemyEffect.Name;
-            Description = alchemyEffect.Description;
             Id = alchemyEffect.Id;
         }
 
         public override bool IsPositiveEffect { get; }
 
         public override string Name { get; }
-
-        public override string Description { get; }
 
         public override string Id { get; }
     }
