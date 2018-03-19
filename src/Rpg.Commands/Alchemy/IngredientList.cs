@@ -7,7 +7,7 @@ using Rpg.Models.Alchemy.Ingredients;
 
 namespace Rpg.Commands.Alchemy
 {
-    public class ListIngredients
+    public class IngredientList
     {
         public class Response
         {
@@ -27,7 +27,12 @@ namespace Rpg.Commands.Alchemy
         {
             protected override Response HandleCore(Command request)
             {
-                var ingredients = AllIngredients.List.Select(x => new IngredientViewModel(x.Id, x.Name));
+                var ingredients = AllIngredients.List.Select(x => 
+                    new IngredientViewModel
+                    {
+                        Id = x.Id,
+                        Name = x.Name
+                    });
 
                 return new Response(ingredients);
             }

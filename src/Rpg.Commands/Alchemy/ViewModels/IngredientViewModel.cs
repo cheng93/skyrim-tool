@@ -2,14 +2,13 @@ namespace Rpg.Commands.Alchemy.ViewModels
 {
     public class IngredientViewModel
     {
-        public IngredientViewModel(string id, string name)
+        internal IngredientViewModel()
         {
-            Id = id;
-            Name = name;
+
         }
 
-        public string Id { get; }
+        public string Id { get; internal set; }
 
-        public string Name { get; }
+        public string Name { get; internal set; }
     }
 }
