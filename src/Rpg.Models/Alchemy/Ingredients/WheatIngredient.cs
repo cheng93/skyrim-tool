@@ -16,6 +16,8 @@ namespace Rpg.Models.Alchemy.Ingredients
 
         public override string Name { get; }
 
+        public override string Id { get; } = "0004b0ba";
+
         public override IAlchemyEffect PrimaryEffect { get; }
 
         public override IAlchemyEffect SecondaryEffect { get; }
