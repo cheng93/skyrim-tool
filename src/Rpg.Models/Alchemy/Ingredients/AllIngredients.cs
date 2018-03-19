@@ -39,7 +39,6 @@ namespace Rpg.Models.Alchemy.Ingredients
                 AllIngredients.ElvesEar,
                 AllIngredients.EyeOfSabreCat,
                 AllIngredients.FalmerEar,
-                AllIngredients.FineCutVoidSalts,
                 AllIngredients.FireSalts,
                 AllIngredients.FlyAmanita,
                 AllIngredients.FrostMirriam,
