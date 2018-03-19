@@ -9,6 +9,10 @@ namespace Rpg.Logic.Alchemy
 {
     public interface IPotionBuilder
     {
+        IPotionBuilder AlchemyLevel(int alchemyLevel);
+
+        IPotionBuilder FortifyAlchemyPercent(double fortifyAlchemyPercent);
+
         IPotionBuilder Ingredient(IIngredient ingredient);
 
         IPotionBuilder Perk(IPerk<AlchemySkill> perk);
@@ -38,6 +42,18 @@ namespace Rpg.Logic.Alchemy
         private readonly IPotionFactory potionFactory;
 
         private readonly IAlchemyOptionsValidator validator;
+
+        public IPotionBuilder AlchemyLevel(int alchemyLevel)
+        {
+            alchemyOptions.AlchemyLevel = alchemyLevel;
+            return this;
+        }
+
+        public IPotionBuilder FortifyAlchemyPercent(double fortifyAlchemyPercent)
+        {
+            alchemyOptions.FortifyAlchemyPercent = fortifyAlchemyPercent;
+            return this;
+        }
 
         public IPotionBuilder Ingredient(IIngredient ingredient)
         {
