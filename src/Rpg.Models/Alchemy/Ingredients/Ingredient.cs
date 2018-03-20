@@ -4,7 +4,7 @@ using Rpg.Models.Common;
 
 namespace Rpg.Models.Alchemy.Ingredients
 {
-    public interface IIngredient : IHasName
+    public interface IIngredient : IHasName, IHasId
     {
         IAlchemyEffect PrimaryEffect { get; }
 
@@ -20,6 +20,8 @@ namespace Rpg.Models.Alchemy.Ingredients
     public abstract class Ingredient : IIngredient
     {
         public abstract string Name { get; }
+
+        public abstract string Id { get; }
 
         public abstract IAlchemyEffect PrimaryEffect { get; }
 
