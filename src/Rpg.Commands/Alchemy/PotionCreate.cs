@@ -35,7 +35,7 @@ namespace Rpg.Commands.Alchemy
 
             public bool HasPoisonerPerk { get; set; }
 
-            public IEnumerable<string> IngredientIds { get; set; }
+            public IEnumerable<string> IngredientIds { get; set; } = Enumerable.Empty<string>();
         }
 
         public class CommandHandler : RequestHandler<Command, Response>
