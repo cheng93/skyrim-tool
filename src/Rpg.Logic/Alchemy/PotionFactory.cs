@@ -45,7 +45,7 @@ namespace Rpg.Logic.Alchemy
                         Ingredient = x,
                         Effect = effect
                     })
-                .GroupBy(x => x.Effect)
+                .GroupBy(x => x.Effect.Id)
                 .Where(x => x.Count() > 1)
                 .Select(x => x
                     .OrderByDescending(y => effectIngredientPriorityFactory
