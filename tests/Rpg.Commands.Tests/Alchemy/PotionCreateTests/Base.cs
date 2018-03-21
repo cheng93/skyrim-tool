@@ -5,6 +5,7 @@ using Moq;
 using Rpg.Commands.Alchemy;
 using Rpg.Logic.Alchemy;
 using Rpg.Models.Alchemy;
+using Rpg.Models.Alchemy.Effects;
 using Rpg.Models.Alchemy.Ingredients;
 using Rpg.Models.Perks;
 using Rpg.Models.Skills.Stealth;
@@ -54,13 +55,21 @@ namespace Rpg.Commands.Tests.Alchemy.PotionCreateTests
     {
         protected BaseValid()
         {
-            var potion = new Mock<IPotion>();
-            potion
+            var effect = new Mock<IAlchemyEffect>();
+            effect
                 .Setup(x => x.Description)
                 .Returns(Description);
+
+            var potion = new Mock<IPotion>();
             potion
                 .Setup(x => x.Name)
                 .Returns(Name);
+            potion
+                .Setup(x => x.Cost)
+                .Returns(Cost);
+            potion
+                .Setup(x => x.Effects)
+                .Returns(new[] { effect.Object });
 
             var validatedPotionBuilder = new Mock<IValidatedPotionBuilder>();
             validatedPotionBuilder
@@ -76,12 +85,15 @@ namespace Rpg.Commands.Tests.Alchemy.PotionCreateTests
 
         private readonly string Name = "Name";
 
+        private readonly decimal Cost = 1.0M;
+
         protected void TestAndAssert()
         {
             var response = Subject.Handle(Request, It.IsAny<CancellationToken>()).Result;
 
-            response.Potion.Description.Should().Be(Description);
             response.Potion.Name.Should().Be(Name);
+            response.Potion.Cost.Should().Be(Cost);
+            response.Potion.Effects.Should().BeEquivalentTo(new[] {Description});
         }
     }
 }

@@ -89,7 +89,8 @@ namespace Rpg.Commands.Alchemy
                 return new Response(new PotionViewModel
                 {
                     Name = potion.Name,
-                    Description = potion.Description
+                    Cost = potion.Cost,
+                    Effects = potion.Effects.Select(x => x.Description)
                 });
             }
 
