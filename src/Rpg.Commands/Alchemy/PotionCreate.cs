@@ -23,7 +23,7 @@ namespace Rpg.Commands.Alchemy
 
         public class Command : IRequest<Response>
         {
-            public int AlchemyLevel { get; set; }
+            public int AlchemyLevel { get; set; } = 15;
 
             public int AlchemistPerkRank { get; set; }
 
