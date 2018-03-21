@@ -46,15 +46,6 @@ namespace Rpg.Models.Alchemy.Effects
         public double Duration { get; }
 
         public double Magnitude { get; }
-
-        public override bool Equals(object obj)
-        {
-            return obj is AlchemyEffect effect
-                ? Id == effect.Id
-                : false;
-        }
-
-        public override int GetHashCode() => Id.GetHashCode();
     }
 
     public abstract class AlchemyEffect<T> : AlchemyEffect
