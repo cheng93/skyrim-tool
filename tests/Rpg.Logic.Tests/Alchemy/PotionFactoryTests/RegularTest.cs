@@ -19,7 +19,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.HagravenFeathers,
                 },
                 $"Poison of {AllAlchemyEffects.DamageMagicka.Name}",
-                AllAlchemyEffects.DamageMagicka.Description
+                AllAlchemyEffects.DamageMagicka.Description,
+                6.6
             };
             yield return new object []
             {
@@ -29,7 +30,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.JuniperBerries
                 },
                 $"Potion of {AllAlchemyEffects.RegenerateHealth.Name}",
-                AllAlchemyEffects.RegenerateHealth.Description
+                AllAlchemyEffects.RegenerateHealth.Description,
+                150.0
             };
             yield return new object []
             {
@@ -39,7 +41,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.CharredSkeeverHide,
                 },
                 $"Potion of {AllAlchemyEffects.RestoreStamina.Name}",
-                AllAlchemyEffects.RestoreStamina.Description
+                AllAlchemyEffects.RestoreStamina.Description,
+                3.0
             };
             yield return new object []
             {
@@ -49,7 +52,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.LargeAntlers,
                 },
                 $"Poison of {AllAlchemyEffects.Slow.Name}",
-                AllAlchemyEffects.Slow.Description
+                AllAlchemyEffects.Slow.Description,
+                250.0
             };
             yield return new object []
             {
@@ -59,7 +63,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.HangingMoss,
                 },
                 $"Poison of {AllAlchemyEffects.DamageMagickaRegeneration.Name}",
-                $"{AllAlchemyEffects.DamageMagickaRegeneration.Description}, {AllAlchemyEffects.DamageMagicka.Description}"
+                $"{AllAlchemyEffects.DamageMagickaRegeneration.Description} {AllAlchemyEffects.DamageMagicka.Description}",
+                256.6
             };
             yield return new object []
             {
@@ -70,7 +75,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.HangingMoss,
                 },
                 $"Poison of {AllAlchemyEffects.DamageMagickaRegeneration.Name}",
-                $"{AllAlchemyEffects.DamageMagickaRegeneration.Description}, {AllAlchemyEffects.FortifyDestruction.Description}, {AllAlchemyEffects.ResistShock.Description}, {AllAlchemyEffects.FortifyHealth.Description}, {AllAlchemyEffects.DamageMagicka.Description}"
+                $"{AllAlchemyEffects.DamageMagickaRegeneration.Description} {AllAlchemyEffects.FortifyDestruction.Description} {AllAlchemyEffects.ResistShock.Description} {AllAlchemyEffects.FortifyHealth.Description} {AllAlchemyEffects.DamageMagicka.Description}",
+                550.6
             };
             yield return new object []
             {
@@ -81,7 +87,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.LunaMothWing,
                 },
                 $"Potion of {AllAlchemyEffects.Invisibility.Name}",
-                $"{AllAlchemyEffects.Invisibility.Description}, {AllAlchemyEffects.RegenerateHealth.Description}, {AllAlchemyEffects.FortifyStamina.Description}, {AllAlchemyEffects.DamageMagicka.Description}"
+                $"{AllAlchemyEffects.Invisibility.Description} {AllAlchemyEffects.RegenerateHealth.Description} {AllAlchemyEffects.FortifyStamina.Description} {AllAlchemyEffects.DamageMagicka.Description}",
+                628.6
             };
         }
 
@@ -90,7 +97,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
         public void Test(
             IEnumerable<IIngredient> ingredients,
             string expectedName,
-            string expectedDescription)
+            string expectedDescription,
+            double cost)
         {
             Options
                 .Setup(x => x.Ingredients)
@@ -100,6 +108,7 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
 
             potion.Name.Should().Be(expectedName);
             potion.Description.Should().Be(expectedDescription);
+            potion.Cost.Should().Be(cost);
         }
     }
 }

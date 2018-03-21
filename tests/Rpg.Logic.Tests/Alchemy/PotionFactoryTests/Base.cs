@@ -45,7 +45,7 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                 .Returns((IAlchemyEffect effect, IAlchemyOptions options) =>
                     new AlchemyFormulaeResults(
                         effect.Cost.NonZeroOrOne() * effect.Duration.NonZeroOrOne() * effect.Magnitude.NonZeroOrOne(),
-                        effect.Cost,
+                        effect.Cost.NonZeroOrOne() * effect.Duration.NonZeroOrOne() * effect.Magnitude.NonZeroOrOne(),
                         effect.Duration,
                         effect.Magnitude));
 
