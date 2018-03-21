@@ -38,5 +38,10 @@ namespace Rpg.Web
 
             app.UseMvc();
         }
+
+        public void ConfigureContainer(ContainerBuilder containerBuilder)
+        {
+            containerBuilder.RegisterModule(new AutofacModule());
+        }
     }
 }
