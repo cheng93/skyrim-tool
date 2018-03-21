@@ -7,9 +7,9 @@ namespace Rpg.Models.Extensions
     {
         private static IAlchemyEffect Create(
             this IAlchemyEffect effect,
-            double costFactor = 1,
-            double durationFactor = 1,
-            double magnitudeFactor = 1)
+            decimal costFactor = 1,
+            decimal durationFactor = 1,
+            decimal magnitudeFactor = 1)
         {
             return new AlchemyEffectFactory()
                 .Create(
@@ -19,17 +19,17 @@ namespace Rpg.Models.Extensions
                     effect.Magnitude * magnitudeFactor);
         }
 
-        internal static IAlchemyEffect ScaleCost(this IAlchemyEffect effect, double factor)
+        internal static IAlchemyEffect ScaleCost(this IAlchemyEffect effect, decimal factor)
         {
             return Create(effect, costFactor: factor);
         }
 
-        internal static IAlchemyEffect ScaleDuration(this IAlchemyEffect effect, double factor)
+        internal static IAlchemyEffect ScaleDuration(this IAlchemyEffect effect, decimal factor)
         {
             return Create(effect, durationFactor: factor);
         }
 
-        internal static IAlchemyEffect ScaleMagnitude(this IAlchemyEffect effect, double factor)
+        internal static IAlchemyEffect ScaleMagnitude(this IAlchemyEffect effect, decimal factor)
         {
             return Create(effect, magnitudeFactor: factor);
         }

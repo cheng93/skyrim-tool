@@ -9,7 +9,7 @@ namespace Rpg.Models.Alchemy.Ingredients
         public BeehiveHuskIngredient()
         {
             Name = "Beehive Husk";
-            PrimaryEffect = AllAlchemyEffects.ResistPoison.ScaleMagnitude(0.5);
+            PrimaryEffect = AllAlchemyEffects.ResistPoison.ScaleMagnitude(0.5M);
             SecondaryEffect = AllAlchemyEffects.FortifyLightArmor;
             TertiaryEffect = AllAlchemyEffects.FortifySneak;
             QuaternaryEffect = AllAlchemyEffects.FortifyDestruction;

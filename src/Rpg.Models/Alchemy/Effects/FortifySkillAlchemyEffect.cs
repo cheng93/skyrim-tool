@@ -11,9 +11,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public FortifySkillAlchemyEffect(
             FortifySkillEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
             switch (Effect.Skill)
@@ -105,21 +105,21 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static FortifySkillAlchemyEffect Create(this FortifySkillAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static FortifySkillAlchemyEffect Create(this FortifySkillAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new FortifySkillAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
 
         public static readonly FortifySkillAlchemyEffect FortifyAlteration = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyAlteration,
-            cost: 0.2,
+            cost: 0.2M,
             duration: 60,
             magnitude: 4
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyArchery = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyArchery,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 4
         );
@@ -133,98 +133,98 @@ namespace Rpg.Models.Alchemy.Effects
 
         public static readonly FortifySkillAlchemyEffect FortifyBlock = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyBlock,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 4
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyConjuration = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyConjuration,
-            cost: 0.25,
+            cost: 0.25M,
             duration: 60,
             magnitude: 5
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyDestruction = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyDestruction,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 4
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyEnchanting = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyEnchanting,
-            cost: 0.6,
+            cost: 0.6M,
             duration: 30,
             magnitude: 1
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyHeavyArmor = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyHeavyArmor,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 2
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyIllusion = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyIllusion,
-            cost: 0.4,
+            cost: 0.4M,
             duration: 60,
             magnitude: 4
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyLightArmor = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyLightArmor,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 2
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyLockpicking = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyLockpicking,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 30,
             magnitude: 2
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyOneHanded = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyOneHanded,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 4
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyPickpocket = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyPickpocket,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 4
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyRestoration = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyRestoration,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 4
         );
 
         public static readonly FortifySkillAlchemyEffect FortifySmithing = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifySmithing,
-            cost: 0.75,
+            cost: 0.75M,
             duration: 30,
             magnitude: 4
         );
 
         public static readonly FortifySkillAlchemyEffect FortifySneak = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifySneak,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 4
         );
 
         public static readonly FortifySkillAlchemyEffect FortifyTwoHanded = new FortifySkillAlchemyEffect(
             AllEffects.Restoration.FortifyTwoHanded,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 4
         );

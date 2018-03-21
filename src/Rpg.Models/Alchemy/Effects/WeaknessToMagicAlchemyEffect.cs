@@ -7,9 +7,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public WeaknessToMagicAlchemyEffect(
             WeaknessToMagicEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -25,7 +25,7 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static WeaknessToMagicAlchemyEffect Create(this WeaknessToMagicAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static WeaknessToMagicAlchemyEffect Create(this WeaknessToMagicAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new WeaknessToMagicAlchemyEffect(e.Effect, cost, duration, magnitude);
         }

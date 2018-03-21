@@ -27,7 +27,7 @@ namespace Rpg.Commands.Alchemy
 
             public int AlchemistPerkRank { get; set; }
 
-            public double FortifyAlchemyPercent { get; set; }
+            public decimal FortifyAlchemyPercent { get; set; }
 
             public bool HasBenefactorPerk { get; set; }
 

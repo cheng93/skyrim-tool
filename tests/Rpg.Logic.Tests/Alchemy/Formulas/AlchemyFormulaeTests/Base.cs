@@ -16,10 +16,10 @@ namespace Rpg.Logic.Tests.Alchemy.Formulas.AlchemyFormulaeTests
 
         protected void TestAndAssert(
             IAlchemyEffect effect,
-            double baseCost,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal baseCost,
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
         {
             var results = Subject.GetResults(effect, Options.Object);
             results.BaseCost.Should().Be(baseCost);

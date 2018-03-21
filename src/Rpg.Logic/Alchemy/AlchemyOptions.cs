@@ -12,7 +12,7 @@ namespace Rpg.Logic.Alchemy
     {
         int AlchemyLevel { get; set; }
 
-        double FortifyAlchemyPercent { get; set; }
+        decimal FortifyAlchemyPercent { get; set; }
 
         IEnumerable<IIngredient> Ingredients { get; set; }
 
@@ -23,7 +23,7 @@ namespace Rpg.Logic.Alchemy
     {
         public int AlchemyLevel { get; set; } = SkillConstants.MinLevel;
 
-        public double FortifyAlchemyPercent { get; set; } = 0;
+        public decimal FortifyAlchemyPercent { get; set; } = 0;
 
         private IEnumerable<IIngredient> ingredients = Enumerable.Empty<IIngredient>();
 

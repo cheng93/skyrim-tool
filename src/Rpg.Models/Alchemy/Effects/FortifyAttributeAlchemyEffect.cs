@@ -11,9 +11,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public FortifyAttributeAlchemyEffect(
             FortifyAttributeEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -36,28 +36,28 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static FortifyAttributeAlchemyEffect Create(this FortifyAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static FortifyAttributeAlchemyEffect Create(this FortifyAttributeAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new FortifyAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
 
         public static readonly FortifyAttributeAlchemyEffect FortifyHealth = new FortifyAttributeAlchemyEffect(
             AllEffects.Restoration.FortifyHealth,
-            cost: 0.35,
+            cost: 0.35M,
             duration: 60,
             magnitude: 4
         );
 
         public static readonly FortifyAttributeAlchemyEffect FortifyMagicka = new FortifyAttributeAlchemyEffect(
             AllEffects.Restoration.FortifyMagicka,
-            cost: 0.3,
+            cost: 0.3M,
             duration: 60,
             magnitude: 4
         );
 
         public static readonly FortifyAttributeAlchemyEffect FortifyStamina = new FortifyAttributeAlchemyEffect(
             AllEffects.Restoration.FortifyStamina,
-            cost: 0.3,
+            cost: 0.3M,
             duration: 60,
             magnitude: 4
         );

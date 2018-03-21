@@ -10,7 +10,7 @@ namespace Rpg.Models.Alchemy.Ingredients
         {
             Name = "Charred Skeever Hide";
             PrimaryEffect = AllAlchemyEffects.RestoreStamina;
-            SecondaryEffect = AllAlchemyEffects.CureDisease.ScaleCost(0.36);
+            SecondaryEffect = AllAlchemyEffects.CureDisease.ScaleCost(0.36M);
             TertiaryEffect = AllAlchemyEffects.ResistPoison;
             QuaternaryEffect = AllAlchemyEffects.RestoreHealth;
         }

@@ -7,9 +7,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public SlowAlchemyEffect(
             SlowEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -25,7 +25,7 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static SlowAlchemyEffect Create(this SlowAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static SlowAlchemyEffect Create(this SlowAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new SlowAlchemyEffect(e.Effect, cost, duration, magnitude);
         }

@@ -10,7 +10,7 @@ namespace Rpg.Models.Alchemy.Ingredients
         {
             Name = "Giant's Toe";
             PrimaryEffect = AllAlchemyEffects.DamageStamina;
-            SecondaryEffect = AllAlchemyEffects.FortifyHealth.ScaleMagnitude(5.9);
+            SecondaryEffect = AllAlchemyEffects.FortifyHealth.ScaleMagnitude(5.9M);
             TertiaryEffect = AllAlchemyEffects.FortifyCarryWeight;
             QuaternaryEffect = AllAlchemyEffects.DamageStaminaRegeneration;
         }

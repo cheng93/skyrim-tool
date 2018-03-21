@@ -9,7 +9,7 @@ namespace Rpg.Models.Alchemy.Ingredients
         public NirnrootIngredient()
         {
             Name = "Nirnroot";
-            PrimaryEffect = AllAlchemyEffects.DamageHealth.ScaleCost(12.6);
+            PrimaryEffect = AllAlchemyEffects.DamageHealth.ScaleCost(12.6M);
             SecondaryEffect = AllAlchemyEffects.DamageStamina;
             TertiaryEffect = AllAlchemyEffects.Invisibility;
             QuaternaryEffect = AllAlchemyEffects.ResistMagic;

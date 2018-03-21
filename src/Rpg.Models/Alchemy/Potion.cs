@@ -7,7 +7,7 @@ namespace Rpg.Models.Alchemy
 {
     public interface IPotion : IHasName, IHasDescription
     {
-        double Cost { get; }
+        decimal Cost { get; }
 
         IEnumerable<IAlchemyEffect> Effects { get; }
     }
@@ -25,7 +25,7 @@ namespace Rpg.Models.Alchemy
 
         }
 
-        public double Cost { get; }
+        public decimal Cost { get; }
 
         public IEnumerable<IAlchemyEffect> Effects { get; }
 

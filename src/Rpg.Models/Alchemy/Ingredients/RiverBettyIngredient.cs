@@ -9,7 +9,7 @@ namespace Rpg.Models.Alchemy.Ingredients
         public RiverBettyIngredient()
         {
             Name = "River Betty";
-            PrimaryEffect = AllAlchemyEffects.DamageHealth.ScaleMagnitude(2.5);
+            PrimaryEffect = AllAlchemyEffects.DamageHealth.ScaleMagnitude(2.5M);
             SecondaryEffect = AllAlchemyEffects.FortifyAlteration;
             TertiaryEffect = AllAlchemyEffects.Slow;
             QuaternaryEffect = AllAlchemyEffects.FortifyCarryWeight;

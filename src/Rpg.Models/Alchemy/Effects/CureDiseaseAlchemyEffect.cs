@@ -7,9 +7,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public CureDiseaseAlchemyEffect(
             CureDiseaseEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -25,14 +25,14 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static CureDiseaseAlchemyEffect Create(this CureDiseaseAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static CureDiseaseAlchemyEffect Create(this CureDiseaseAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new CureDiseaseAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
 
         public static readonly CureDiseaseAlchemyEffect CureDisease = new CureDiseaseAlchemyEffect(
             AllEffects.Restoration.CureDisease,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 0,
             magnitude: 5
         );

@@ -7,9 +7,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public FearAlchemyEffect(
             FearEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -25,7 +25,7 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static FearAlchemyEffect Create(this FearAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static FearAlchemyEffect Create(this FearAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new FearAlchemyEffect(e.Effect, cost, duration, magnitude);
         }

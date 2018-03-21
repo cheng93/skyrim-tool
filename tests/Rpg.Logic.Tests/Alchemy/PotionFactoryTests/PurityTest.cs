@@ -44,7 +44,7 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
             IEnumerable<IIngredient> ingredients,
             string expectedName,
             string expectedDescription,
-            double cost)
+            decimal cost)
         {
             Options
                 .Setup(x => x.Ingredients)

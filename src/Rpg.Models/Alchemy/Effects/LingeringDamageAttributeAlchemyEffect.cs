@@ -11,9 +11,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public LingeringDamageAttributeAlchemyEffect(
             LingeringDamageAttributeEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -50,7 +50,7 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static LingeringDamageAttributeAlchemyEffect Create(this LingeringDamageAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static LingeringDamageAttributeAlchemyEffect Create(this LingeringDamageAttributeAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new LingeringDamageAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
@@ -71,7 +71,7 @@ namespace Rpg.Models.Alchemy.Effects
 
         public static readonly LingeringDamageAttributeAlchemyEffect LingeringDamageStamina = new LingeringDamageAttributeAlchemyEffect(
             AllEffects.Destruction.LingeringDamageStamina,
-            cost: 1.8,
+            cost: 1.8M,
             duration: 10,
             magnitude: 1
         );

@@ -11,7 +11,7 @@ namespace Rpg.Models.Alchemy.Ingredients
             Name = "Blisterwort";
             PrimaryEffect = AllAlchemyEffects.DamageStamina;
             SecondaryEffect = AllAlchemyEffects.Frenzy;
-            TertiaryEffect = AllAlchemyEffects.RestoreHealth.ScaleMagnitude(0.6);
+            TertiaryEffect = AllAlchemyEffects.RestoreHealth.ScaleMagnitude(0.6M);
             QuaternaryEffect = AllAlchemyEffects.FortifySmithing;
         }
 

@@ -26,7 +26,7 @@ namespace Rpg.Commands.Tests.Alchemy.PotionCreateTests
                 .Verifiable();
 
             PotionBuilder
-                .Setup(x => x.FortifyAlchemyPercent(It.IsAny<double>()))
+                .Setup(x => x.FortifyAlchemyPercent(It.IsAny<decimal>()))
                 .Returns(PotionBuilder.Object)
                 .Verifiable();
 

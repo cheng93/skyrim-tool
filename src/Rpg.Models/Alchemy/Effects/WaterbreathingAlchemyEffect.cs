@@ -7,9 +7,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public WaterbreathingAlchemyEffect(
             WaterbreathingEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -25,7 +25,7 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static WaterbreathingAlchemyEffect Create(this WaterbreathingAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static WaterbreathingAlchemyEffect Create(this WaterbreathingAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new WaterbreathingAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
