@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Rpg.Models.Alchemy.Effects;
+using Rpg.Models.Common;
 
 namespace Rpg.Logic.Alchemy.EffectIngredientPriorities
 {
@@ -9,7 +10,8 @@ namespace Rpg.Logic.Alchemy.EffectIngredientPriorities
     }
     internal class EffectIngredientPriorityFactory : IEffectIngredientPriorityFactory
     {
-        private Dictionary<IAlchemyEffect, IEffectIngredientPriority> effectMap = new Dictionary<IAlchemyEffect, IEffectIngredientPriority>()
+        private Dictionary<IAlchemyEffect, IEffectIngredientPriority> effectMap = 
+            new Dictionary<IAlchemyEffect, IEffectIngredientPriority>(new IHasIdEqualityComparer())
         {
             {AllAlchemyEffects.CureDisease, new CureDiseaseIngredientPriority()},
             {AllAlchemyEffects.DamageHealth, new DamageHealthIngredientPriority()},
