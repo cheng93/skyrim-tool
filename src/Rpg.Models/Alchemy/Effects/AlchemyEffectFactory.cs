@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Rpg.Models.Common;
 
 namespace Rpg.Models.Alchemy.Effects
 {
@@ -11,7 +12,7 @@ namespace Rpg.Models.Alchemy.Effects
     public class AlchemyEffectFactory : IAlchemyEffectFactory
     {
         private static readonly Dictionary<IAlchemyEffect, Func<double, double, double, IAlchemyEffect>> map
-            = new Dictionary<IAlchemyEffect, Func<double, double, double, IAlchemyEffect>>()
+            = new Dictionary<IAlchemyEffect, Func<double, double, double, IAlchemyEffect>>(new IHasIdEqualityComparer())
         {
             {AllAlchemyEffects.CureDisease, (double c, double d, double m) => AllAlchemyEffects.CureDisease.Create(c, d, m)},
             {AllAlchemyEffects.DamageHealth, (double c, double d, double m) => AllAlchemyEffects.DamageHealth.Create(c, d, m)},
