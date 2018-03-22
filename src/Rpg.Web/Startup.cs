@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Rpg.Web.Setup.Ioc;
+using Rpg.Web.Setup.Middleware;
 
 namespace Rpg.Web
 {
@@ -35,6 +36,8 @@ namespace Rpg.Web
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseMvc();
         }
