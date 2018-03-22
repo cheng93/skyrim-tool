@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Rpg.Web.Setup;
+using Rpg.Web.Setup.Ioc;
 
 namespace Rpg.Web
 {

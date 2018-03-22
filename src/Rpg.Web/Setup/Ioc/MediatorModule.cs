@@ -4,8 +4,9 @@ using Autofac;
 using MediatR;
 using MediatR.Pipeline;
 using Rpg.Commands.Alchemy;
+using Rpg.Commands.Pipeline;
 
-namespace Rpg.Web.Setup
+namespace Rpg.Web.Setup.Ioc
 {
     public class MediatorModule : Autofac.Module
     {
@@ -18,6 +19,7 @@ namespace Rpg.Web.Setup
                 typeof(IRequestHandler<,>),
                 typeof(IRequestHandler<>),
                 typeof(INotificationHandler<>),
+                typeof(IRequestPreProcessor<>)
             };
 
             foreach (var mediatrOpenType in mediatrOpenTypes)
@@ -28,8 +30,10 @@ namespace Rpg.Web.Setup
                     .AsImplementedInterfaces();
             }
 
+
             builder.RegisterGeneric(typeof(RequestPostProcessorBehavior<,>)).As(typeof(IPipelineBehavior<,>));
             builder.RegisterGeneric(typeof(RequestPreProcessorBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+            //builder.RegisterGeneric(typeof(ValidationPreProcessor<>)).As(typeof(IRequestPreProcessor<>));
 
             builder.Register<SingleInstanceFactory>(ctx =>
             {
