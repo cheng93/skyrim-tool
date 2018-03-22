@@ -11,7 +11,7 @@ namespace Rpg.Models.Alchemy.Ingredients
             Name = "Thistle Branch";
             PrimaryEffect = AllAlchemyEffects.ResistFrost;
             SecondaryEffect = AllAlchemyEffects.RavageStamina;
-            TertiaryEffect = AllAlchemyEffects.ResistPoison.ScaleMagnitude(0.75);
+            TertiaryEffect = AllAlchemyEffects.ResistPoison.ScaleMagnitude(0.75M);
             QuaternaryEffect = AllAlchemyEffects.FortifyHeavyArmor;
         }
 

@@ -9,7 +9,7 @@ namespace Rpg.Models.Alchemy.Ingredients
         public BearClawsIngredient()
         {
             Name = "Bear Claws";
-            PrimaryEffect = AllAlchemyEffects.RestoreStamina.ScaleMagnitude(0.8);
+            PrimaryEffect = AllAlchemyEffects.RestoreStamina.ScaleMagnitude(0.8M);
             SecondaryEffect = AllAlchemyEffects.FortifyHealth;
             TertiaryEffect = AllAlchemyEffects.FortifyOneHanded;
             QuaternaryEffect = AllAlchemyEffects.DamageMagickaRegeneration;

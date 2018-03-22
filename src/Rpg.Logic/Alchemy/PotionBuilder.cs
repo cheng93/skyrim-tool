@@ -11,7 +11,7 @@ namespace Rpg.Logic.Alchemy
     {
         IPotionBuilder AlchemyLevel(int alchemyLevel);
 
-        IPotionBuilder FortifyAlchemyPercent(double fortifyAlchemyPercent);
+        IPotionBuilder FortifyAlchemyPercent(decimal fortifyAlchemyPercent);
 
         IPotionBuilder Ingredient(IIngredient ingredient);
 
@@ -49,7 +49,7 @@ namespace Rpg.Logic.Alchemy
             return this;
         }
 
-        public IPotionBuilder FortifyAlchemyPercent(double fortifyAlchemyPercent)
+        public IPotionBuilder FortifyAlchemyPercent(decimal fortifyAlchemyPercent)
         {
             alchemyOptions.FortifyAlchemyPercent = fortifyAlchemyPercent;
             return this;

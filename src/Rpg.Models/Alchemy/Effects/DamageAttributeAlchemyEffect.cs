@@ -11,9 +11,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public DamageAttributeAlchemyEffect(
             DamageAttributeEffect effect,
-            double cost,
-            double duration,
-            double magnitude) 
+            decimal cost,
+            decimal duration,
+            decimal magnitude) 
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -50,7 +50,7 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static DamageAttributeAlchemyEffect Create(this DamageAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static DamageAttributeAlchemyEffect Create(this DamageAttributeAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new DamageAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
@@ -64,14 +64,14 @@ namespace Rpg.Models.Alchemy.Effects
 
         public static readonly DamageAttributeAlchemyEffect DamageMagicka = new DamageAttributeAlchemyEffect(
             AllEffects.Destruction.DamageMagicka,
-            cost: 2.2,
+            cost: 2.2M,
             duration: 0,
             magnitude: 3
         );
 
         public static readonly DamageAttributeAlchemyEffect DamageStamina = new DamageAttributeAlchemyEffect(
             AllEffects.Destruction.DamageStamina,
-            cost: 1.8,
+            cost: 1.8M,
             duration: 0,
             magnitude: 3
         );

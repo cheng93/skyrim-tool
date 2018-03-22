@@ -28,10 +28,10 @@ namespace Rpg.Logic.Tests.Alchemy.Formulas.AlchemyFormulaeTests
         [MemberData(nameof(TestData))]
         public void Test(
             IAlchemyEffect effect,
-            double baseCost,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal baseCost,
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
         {
 
             Options

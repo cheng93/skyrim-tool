@@ -12,7 +12,7 @@ namespace Rpg.Models.Alchemy.Ingredients
             PrimaryEffect = AllAlchemyEffects.DamageHealth;
             SecondaryEffect = AllAlchemyEffects.LingeringDamageHealth;
             TertiaryEffect = AllAlchemyEffects.Paralyze;
-            QuaternaryEffect = AllAlchemyEffects.RestoreHealth.ScaleMagnitude(0.6);
+            QuaternaryEffect = AllAlchemyEffects.RestoreHealth.ScaleMagnitude(0.6M);
         }
 
         public override string Name { get; }

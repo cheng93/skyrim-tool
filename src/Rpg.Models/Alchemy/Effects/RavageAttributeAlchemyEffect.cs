@@ -11,9 +11,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public RavageAttributeAlchemyEffect(
             RavageAttributeEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -50,14 +50,14 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static RavageAttributeAlchemyEffect Create(this RavageAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static RavageAttributeAlchemyEffect Create(this RavageAttributeAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new RavageAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
 
         public static readonly RavageAttributeAlchemyEffect RavageHealth = new RavageAttributeAlchemyEffect(
             AllEffects.Destruction.RavageHealth,
-            cost: 0.4,
+            cost: 0.4M,
             duration: 10,
             magnitude: 2
         );
@@ -71,7 +71,7 @@ namespace Rpg.Models.Alchemy.Effects
 
         public static readonly RavageAttributeAlchemyEffect RavageStamina = new RavageAttributeAlchemyEffect(
             AllEffects.Destruction.RavageStamina,
-            cost: 1.6,
+            cost: 1.6M,
             duration: 10,
             magnitude: 2
         );

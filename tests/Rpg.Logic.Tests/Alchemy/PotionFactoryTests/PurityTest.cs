@@ -21,7 +21,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.HangingMoss,
                 },
                 $"Poison of {AllAlchemyEffects.DamageMagickaRegeneration.Name}",
-                $"{AllAlchemyEffects.DamageMagickaRegeneration.Description}, {AllAlchemyEffects.DamageMagicka.Description}"
+                $"{AllAlchemyEffects.DamageMagickaRegeneration.Description} {AllAlchemyEffects.DamageMagicka.Description}",
+                256.6
             };
             yield return new object []
             {
@@ -32,7 +33,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.LunaMothWing,
                 },
                 $"Potion of {AllAlchemyEffects.Invisibility.Name}",
-                $"{AllAlchemyEffects.Invisibility.Description}, {AllAlchemyEffects.RegenerateHealth.Description}, {AllAlchemyEffects.FortifyStamina.Description}"
+                $"{AllAlchemyEffects.Invisibility.Description} {AllAlchemyEffects.RegenerateHealth.Description} {AllAlchemyEffects.FortifyStamina.Description}",
+                622.0
             };
         }
 
@@ -41,7 +43,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
         public void Test(
             IEnumerable<IIngredient> ingredients,
             string expectedName,
-            string expectedDescription)
+            string expectedDescription,
+            decimal cost)
         {
             Options
                 .Setup(x => x.Ingredients)
@@ -55,6 +58,7 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
 
             potion.Name.Should().Be(expectedName);
             potion.Description.Should().Be(expectedDescription);
+            potion.Cost.Should().Be(cost);
         }
     }
 }

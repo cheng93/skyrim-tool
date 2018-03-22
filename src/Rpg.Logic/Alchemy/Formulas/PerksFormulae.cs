@@ -9,7 +9,7 @@ namespace Rpg.Logic.Alchemy.Formulas
 {
     internal static class PerksFormulae
     {
-        public static double GetPerks(IAlchemyEffect effect, IEnumerable<IPerk<AlchemySkill>> perks)
+        public static decimal GetPerks(IAlchemyEffect effect, IEnumerable<IPerk<AlchemySkill>> perks)
         {
             var alchemistPerkFactor = GetAlchemistPerkFactor(perks);
             var physicianPerkFactor = GetPhysicianPerkFactor(effect, perks);
@@ -21,7 +21,7 @@ namespace Rpg.Logic.Alchemy.Formulas
                 * (1 + benefactorPerkFactor / 100 + poisonerPerkFactor / 100);
         }
 
-        private static double GetAlchemistPerkFactor(IEnumerable<IPerk<AlchemySkill>> perks)
+        private static decimal GetAlchemistPerkFactor(IEnumerable<IPerk<AlchemySkill>> perks)
         {
             return perks
                 .OfType<AlchemistPerk>()
@@ -30,7 +30,7 @@ namespace Rpg.Logic.Alchemy.Formulas
                 ?? 0;
         }
 
-        private static double GetPhysicianPerkFactor(IAlchemyEffect effect, IEnumerable<IPerk<AlchemySkill>> perks)
+        private static decimal GetPhysicianPerkFactor(IAlchemyEffect effect, IEnumerable<IPerk<AlchemySkill>> perks)
         {
             var hasPhysicianPerk = perks.OfType<PhysicianPerk>().Any();
             var isRestoreAttributeEffect = new []
@@ -45,7 +45,7 @@ namespace Rpg.Logic.Alchemy.Formulas
                 : 0;
         }
 
-        private static double GetBenefactorPerkFactor(IAlchemyEffect effect, IEnumerable<IPerk<AlchemySkill>> perks)
+        private static decimal GetBenefactorPerkFactor(IAlchemyEffect effect, IEnumerable<IPerk<AlchemySkill>> perks)
         {
             var hasBenefactorPerk = perks.OfType<BenefactorPerk>().Any();
 
@@ -54,7 +54,7 @@ namespace Rpg.Logic.Alchemy.Formulas
                 : 0;
         }
 
-        private static double GetPoisonerPerkFactor(IAlchemyEffect effect, IEnumerable<IPerk<AlchemySkill>> perks)
+        private static decimal GetPoisonerPerkFactor(IAlchemyEffect effect, IEnumerable<IPerk<AlchemySkill>> perks)
         {
             var hasPoisonerPerk = perks.OfType<PoisonerPerk>().Any();
 

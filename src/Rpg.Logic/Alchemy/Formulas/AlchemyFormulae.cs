@@ -5,7 +5,7 @@ namespace Rpg.Logic.Alchemy.Formulas
 {
     internal class AlchemyFormulaeResults
     {
-        public AlchemyFormulaeResults(double baseCost, double cost, double duration, double magnitude)
+        public AlchemyFormulaeResults(decimal baseCost, decimal cost, decimal duration, decimal magnitude)
         {
             BaseCost = baseCost;
             Cost = cost;
@@ -13,13 +13,13 @@ namespace Rpg.Logic.Alchemy.Formulas
             Magnitude = magnitude;
         }
 
-        public double BaseCost { get; }
+        public decimal BaseCost { get; }
 
-        public double Cost { get; }
+        public decimal Cost { get; }
 
-        public double Duration { get; }
+        public decimal Duration { get; }
 
-        public double Magnitude { get; }
+        public decimal Magnitude { get; }
     }
 
     internal interface IAlchemyFormulae

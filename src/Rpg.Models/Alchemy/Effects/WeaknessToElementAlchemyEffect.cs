@@ -10,9 +10,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public WeaknessToElementAlchemyEffect(
             WeaknessToElementEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -35,28 +35,28 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static WeaknessToElementAlchemyEffect Create(this WeaknessToElementAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static WeaknessToElementAlchemyEffect Create(this WeaknessToElementAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new WeaknessToElementAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
 
         public static readonly WeaknessToElementAlchemyEffect WeaknessToFire = new WeaknessToElementAlchemyEffect(
             AllEffects.Destruction.WeaknessToFire,
-            cost: 0.6,
+            cost: 0.6M,
             duration: 30,
             magnitude: 3
         );
 
         public static readonly WeaknessToElementAlchemyEffect WeaknessToFrost = new WeaknessToElementAlchemyEffect(
             AllEffects.Destruction.WeaknessToFrost,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 30,
             magnitude: 3
         );
 
         public static readonly WeaknessToElementAlchemyEffect WeaknessToShock = new WeaknessToElementAlchemyEffect(
             AllEffects.Destruction.WeaknessToShock,
-            cost: 0.7,
+            cost: 0.7M,
             duration: 30,
             magnitude: 3
         );

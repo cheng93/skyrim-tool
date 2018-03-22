@@ -7,7 +7,7 @@ namespace Rpg.Logic.Alchemy.Formulas
 {
     internal class DurationFormulae
     {
-        public static double GetDuration(IAlchemyEffect effect, double powerFactor)
+        public static decimal GetDuration(IAlchemyEffect effect, decimal powerFactor)
         {
             var durationFactor = effect.PowerAffectsDuration()
                 ? powerFactor

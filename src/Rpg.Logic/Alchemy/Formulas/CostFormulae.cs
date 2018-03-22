@@ -5,7 +5,7 @@ namespace Rpg.Logic.Alchemy.Formulas
 {
     internal static class CostFormulae
     {
-        public static double GetCost(IAlchemyEffect effect, double magnitude, double duration)
+        public static decimal GetCost(IAlchemyEffect effect, decimal magnitude, decimal duration)
         {
             var magnitudeFactor = magnitude > 0
                 ? magnitude
@@ -15,7 +15,7 @@ namespace Rpg.Logic.Alchemy.Formulas
                 ? duration / 10
                 : 1;
 
-            return Math.Floor(effect.Cost * Math.Pow(magnitudeFactor * durationFactor, 1.1));
+            return Math.Floor(effect.Cost * (decimal)Math.Pow((double)(magnitudeFactor * durationFactor), 1.1));
         }
     }
 }

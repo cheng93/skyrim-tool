@@ -9,8 +9,8 @@ namespace Rpg.Models.Alchemy.Ingredients
         public DeathbellIngredient()
         {
             Name = "Deathbell";
-            PrimaryEffect = AllAlchemyEffects.DamageHealth.ScaleMagnitude(1.5);
-            SecondaryEffect = AllAlchemyEffects.RavageStamina.ScaleCost(2.1);
+            PrimaryEffect = AllAlchemyEffects.DamageHealth.ScaleMagnitude(1.5M);
+            SecondaryEffect = AllAlchemyEffects.RavageStamina.ScaleCost(2.1M);
             TertiaryEffect = AllAlchemyEffects.Slow;
             QuaternaryEffect = AllAlchemyEffects.WeaknessToPoison;
         }

@@ -11,9 +11,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public DamageAttributeRegenerationAlchemyEffect(
             DamageAttributeRegenerationEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
             if (effect.Attribute == Attribute.Health)
@@ -51,21 +51,21 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static DamageAttributeRegenerationAlchemyEffect Create(this DamageAttributeRegenerationAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static DamageAttributeRegenerationAlchemyEffect Create(this DamageAttributeRegenerationAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new DamageAttributeRegenerationAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
 
         public static readonly DamageAttributeRegenerationAlchemyEffect DamageMagickaRegeneration = new DamageAttributeRegenerationAlchemyEffect(
             AllEffects.Destruction.DamageMagickaRegeneration,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 5,
             magnitude: 100
         );
 
         public static readonly DamageAttributeRegenerationAlchemyEffect DamageStaminaRegeneration = new DamageAttributeRegenerationAlchemyEffect(
             AllEffects.Destruction.DamageStaminaRegeneration,
-            cost: 0.3,
+            cost: 0.3M,
             duration: 5,
             magnitude: 100
         );

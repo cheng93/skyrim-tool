@@ -10,7 +10,7 @@ namespace Rpg.Models.Alchemy.Ingredients
         {
             Name = "Briar Heart";
             PrimaryEffect = AllAlchemyEffects.RestoreMagicka;
-            SecondaryEffect = AllAlchemyEffects.FortifyBlock.ScaleMagnitude(0.5);
+            SecondaryEffect = AllAlchemyEffects.FortifyBlock.ScaleMagnitude(0.5M);
             TertiaryEffect = AllAlchemyEffects.Paralyze;
             QuaternaryEffect = AllAlchemyEffects.FortifyMagicka;
         }

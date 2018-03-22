@@ -16,7 +16,7 @@ namespace Rpg.Commands.Alchemy
                 Ingredients = ingredients;
             }
 
-            IEnumerable<IngredientViewModel> Ingredients { get; }
+            public IEnumerable<IngredientViewModel> Ingredients { get; }
         }
 
         public class Command : IRequest<Response>

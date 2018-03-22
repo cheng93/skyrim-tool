@@ -6,11 +6,11 @@ namespace Rpg.Models.Alchemy.Effects
 {
     public interface IAlchemyEffect : IHasName, IHasDescription, IHasId
     {
-        double Cost { get; }
+        decimal Cost { get; }
 
-        double Duration { get; }
+        decimal Duration { get; }
 
-        double Magnitude { get; }
+        decimal Magnitude { get; }
 
         bool IsPositiveEffect { get; }
 
@@ -21,9 +21,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         protected AlchemyEffect(
             IEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
         {
             Effect = effect;
             Cost = cost;
@@ -41,11 +41,11 @@ namespace Rpg.Models.Alchemy.Effects
 
         public IEffect Effect { get; }
 
-        public double Cost { get; }
+        public decimal Cost { get; }
 
-        public double Duration { get; }
+        public decimal Duration { get; }
 
-        public double Magnitude { get; }
+        public decimal Magnitude { get; }
     }
 
     public abstract class AlchemyEffect<T> : AlchemyEffect
@@ -53,9 +53,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public AlchemyEffect(
             T effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }

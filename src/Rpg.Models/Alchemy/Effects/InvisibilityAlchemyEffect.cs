@@ -7,9 +7,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public InvisibilityAlchemyEffect(
             InvisibilityEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -25,7 +25,7 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static InvisibilityAlchemyEffect Create(this InvisibilityAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static InvisibilityAlchemyEffect Create(this InvisibilityAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new InvisibilityAlchemyEffect(e.Effect, cost, duration, magnitude);
         }

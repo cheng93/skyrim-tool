@@ -9,7 +9,7 @@ namespace Rpg.Models.Alchemy.Ingredients
         public HawkFeathersIngredient()
         {
             Name = "Hawk Feathers";
-            PrimaryEffect = AllAlchemyEffects.CureDisease.ScaleCost(0.36);
+            PrimaryEffect = AllAlchemyEffects.CureDisease.ScaleCost(0.36M);
             SecondaryEffect = AllAlchemyEffects.FortifyLightArmor;
             TertiaryEffect = AllAlchemyEffects.FortifyOneHanded;
             QuaternaryEffect = AllAlchemyEffects.FortifySneak;

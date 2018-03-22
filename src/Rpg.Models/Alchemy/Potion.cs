@@ -7,6 +7,8 @@ namespace Rpg.Models.Alchemy
 {
     public interface IPotion : IHasName, IHasDescription
     {
+        decimal Cost { get; }
+
         IEnumerable<IAlchemyEffect> Effects { get; }
     }
 
@@ -18,9 +20,12 @@ namespace Rpg.Models.Alchemy
         {
             Effects = effects;
             Name = name;
-            Description = string.Join(", ", effects.Select(x => x.Description));
-                
+            Description = string.Join(" ", effects.Select(x => x.Description));
+            Cost = effects.Sum(x => x.Cost);
+
         }
+
+        public decimal Cost { get; }
 
         public IEnumerable<IAlchemyEffect> Effects { get; }
 

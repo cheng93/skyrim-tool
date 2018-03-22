@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Rpg.Commands.Alchemy.ViewModels
 {
     public class PotionViewModel
@@ -9,6 +11,8 @@ namespace Rpg.Commands.Alchemy.ViewModels
 
         public string Name { get; internal set; }
 
-        public string Description { get; internal set; }
+        public decimal Cost { get; internal set; }
+
+        public IEnumerable<string> Effects { get; internal set; }
     }
 }

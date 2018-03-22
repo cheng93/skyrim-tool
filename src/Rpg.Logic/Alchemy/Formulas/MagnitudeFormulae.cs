@@ -7,7 +7,7 @@ namespace Rpg.Logic.Alchemy.Formulas
 {
     internal static class MagnitudeFormulae
     {
-        public static double GetMagnitude(IAlchemyEffect effect, double powerFactor)
+        public static decimal GetMagnitude(IAlchemyEffect effect, decimal powerFactor)
         {
             var magnitudeFactor = effect.PowerAffectsMagnitude()
                 ? powerFactor

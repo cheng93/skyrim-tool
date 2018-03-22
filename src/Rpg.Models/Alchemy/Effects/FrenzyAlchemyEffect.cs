@@ -7,9 +7,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public FrenzyAlchemyEffect(
             FrenzyEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -25,7 +25,7 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static FrenzyAlchemyEffect Create(this FrenzyAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static FrenzyAlchemyEffect Create(this FrenzyAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new FrenzyAlchemyEffect(e.Effect, cost, duration, magnitude);
         }

@@ -10,7 +10,7 @@ namespace Rpg.Models.Alchemy.Ingredients
         {
             Name = "Ectoplasm";
             PrimaryEffect = AllAlchemyEffects.RestoreMagicka;
-            SecondaryEffect = AllAlchemyEffects.FortifyDestruction.ScaleMagnitude(0.8);
+            SecondaryEffect = AllAlchemyEffects.FortifyDestruction.ScaleMagnitude(0.8M);
             TertiaryEffect = AllAlchemyEffects.FortifyMagicka;
             QuaternaryEffect = AllAlchemyEffects.DamageHealth;
         }

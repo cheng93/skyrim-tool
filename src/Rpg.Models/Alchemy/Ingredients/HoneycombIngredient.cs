@@ -10,7 +10,7 @@ namespace Rpg.Models.Alchemy.Ingredients
         {
             Name = "Honeycomb";
             PrimaryEffect = AllAlchemyEffects.RestoreStamina;
-            SecondaryEffect = AllAlchemyEffects.FortifyBlock.ScaleMagnitude(0.5);
+            SecondaryEffect = AllAlchemyEffects.FortifyBlock.ScaleMagnitude(0.5M);
             TertiaryEffect = AllAlchemyEffects.FortifyLightArmor;
             QuaternaryEffect = AllAlchemyEffects.RavageStamina;
         }

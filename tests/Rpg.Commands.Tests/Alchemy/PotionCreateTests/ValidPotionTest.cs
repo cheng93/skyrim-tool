@@ -31,7 +31,7 @@ namespace Rpg.Commands.Tests.Alchemy.PotionCreateTests
         [InlineData(100)]
         [InlineData(150)]
         [InlineData(60.5)]
-        public void VariousFortifyAlchemyPercent(double fortifyAlchemyPercent)
+        public void VariousFortifyAlchemyPercent(decimal fortifyAlchemyPercent)
         {
             Request.FortifyAlchemyPercent = fortifyAlchemyPercent;
             TestAndAssert();

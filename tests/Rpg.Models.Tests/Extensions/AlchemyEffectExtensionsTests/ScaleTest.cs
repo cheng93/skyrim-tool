@@ -18,7 +18,7 @@ namespace Rpg.Models.Tests.Extensions.AlchemyEffectExtensionsTests
 
         [Theory]
         [MemberData(nameof(CostData))]
-        public void Cost(IAlchemyEffect effect, double expected)
+        public void Cost(IAlchemyEffect effect, decimal expected)
         {
             var actual = effect.ScaleCost(2);
             actual.Cost.Should().Be(expected);
@@ -34,7 +34,7 @@ namespace Rpg.Models.Tests.Extensions.AlchemyEffectExtensionsTests
 
         [Theory]
         [MemberData(nameof(DurationData))]
-        public void Duration(IAlchemyEffect effect, double expected)
+        public void Duration(IAlchemyEffect effect, decimal expected)
         {
             var actual = effect.ScaleDuration(2);
             actual.Duration.Should().Be(expected);
@@ -50,7 +50,7 @@ namespace Rpg.Models.Tests.Extensions.AlchemyEffectExtensionsTests
 
         [Theory]
         [MemberData(nameof(MagnitudeData))]
-        public void Magnitude(IAlchemyEffect effect, double expected)
+        public void Magnitude(IAlchemyEffect effect, decimal expected)
         {
             var actual = effect.ScaleMagnitude(2);
             actual.Magnitude.Should().Be(expected);

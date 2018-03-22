@@ -7,9 +7,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public ResistPoisonAlchemyEffect(
             ResistPoisonEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -25,14 +25,14 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static ResistPoisonAlchemyEffect Create(this ResistPoisonAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static ResistPoisonAlchemyEffect Create(this ResistPoisonAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new ResistPoisonAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
 
         public static readonly ResistPoisonAlchemyEffect ResistPoison = new ResistPoisonAlchemyEffect(
             AllEffects.Restoration.ResistPoison,
-            cost: 0.5,
+            cost: 0.5M,
             duration: 60,
             magnitude: 4
         );

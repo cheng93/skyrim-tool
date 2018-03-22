@@ -40,7 +40,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.RiverBetty
                 },
                 $"Poison of {AllAlchemyEffects.DamageHealth.Name}",
-                AllIngredients.RiverBetty.PrimaryEffect.Description
+                AllIngredients.RiverBetty.PrimaryEffect.Description,
+                15.0
             };
             yield return new object []
             {
@@ -50,7 +51,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.RiverBetty
                 },
                 $"Poison of {AllAlchemyEffects.DamageHealth.Name}",
-                AllIngredients.RiverBetty.PrimaryEffect.Description
+                AllIngredients.RiverBetty.PrimaryEffect.Description,
+                15.0
             };
             yield return new object []
             {
@@ -60,7 +62,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.RiverBetty
                 },
                 $"Poison of {AllAlchemyEffects.DamageHealth.Name}",
-                AllIngredients.RiverBetty.PrimaryEffect.Description
+                AllIngredients.RiverBetty.PrimaryEffect.Description,
+                15.0
             };
             yield return new object []
             {
@@ -70,7 +73,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                     AllIngredients.Nirnroot
                 },
                 $"Poison of {AllAlchemyEffects.DamageHealth.Name}",
-                AllIngredients.Nirnroot.PrimaryEffect.Description
+                AllIngredients.Nirnroot.PrimaryEffect.Description,
+                75.6
             };
         }
 
@@ -79,7 +83,8 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
         public void Test(
             IEnumerable<IIngredient> ingredients,
             string expectedName,
-            string expectedDescription)
+            string expectedDescription,
+            decimal cost)
         {
             Options
                 .Setup(x => x.Ingredients)
@@ -89,6 +94,7 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
 
             potion.Name.Should().Be(expectedName);
             potion.Description.Should().Be(expectedDescription);
+            potion.Cost.Should().Be(cost);
         }        
     }
 }

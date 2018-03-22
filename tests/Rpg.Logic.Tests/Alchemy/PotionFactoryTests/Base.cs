@@ -45,22 +45,22 @@ namespace Rpg.Logic.Tests.Alchemy.PotionFactoryTests
                 .Returns((IAlchemyEffect effect, IAlchemyOptions options) =>
                     new AlchemyFormulaeResults(
                         effect.Cost.NonZeroOrOne() * effect.Duration.NonZeroOrOne() * effect.Magnitude.NonZeroOrOne(),
-                        effect.Cost,
+                        effect.Cost.NonZeroOrOne() * effect.Duration.NonZeroOrOne() * effect.Magnitude.NonZeroOrOne(),
                         effect.Duration,
                         effect.Magnitude));
 
             AlchemyEffectFactory
                 .Setup(x => x.Create(
                     It.IsAny<IAlchemyEffect>(),
-                    It.IsAny<double>(),
-                    It.IsAny<double>(),
-                    It.IsAny<double>()
+                    It.IsAny<decimal>(),
+                    It.IsAny<decimal>(),
+                    It.IsAny<decimal>()
                 ))
                 .Returns((
                     IAlchemyEffect effect,
-                    double cost, 
-                    double duration,
-                    double magnitude) => 
+                    decimal cost, 
+                    decimal duration,
+                    decimal magnitude) => 
                     {
                         var mock = new Mock<IAlchemyEffect>();
                         mock.Setup(x => x.Cost).Returns(cost);

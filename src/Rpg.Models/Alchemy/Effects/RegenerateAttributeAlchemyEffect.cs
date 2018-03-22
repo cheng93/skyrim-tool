@@ -10,9 +10,9 @@ namespace Rpg.Models.Alchemy.Effects
     {
         public RegenerateAttributeAlchemyEffect(
             RegenerateAttributeEffect effect,
-            double cost,
-            double duration,
-            double magnitude)
+            decimal cost,
+            decimal duration,
+            decimal magnitude)
             : base(effect, cost, duration, magnitude)
         {
         }
@@ -35,28 +35,28 @@ namespace Rpg.Models.Alchemy.Effects
 
     public static partial class AllAlchemyEffects
     {
-        internal static RegenerateAttributeAlchemyEffect Create(this RegenerateAttributeAlchemyEffect e, double cost, double duration, double magnitude)
+        internal static RegenerateAttributeAlchemyEffect Create(this RegenerateAttributeAlchemyEffect e, decimal cost, decimal duration, decimal magnitude)
         {
             return new RegenerateAttributeAlchemyEffect(e.Effect, cost, duration, magnitude);
         }
 
         public static readonly RegenerateAttributeAlchemyEffect RegenerateHealth = new RegenerateAttributeAlchemyEffect(
             AllEffects.Restoration.RegenerateHealth,
-            cost: 0.1,
+            cost: 0.1M,
             duration: 300,
             magnitude: 5
         );
 
         public static readonly RegenerateAttributeAlchemyEffect RegenerateMagicka = new RegenerateAttributeAlchemyEffect(
             AllEffects.Restoration.RegenerateMagicka,
-            cost: 0.1,
+            cost: 0.1M,
             duration: 300,
             magnitude: 5
         );
 
         public static readonly RegenerateAttributeAlchemyEffect RegenerateStamina = new RegenerateAttributeAlchemyEffect(
             AllEffects.Restoration.RegenerateStamina,
-            cost: 0.1,
+            cost: 0.1M,
             duration: 300,
             magnitude: 5
         );
