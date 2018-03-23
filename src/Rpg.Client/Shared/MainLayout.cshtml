@@ -1,7 +1,10 @@
 ﻿@implements ILayoutComponent
 
-<div class='container-fluid'>
-    @Body
+<div class="mdc-typography">
+    <Toolbar title="Skyrim Tool" />
+    <main class="mdc-toolbar-fixed-adjust">
+        @Body
+    </main>
 </div>
 
 @functions {
