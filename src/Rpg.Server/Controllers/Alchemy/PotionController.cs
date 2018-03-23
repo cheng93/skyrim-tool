@@ -3,7 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Rpg.Commands.Alchemy;
 
-namespace Rpg.Web.Controllers.Alchemy
+namespace Rpg.Server.Controllers.Alchemy
 {
     [Route("api/alchemy/potion")]
     public class PotionController : BaseController

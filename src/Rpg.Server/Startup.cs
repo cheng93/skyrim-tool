@@ -9,10 +9,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Rpg.Web.Setup.Ioc;
-using Rpg.Web.Setup.Middleware;
+using Rpg.Client;
+using Rpg.Server.Setup.Ioc;
+using Rpg.Server.Setup.Middleware;
 
-namespace Rpg.Web
+namespace Rpg.Server
 {
     public class Startup
     {
@@ -40,6 +41,8 @@ namespace Rpg.Web
             app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseMvc();
+
+            app.UseBlazor<Rpg.Client.Program>();
         }
 
         public void ConfigureContainer(ContainerBuilder containerBuilder)

@@ -3,7 +3,7 @@ using Autofac;
 using Rpg.Commands.Alchemy;
 using Rpg.Logic.Alchemy;
 
-namespace Rpg.Web.Setup.Ioc
+namespace Rpg.Server.Setup.Ioc
 {
     public class AutofacModule : Autofac.Module
     {

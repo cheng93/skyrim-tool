@@ -5,7 +5,7 @@ using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace Rpg.Web.Setup.Middleware
+namespace Rpg.Server.Setup.Middleware
 {
     public class ExceptionMiddleware
     {

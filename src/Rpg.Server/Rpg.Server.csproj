@@ -5,13 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Autofac" Version="4.6.2" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="0.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Rpg.Commands\Rpg.Commands.csproj" />
+    <ProjectReference Include="..\Rpg.Client\Rpg.Client.csproj" />
   </ItemGroup>
 
 </Project>

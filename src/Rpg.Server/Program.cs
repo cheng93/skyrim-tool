@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Autofac.Extensions.DependencyInjection;
 
-namespace Rpg.Web
+namespace Rpg.Server
 {
     public class Program
     {
