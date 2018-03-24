@@ -45,11 +45,13 @@ namespace Rpg.Client.State
 
         public int AlchemistPerkRank { get; private set; }
 
-        public bool HasPhysicianPerk { get; private set; }
-
         public bool HasBenefactorPerk { get; private set; }
 
+        public bool HasPhysicianPerk { get; private set; }
+
         public bool HasPoisonerPerk { get; private set; }
+
+        public bool HasPurityPerk { get; private set; }
 
         public Potion Potion { get; private set; }
 
@@ -90,21 +92,27 @@ namespace Rpg.Client.State
             NotifyStateChanged();
         }
 
-        public void ChangeHasPhysician(bool hasPerk)
-        {
-            HasPhysicianPerk = hasPerk;
-            NotifyStateChanged();
-        }
-
         public void ChangeHasBenefactor(bool hasPerk)
         {
             HasBenefactorPerk = hasPerk;
             NotifyStateChanged();
         }
 
+        public void ChangeHasPhysician(bool hasPerk)
+        {
+            HasPhysicianPerk = hasPerk;
+            NotifyStateChanged();
+        }
+
         public void ChangeHasPoisoner(bool hasPerk)
         {
             HasPoisonerPerk = hasPerk;
+            NotifyStateChanged();
+        }
+
+        public void ChangeHasPurity(bool hasPerk)
+        {
+            HasPurityPerk = hasPerk;
             NotifyStateChanged();
         }
 
@@ -119,6 +127,7 @@ namespace Rpg.Client.State
                 HasBenefactorPerk = HasBenefactorPerk,
                 HasPhysicianPerk = HasPhysicianPerk,
                 HasPoisonerPerk = HasPoisonerPerk,
+                HasPurityPerk = HasPurityPerk,
                 IngredientIds = SelectedIngredientIds
             };
 

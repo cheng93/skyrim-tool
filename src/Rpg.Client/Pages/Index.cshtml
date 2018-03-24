@@ -15,6 +15,7 @@
     <PerkCheckbox Label="Physician" Change=@((hasPerk) => state.ChangeHasPhysician(hasPerk)) />
     <PerkCheckbox Label="Benefactor" Change=@((hasPerk) => state.ChangeHasBenefactor(hasPerk)) />
     <PerkCheckbox Label="Poisoner" Change=@((hasPerk) => state.ChangeHasPoisoner(hasPerk)) />
+    <PerkCheckbox Label="Purity" Change=@((hasPerk) => state.ChangeHasPurity(hasPerk)) />
 </section>
 
 <button @onclick(async() => await state.CreatePotion())>Create Potion</button>

@@ -38,6 +38,8 @@ namespace Rpg.Commands.Alchemy
 
             public bool HasPoisonerPerk { get; set; }
 
+            public bool HasPurityPerk { get; set; }
+
             public IEnumerable<string> IngredientIds { get; set; } = Enumerable.Empty<string>();
         }
 
@@ -105,6 +107,11 @@ namespace Rpg.Commands.Alchemy
                 if (request.HasPoisonerPerk)
                 {
                     potionBuilder = potionBuilder.Perk(AllPerks.Alchemy.Poisoner);
+                }
+
+                if (request.HasPurityPerk)
+                {
+                    potionBuilder = potionBuilder.Perk(AllPerks.Alchemy.Purity);
                 }
 
                 var potion = potionBuilder
