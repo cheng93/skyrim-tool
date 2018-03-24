@@ -1,0 +1,16 @@
+@if (Potion != null)
+{
+    <div>@Potion.Name</div>
+    <div>@Potion.Cost</div>
+    <ul>
+        @foreach (var effect in Potion.Effects)
+        {
+            <li>@effect</li>
+        }
+    </ul>
+}
+
+@functions
+{
+    public Potion Potion { get; set; }
+}

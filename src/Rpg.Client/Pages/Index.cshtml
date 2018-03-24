@@ -2,12 +2,12 @@
 @inject AlchemyState state
 
 <section>
-    <IngredientSelect Ingredients=@ingredients />
-    <IngredientInfo></IngredientInfo>
-    <IngredientSelect Ingredients=@ingredients />
-    <IngredientInfo></IngredientInfo>
-    <IngredientSelect Ingredients=@ingredients />
-    <IngredientInfo></IngredientInfo>
+    <IngredientSelect Ingredients=@ingredients Change=@((id) => state.ChangeIngredientOne(id)) />
+    <IngredientInfo Ingredient=@state.IngredientOne />
+    <IngredientSelect Ingredients=@ingredients Change=@((id) => state.ChangeIngredientTwo(id)) />
+    <IngredientInfo Ingredient=@state.IngredientTwo></IngredientInfo>
+    <IngredientSelect Ingredients=@ingredients Change=@((id) => state.ChangeIngredientThree(id)) />
+    <IngredientInfo Ingredient=@state.IngredientThree></IngredientInfo>
 </section>
 
 <section>
@@ -17,18 +17,20 @@
     <PerkCheckbox></PerkCheckbox>
 </section>
 
+<button @onclick(() => state.CreatePotion())>Create Potion</button>
+
 <section>
-    <potion></potion>
+    <PotionInfo Potion=@state.Potion></PotionInfo>
 </section>
 
 @functions
 {
     private Ingredient[] ingredients = Array.Empty<Ingredient>();
 
-    private string ingredientOne;
-
     protected override async Task OnInitAsync()
     {
+        state.OnChange += StateHasChanged;
+
         await state.LoadIngredients();
 
         ingredients = state.Ingredients;

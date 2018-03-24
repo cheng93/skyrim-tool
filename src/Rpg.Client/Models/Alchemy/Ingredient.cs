@@ -10,5 +10,7 @@ namespace Rpg.Client.Models.Alchemy
         public string Id { get; set; }
 
         public string Name { get; set; }
+
+        public string[] Effects { get;set; }
     }
 }

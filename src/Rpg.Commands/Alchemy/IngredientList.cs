@@ -31,7 +31,16 @@ namespace Rpg.Commands.Alchemy
                     new IngredientViewModel
                     {
                         Id = x.Id,
-                        Name = x.Name
+                        Name = x.Name,
+                        Effects = new []
+                            {
+                                x.PrimaryEffect,
+                                x.SecondaryEffect,
+                                x.TertiaryEffect,
+                                x.QuaternaryEffect
+                            }
+                            .Select(y => y.Description)
+                        
                     });
 
                 return new Response(ingredients);
