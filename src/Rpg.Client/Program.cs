@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Blazor.Browser.Rendering;
 using Microsoft.AspNetCore.Blazor.Browser.Services;
+using Microsoft.Extensions.DependencyInjection;
 using System;
+using Rpg.Client.State;
 
 namespace Rpg.Client
 {
@@ -8,9 +10,9 @@ namespace Rpg.Client
     {
         static void Main(string[] args)
         {
-            var serviceProvider = new BrowserServiceProvider(configure =>
+            var serviceProvider = new BrowserServiceProvider(services =>
             {
-                // Add any custom services here
+                services.AddSingleton<AlchemyState>();
             });
 
             new BrowserRenderer(serviceProvider).AddComponent<App>("app");

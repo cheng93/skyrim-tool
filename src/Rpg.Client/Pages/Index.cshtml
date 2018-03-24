@@ -1,11 +1,12 @@
 ﻿@page "/"
+@inject AlchemyState state
 
 <section>
-    <IngredientSelect></IngredientSelect>
+    <IngredientSelect Ingredients=@ingredients />
     <IngredientInfo></IngredientInfo>
-    <IngredientSelect></IngredientSelect>
+    <IngredientSelect Ingredients=@ingredients />
     <IngredientInfo></IngredientInfo>
-    <IngredientSelect></IngredientSelect>
+    <IngredientSelect Ingredients=@ingredients />
     <IngredientInfo></IngredientInfo>
 </section>
 
@@ -19,3 +20,17 @@
 <section>
     <potion></potion>
 </section>
+
+@functions
+{
+    private Ingredient[] ingredients = Array.Empty<Ingredient>();
+
+    private string ingredientOne;
+
+    protected override async Task OnInitAsync()
+    {
+        await state.LoadIngredients();
+
+        ingredients = state.Ingredients;
+    }
+}

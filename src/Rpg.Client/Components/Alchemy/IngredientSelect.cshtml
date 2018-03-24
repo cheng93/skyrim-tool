@@ -1,0 +1,11 @@
+<select>
+    @foreach (var ingredient in Ingredients)
+    {
+        <option value=@ingredient.Id label=@ingredient.Name />
+    }
+</select>
+
+@functions
+{
+    public Ingredient[] Ingredients { get; set; }
+}
