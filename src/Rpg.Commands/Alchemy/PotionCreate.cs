@@ -113,12 +113,15 @@ namespace Rpg.Commands.Alchemy
                     .Validate()
                     .Build();
 
-                return new Response(new PotionViewModel
-                {
-                    Name = potion.Name,
-                    Cost = potion.Cost,
-                    Effects = potion.Effects.Select(x => x.Description)
-                });
+                return new Response(
+                    potion != null
+                        ? new PotionViewModel
+                        {
+                            Name = potion.Name,
+                            Cost = potion.Cost,
+                            Effects = potion.Effects.Select(x => x.Description)
+                        }
+                        : null);
             }
 
             private static readonly Dictionary<int, AlchemistPerk> alchemistMap 
