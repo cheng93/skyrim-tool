@@ -12,9 +12,9 @@
 
 <section>
     <AlchemistDropdown Change=@((rank) => state.ChangeAlchemistRank(rank)) />
-    <PerkCheckbox></PerkCheckbox>
-    <PerkCheckbox></PerkCheckbox>
-    <PerkCheckbox></PerkCheckbox>
+    <PerkCheckbox Label="Physician" Change=@((hasPerk) => state.ChangeHasPhysician(hasPerk)) />
+    <PerkCheckbox Label="Benefactor" Change=@((hasPerk) => state.ChangeHasBenefactor(hasPerk)) />
+    <PerkCheckbox Label="Poisoner" Change=@((hasPerk) => state.ChangeHasPoisoner(hasPerk)) />
 </section>
 
 <button @onclick(async() => await state.CreatePotion())>Create Potion</button>

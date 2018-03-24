@@ -43,7 +43,13 @@ namespace Rpg.Client.State
             .Where(x => x != null)
             .Select(x => x.Id);
 
-        public int AlchemistRank { get; private set; }
+        public int AlchemistPerkRank { get; private set; }
+
+        public bool HasPhysicianPerk { get; private set; }
+
+        public bool HasBenefactorPerk { get; private set; }
+
+        public bool HasPoisonerPerk { get; private set; }
 
         public Potion Potion { get; private set; }
 
@@ -80,7 +86,25 @@ namespace Rpg.Client.State
 
         public void ChangeAlchemistRank(string rank)
         {
-            AlchemistRank = int.Parse(rank);
+            AlchemistPerkRank = int.Parse(rank);
+            NotifyStateChanged();
+        }
+
+        public void ChangeHasPhysician(bool hasPerk)
+        {
+            HasPhysicianPerk = hasPerk;
+            NotifyStateChanged();
+        }
+
+        public void ChangeHasBenefactor(bool hasPerk)
+        {
+            HasBenefactorPerk = hasPerk;
+            NotifyStateChanged();
+        }
+
+        public void ChangeHasPoisoner(bool hasPerk)
+        {
+            HasPoisonerPerk = hasPerk;
             NotifyStateChanged();
         }
 
@@ -91,7 +115,10 @@ namespace Rpg.Client.State
 
             var postData = new 
             {
-                AlchemistPerkRank = AlchemistRank,
+                AlchemistPerkRank = AlchemistPerkRank,
+                HasBenefactorPerk = HasBenefactorPerk,
+                HasPhysicianPerk = HasPhysicianPerk,
+                HasPoisonerPerk = HasPoisonerPerk,
                 IngredientIds = SelectedIngredientIds
             };
 
