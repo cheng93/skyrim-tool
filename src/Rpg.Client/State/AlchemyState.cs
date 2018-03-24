@@ -43,6 +43,8 @@ namespace Rpg.Client.State
             .Where(x => x != null)
             .Select(x => x.Id);
 
+        public int AlchemistRank { get; private set; }
+
         public Potion Potion { get; private set; }
 
         public async Task LoadIngredients()
@@ -76,6 +78,12 @@ namespace Rpg.Client.State
             NotifyStateChanged();
         }
 
+        public void ChangeAlchemistRank(string rank)
+        {
+            AlchemistRank = int.Parse(rank);
+            NotifyStateChanged();
+        }
+
         public async Task CreatePotion()
         {
             LoadingPotion = true;
@@ -83,6 +91,7 @@ namespace Rpg.Client.State
 
             var postData = new 
             {
+                AlchemistPerkRank = AlchemistRank,
                 IngredientIds = SelectedIngredientIds
             };
 
