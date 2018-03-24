@@ -17,7 +17,7 @@
     <PerkCheckbox></PerkCheckbox>
 </section>
 
-<button @onclick(() => state.CreatePotion())>Create Potion</button>
+<button @onclick(async() => await state.CreatePotion())>Create Potion</button>
 
 <section>
     <PotionInfo Potion=@state.Potion></PotionInfo>
