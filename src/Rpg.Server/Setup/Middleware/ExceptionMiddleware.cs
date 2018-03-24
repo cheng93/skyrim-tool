@@ -1,5 +1,6 @@
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
@@ -25,9 +26,10 @@ namespace Rpg.Server.Setup.Middleware
             catch(ValidationException e)
             {
                 var errors = new {
-                    errors = e.Errors.Select(x => x.ToString())
+                    Errors = e.Errors.Select(x => x.ToString())
                 };
-                
+
+                context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
                 await context.Response.WriteAsync(JsonConvert.SerializeObject(errors));
             }
         }
