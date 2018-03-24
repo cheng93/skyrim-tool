@@ -34,6 +34,7 @@ namespace Rpg.Models.Alchemy.Effects
             {AllAlchemyEffects.FortifyEnchanting, (decimal c, decimal d, decimal m) => AllAlchemyEffects.FortifyEnchanting.Create(c, d, m)},
             {AllAlchemyEffects.FortifyHeavyArmor, (decimal c, decimal d, decimal m) => AllAlchemyEffects.FortifyHeavyArmor.Create(c, d, m)},
             {AllAlchemyEffects.FortifyIllusion, (decimal c, decimal d, decimal m) => AllAlchemyEffects.FortifyIllusion.Create(c, d, m)},
+            {AllAlchemyEffects.FortifyLightArmor, (decimal c, decimal d, decimal m) => AllAlchemyEffects.FortifyLightArmor.Create(c, d, m)},
             {AllAlchemyEffects.FortifyLockpicking, (decimal c, decimal d, decimal m) => AllAlchemyEffects.FortifyLockpicking.Create(c, d, m)},
             {AllAlchemyEffects.FortifyOneHanded, (decimal c, decimal d, decimal m) => AllAlchemyEffects.FortifyOneHanded.Create(c, d, m)},
             {AllAlchemyEffects.FortifyPickpocket, (decimal c, decimal d, decimal m) => AllAlchemyEffects.FortifyPickpocket.Create(c, d, m)},

@@ -1,0 +1,14 @@
+<div>
+    <span>Alchemist Rank</span>
+    <select @onchange((item) => Change((string)item))>
+        @for (var i=0; i <= 5; i++)
+        {
+            <option value="@i">@i</option>
+        }
+    </select>
+</div>
+
+@functions
+{
+    public Action<string> Change { get; set; }
+}

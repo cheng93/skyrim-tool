@@ -1,0 +1,16 @@
+@if (Ingredient != null)
+{
+    <div>
+        <ul>
+            @foreach (var effect in Ingredient.Effects)
+            {
+                <li>@effect</li>
+            }
+        </ul>
+    </div>
+}
+
+@functions
+{
+    public Ingredient Ingredient { get; set; }
+}

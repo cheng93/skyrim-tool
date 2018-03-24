@@ -38,6 +38,8 @@ namespace Rpg.Commands.Alchemy
 
             public bool HasPoisonerPerk { get; set; }
 
+            public bool HasPurityPerk { get; set; }
+
             public IEnumerable<string> IngredientIds { get; set; } = Enumerable.Empty<string>();
         }
 
@@ -107,18 +109,26 @@ namespace Rpg.Commands.Alchemy
                     potionBuilder = potionBuilder.Perk(AllPerks.Alchemy.Poisoner);
                 }
 
+                if (request.HasPurityPerk)
+                {
+                    potionBuilder = potionBuilder.Perk(AllPerks.Alchemy.Purity);
+                }
+
                 var potion = potionBuilder
                     .AlchemyLevel(request.AlchemyLevel)
                     .FortifyAlchemyPercent(request.FortifyAlchemyPercent)
                     .Validate()
                     .Build();
 
-                return new Response(new PotionViewModel
-                {
-                    Name = potion.Name,
-                    Cost = potion.Cost,
-                    Effects = potion.Effects.Select(x => x.Description)
-                });
+                return new Response(
+                    potion != null
+                        ? new PotionViewModel
+                        {
+                            Name = potion.Name,
+                            Cost = potion.Cost,
+                            Effects = potion.Effects.Select(x => x.Description)
+                        }
+                        : null);
             }
 
             private static readonly Dictionary<int, AlchemistPerk> alchemistMap 

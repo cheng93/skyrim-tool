@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Rpg.Web.Controllers
+namespace Rpg.Server.Controllers
 {
     public abstract class BaseController : Controller
     {

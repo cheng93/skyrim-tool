@@ -1,0 +1,16 @@
+<div>
+    <select @onchange((item) => Change((string)item))>
+        <option value=""></option>
+        @foreach (var ingredient in Ingredients)
+        {
+            <option value=@ingredient.Id label=@ingredient.Name />
+        }
+    </select>
+</div>
+
+@functions
+{
+    public Ingredient[] Ingredients { get; set; }
+
+    public Action<string> Change { get; set; }
+}

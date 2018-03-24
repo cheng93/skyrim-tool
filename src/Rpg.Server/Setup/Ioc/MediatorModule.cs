@@ -6,7 +6,7 @@ using MediatR.Pipeline;
 using Rpg.Commands.Alchemy;
 using Rpg.Commands.Pipeline;
 
-namespace Rpg.Web.Setup.Ioc
+namespace Rpg.Server.Setup.Ioc
 {
     public class MediatorModule : Autofac.Module
     {

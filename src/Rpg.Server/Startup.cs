@@ -9,10 +9,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Rpg.Web.Setup.Ioc;
-using Rpg.Web.Setup.Middleware;
+using Newtonsoft.Json.Serialization;
+using Rpg.Client;
+using Rpg.Server.Setup.Ioc;
+using Rpg.Server.Setup.Middleware;
 
-namespace Rpg.Web
+namespace Rpg.Server
 {
     public class Startup
     {
@@ -26,7 +28,12 @@ namespace Rpg.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services
+                .AddMvc()
+                .AddJsonOptions(options =>
+                {
+                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +47,8 @@ namespace Rpg.Web
             app.UseMiddleware<ExceptionMiddleware>();
 
             app.UseMvc();
+
+            app.UseBlazor<Rpg.Client.Program>();
         }
 
         public void ConfigureContainer(ContainerBuilder containerBuilder)
