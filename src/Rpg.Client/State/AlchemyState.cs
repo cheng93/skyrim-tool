@@ -43,6 +43,10 @@ namespace Rpg.Client.State
             .Where(x => x != null)
             .Select(x => x.Id);
 
+        public int AlchemyLevel { get; private set; } = 15;
+
+        public decimal FortifyAlchemyPercent { get; private set; } = 0M;
+
         public int AlchemistPerkRank { get; private set; }
 
         public bool HasBenefactorPerk { get; private set; }
@@ -86,6 +90,24 @@ namespace Rpg.Client.State
             NotifyStateChanged();
         }
 
+        public void ChangeAlchemyLevel(string number)
+        {
+            if (int.TryParse(number, out var parsed))
+            {
+                AlchemyLevel = parsed;
+            }
+            NotifyStateChanged();
+        }
+
+        public void ChangeFortifyAlchemy(string number)
+        {
+            if (decimal.TryParse(number, out var parsed))
+            {
+                FortifyAlchemyPercent = parsed;
+            }
+            NotifyStateChanged();
+        }
+
         public void ChangeAlchemistRank(string rank)
         {
             AlchemistPerkRank = int.Parse(rank);
@@ -124,6 +146,8 @@ namespace Rpg.Client.State
             var postData = new 
             {
                 AlchemistPerkRank = AlchemistPerkRank,
+                AlchemyLevel = AlchemyLevel,
+                FortifyAlchemyPercent = FortifyAlchemyPercent,
                 HasBenefactorPerk = HasBenefactorPerk,
                 HasPhysicianPerk = HasPhysicianPerk,
                 HasPoisonerPerk = HasPoisonerPerk,

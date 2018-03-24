@@ -11,6 +11,11 @@
 </section>
 
 <section>
+    <NumericInput Label="Alchemy Level" Min=@alchemyLevelMin Max=@alchemyLevelMax Default=@alchemyLevelDefault Change=@((number) => state.ChangeAlchemyLevel(number)) />
+    <NumericInput Label="Fortify Alchemy %" Step=@fortifyAlchemyStep Default=@fortifyAlchemyDefault Change=@((number) => state.ChangeFortifyAlchemy(number)) />
+</section>
+
+<section>
     <AlchemistDropdown Change=@((rank) => state.ChangeAlchemistRank(rank)) />
     <PerkCheckbox Label="Physician" Change=@((hasPerk) => state.ChangeHasPhysician(hasPerk)) />
     <PerkCheckbox Label="Benefactor" Change=@((hasPerk) => state.ChangeHasBenefactor(hasPerk)) />
@@ -26,6 +31,12 @@
 
 @functions
 {
+    private int alchemyLevelMin = 15;
+    private int alchemyLevelMax = 100;
+    private decimal alchemyLevelDefault;
+    private decimal fortifyAlchemyStep = 0.01M;
+    private decimal fortifyAlchemyDefault;
+
     private Ingredient[] ingredients = Array.Empty<Ingredient>();
 
     protected override async Task OnInitAsync()
@@ -35,5 +46,8 @@
         await state.LoadIngredients();
 
         ingredients = state.Ingredients;
+
+        alchemyLevelDefault = state.AlchemyLevel;
+        fortifyAlchemyDefault = state.FortifyAlchemyPercent;
     }
 }
