@@ -42,6 +42,24 @@ main {
 }
 
 .alchemy-potion {
+    & > *:first-child {
+        display: grid;
+        grid-row-gap: 24px;
+    }
+    & .alchemy-potion--cost {
+        & .alchemy-potion--cost__img {
+            background-image: url('./img/gold.png');
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-size: 15px;
+            padding-left: 22px;
+        }
+    }
+    & .alchemy-potion--effects {
+        display: grid;
+        grid-row-gap: 24px;
+    }
+
     @include phone {
         justify-self: center;
     }

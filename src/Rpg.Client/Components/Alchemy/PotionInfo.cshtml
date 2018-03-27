@@ -1,11 +1,15 @@
 @if (Potion != null)
 {
-    <div>@Potion.Name</div>
-    <div>@Potion.Cost</div>
-    <ul>
+    <div class="alchemy-potion--name mdc-typography--subheading2">@Potion.Name</div>
+    <div class="alchemy-potion--cost">
+        <span class="alchemy-potion--cost__img mdc-typography--body1">
+            @Potion.Cost
+        </span>
+    </div>
+    <ul class="alchemy-potion--effects">
         @foreach (var effect in Potion.Effects)
         {
-            <li>@effect</li>
+            <li class="mdc-typography--body1">@effect</li>
         }
     </ul>
 }
