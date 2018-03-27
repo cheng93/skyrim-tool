@@ -1,3 +1,4 @@
+@import './_mixin';
 @import '~@material/theme/variables';
 
 * {
@@ -8,4 +9,91 @@
 a {
     color: $mdc-theme-primary;
     text-decoration: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    display: grid;
+}
+
+.alchemy {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    @include desktop {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    @include tablet {
+        grid-template-columns: repeat(8, 1fr);
+    }
+    @include phone {
+        margin: 32px;
+        grid-gap: 24px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+            "ingredients ingredients ingredients ingredients"
+            "stats stats stats stats"
+            ". button button ."
+            "potion potion potion potion";
+    }
+}
+
+.alchemy-potion {
+    @include phone {
+        justify-self: center;
+    }
+}
+
+.alchemy-ingredients {
+    display: grid;
+    grid-area: ingredients;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 24px;
+    justify-self: center;
+
+    & .alchemy-ingredients--inner {
+
+        & .alchemy-ingredients--select {
+            justify-self: center;
+        }
+
+        & .alchemy-ingredients--info {
+            align-self: center;
+            justify-self: center;
+
+            @include phone {
+                display: none;
+            }
+        }
+    }
+}
+
+.alchemy-stats {
+    display: grid;
+    grid-area: stats;
+    grid-row-gap: 24px;
+
+    & .alchemy-stats--perk,
+        .alchemy-stats--numeric,
+        .alchemy-stats--alchemist {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & .alchemy-stats--numeric {
+        & input {
+            width: 50px;
+        }
+    }
+}
+
+.alchemy-button {
+    grid-area: button;
+}
+
+.alchemy-potion {
+    grid-area: potion;
 }
