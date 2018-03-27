@@ -36,7 +36,6 @@ module.exports = {
 				test: /\.js$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
-
 				options: {
 					presets: ['env']
 				}
@@ -64,6 +63,14 @@ module.exports = {
 					],
 					fallback: 'style-loader'
 				})
+			},
+			{
+				test: /\.(png|jpg|gif|svg)$/,
+				exclude: /node_modules/,
+				loader: 'file-loader',
+				options: {
+					name: "img/[hash].[ext]"
+				}
 			}
 		]
 	},
