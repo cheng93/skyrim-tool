@@ -4,15 +4,15 @@
 <div class="alchemy">
 <section class="alchemy-input alchemy-ingredients">
     <div class="alchemy-ingredients--inner">
-        <IngredientSelect Ingredients=@ingredients Change=@((id) => state.ChangeIngredientOne(id)) />
+        <IngredientSelect Label="1st Ingredient" Ingredients=@ingredients Change=@((id) => state.ChangeIngredientOne(id)) />
         <IngredientInfo Ingredient=@state.IngredientOne />
     </div>
     <div class="alchemy-ingredients--inner">
-        <IngredientSelect Ingredients=@ingredients Change=@((id) => state.ChangeIngredientTwo(id)) />
+        <IngredientSelect Label="2nd Ingredient"  Ingredients=@ingredients Change=@((id) => state.ChangeIngredientTwo(id)) />
         <IngredientInfo Ingredient=@state.IngredientTwo />
     </div>
     <div class="alchemy-ingredients--inner">
-        <IngredientSelect Ingredients=@ingredients Change=@((id) => state.ChangeIngredientThree(id)) />
+        <IngredientSelect Label="3rd Ingredient" Ingredients=@ingredients Change=@((id) => state.ChangeIngredientThree(id)) />
         <IngredientInfo Ingredient=@state.IngredientThree />
     </div>
 </section>

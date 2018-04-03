@@ -36,7 +36,7 @@ main {
         grid-template-areas: 
             "ingredients ingredients ingredients ingredients"
             "stats stats stats stats"
-            ". button button ."
+            ". . button button"
             "potion potion potion potion";
     }
 }
@@ -59,10 +59,6 @@ main {
         display: grid;
         grid-row-gap: 24px;
     }
-
-    @include phone {
-        justify-self: center;
-    }
 }
 
 .alchemy-ingredients {
@@ -70,14 +66,13 @@ main {
     grid-area: ingredients;
     grid-template-rows: repeat(3, 1fr);
     grid-row-gap: 24px;
-    justify-self: center;
 
     & .alchemy-ingredients--inner {
-
-        & .alchemy-ingredients--select {
-            justify-self: center;
+        & .alchemy-ingredients--select  {
+            @include phone {
+                flex-wrap: wrap;
+            }
         }
-
         & .alchemy-ingredients--info {
             align-self: center;
             justify-self: center;
@@ -94,17 +89,20 @@ main {
     grid-area: stats;
     grid-row-gap: 24px;
 
-    & .alchemy-stats--perk,
-        .alchemy-stats--numeric,
-        .alchemy-stats--alchemist {
-        display: flex;
-        justify-content: space-between;
-    }
-
     & .alchemy-stats--numeric {
         & input {
             width: 50px;
         }
+    }
+}
+
+.alchemy-input {
+    & .alchemy-ingredients--select,
+        .alchemy-stats--perk,
+        .alchemy-stats--numeric,
+        .alchemy-stats--alchemist {
+        display: flex;
+        justify-content: space-between;
     }
 }
 
