@@ -1,4 +1,5 @@
-<div>
+<div class="alchemy-ingredients--select">
+    <span class="mdc-typography--body1">@Label</span>
     <select @onchange((item) => Change((string)item))>
         <option value=""></option>
         @foreach (var ingredient in Ingredients)
@@ -11,6 +12,8 @@
 @functions
 {
     public Ingredient[] Ingredients { get; set; }
+
+    public string Label { get; set; }
 
     public Action<string> Change { get; set; }
 }

@@ -1,10 +1,10 @@
 @if (Ingredient != null)
 {
-    <div>
+    <div class="alchemy-ingredients--info">
         <ul>
             @foreach (var effect in Ingredient.Effects)
             {
-                <li>@effect</li>
+                <li class="alchemy-effect mdc-typography--body1">@effect</li>
             }
         </ul>
     </div>
