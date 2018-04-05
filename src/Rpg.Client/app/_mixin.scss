@@ -6,6 +6,11 @@ $tablet: 480px;
         @content;
     }
 }
+@mixin desktop-height {
+    @media (min-width: $desktop) and (min-height: 840) {
+        @content;
+    }
+}
 
 @mixin tablet {
     @media (min-width: $tablet) and (max-width: $desktop - 1px) {

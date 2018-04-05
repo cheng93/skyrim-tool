@@ -23,15 +23,24 @@ main {
     display: grid;
     grid-template-rows: auto;
     justify-content: center;
+    grid-gap: 24px;
+    margin: 32px;
+
     @include desktop {
         grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: 
+        "ingredients ingredients ingredients ingredients stats stats stats stats potion potion potion potion"
+        "ingredients ingredients ingredients ingredients stats stats stats stats potion potion potion potion"
+        ". . . . . button button . . . . .";
     }
     @include tablet {
         grid-template-columns: repeat(8, 1fr);
+        grid-template-areas: 
+        "ingredients ingredients ingredients ingredients stats stats stats stats"
+        ". . button button button button . ."
+        ". . potion potion potion potion . . ";
     }
     @include phone {
-        margin: 32px;
-        grid-gap: 24px;
         grid-template-columns: repeat(4, 1fr);
         grid-template-areas: 
             "ingredients ingredients ingredients ingredients"
@@ -69,16 +78,15 @@ main {
 
     & .alchemy-ingredients--inner {
         & .alchemy-ingredients--select  {
-            @include phone {
-                flex-wrap: wrap;
-            }
+            flex-wrap: wrap;
         }
         & .alchemy-ingredients--info {
             align-self: center;
             justify-self: center;
+            display: none;
 
-            @include phone {
-                display: none;
+            @include desktop-height  {
+                display: initial;
             }
         }
     }
@@ -108,6 +116,14 @@ main {
 
 .alchemy-button {
     grid-area: button;
+    width: 120px;
+
+    @include phone {
+        justify-self: right;
+    }
+    @include tablet {
+        justify-self: center;
+    }
 }
 
 .alchemy-potion {
