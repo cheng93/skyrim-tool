@@ -8,4 +8,6 @@ EXPOSE 8080
 
 ENV ASPNETCORE_URLS http://*:8080
 
-CMD [ "dotnet", "run", "--project",  "src/Rpg.Server/Rpg.Server.csproj", "-c", "Release" ]
+RUN dotnet build -c Release
+
+CMD [ "dotnet", "run", "--project",  "src/Rpg.Server/Rpg.Server.csproj", "-c", "Release", "--no-build" ]
