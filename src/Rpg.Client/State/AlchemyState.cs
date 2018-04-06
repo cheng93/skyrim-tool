@@ -64,7 +64,7 @@ namespace Rpg.Client.State
             LoadingIngredients = true;
             NotifyStateChanged();
 
-            var response = await client.GetJsonAsync<IngredientsResponse>("/api/alchemy/ingredients");
+            var response = await client.GetJsonAsync<IngredientsResponse>("./api/alchemy/ingredients");
             Ingredients = response.Ingredients;
             ingredientDict = Ingredients.ToDictionary(x => x.Id);
 
