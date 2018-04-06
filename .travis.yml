@@ -13,14 +13,14 @@ services:
 
 install:
   - dotnet restore
-  - cd ./src/Rpg.Client && yarn install
+  - (cd ./src/Rpg.Client && yarn install)
 
 script:
   - dotnet build --no-restore -c Release
   - dotnet test ./tests/Rpg.Models.Tests/Rpg.Models.Tests.csproj --no-build --no-restore -c Release -v n
   - dotnet test ./tests/Rpg.Logic.Tests/Rpg.Logic.Tests.csproj --no-build --no-restore -c Release -v n
   - dotnet test ./tests/Rpg.Commands.Tests/Rpg.Commands.Tests.csproj --no-build --no-restore -c Release -v n
-  - cd ./src/Rpg.Client && yarn run build
+  - (cd ./src/Rpg.Client && yarn run build)
 
 after_success:
   - docker build -t skyrim-tool .
