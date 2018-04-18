@@ -1,6 +1,6 @@
 <div class="alchemy-ingredients--select">
     <span class="mdc-typography--body1">@Label</span>
-    <select @onchange((item) => Change((string)item))>
+    <select onchange="@(event => Change((string)event.Value))">
         <option value=""></option>
         @foreach (var ingredient in Ingredients)
         {

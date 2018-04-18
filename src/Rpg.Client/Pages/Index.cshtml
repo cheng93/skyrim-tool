@@ -28,7 +28,7 @@
     <PerkCheckbox Label="Purity" Change=@((hasPerk) => state.ChangeHasPurity(hasPerk)) />
 </section>
 
-<button class="alchemy-input alchemy-button" @onclick(async() => await state.CreatePotion())>Create Potion</button>
+<button class="alchemy-input alchemy-button" onclick="@(async() => await state.CreatePotion())">Create Potion</button>
 
 <section class="alchemy-potion">
     <PotionInfo Potion=@state.Potion></PotionInfo>
