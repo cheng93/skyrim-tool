@@ -4,7 +4,7 @@
         <option value=""></option>
         @foreach (var ingredient in Ingredients)
         {
-            <option value=@ingredient.Id label=@ingredient.Name />
+            <option value=@ingredient.Id label=@ingredient.Name>@ingredient.Name</option>
         }
     </select>
 </div>
