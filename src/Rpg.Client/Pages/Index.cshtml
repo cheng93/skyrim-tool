@@ -4,28 +4,28 @@
 <div class="alchemy">
 <section class="alchemy-input alchemy-ingredients">
     <div class="alchemy-ingredients--inner">
-        <IngredientSelect Label="1st Ingredient" Ingredients=@ingredients Change=@((id) => state.ChangeIngredientOne(id)) />
+        <IngredientSelect bind-Label="1st Ingredient" bind-Ingredients=@ingredients bind-Change=@((id) => state.ChangeIngredientOne(id)) />
         <IngredientInfo Ingredient=@state.IngredientOne />
     </div>
     <div class="alchemy-ingredients--inner">
-        <IngredientSelect Label="2nd Ingredient"  Ingredients=@ingredients Change=@((id) => state.ChangeIngredientTwo(id)) />
+        <IngredientSelect bind-Label="2nd Ingredient"  bind-Ingredients=@ingredients bind-Change=@((id) => state.ChangeIngredientTwo(id)) />
         <IngredientInfo Ingredient=@state.IngredientTwo />
     </div>
     <div class="alchemy-ingredients--inner">
-        <IngredientSelect Label="3rd Ingredient" Ingredients=@ingredients Change=@((id) => state.ChangeIngredientThree(id)) />
+        <IngredientSelect bind-Label="3rd Ingredient" bind-Ingredients=@ingredients bind-Change=@((id) => state.ChangeIngredientThree(id)) />
         <IngredientInfo Ingredient=@state.IngredientThree />
     </div>
 </section>
 
 <section class="alchemy-input alchemy-stats">
-    <NumericInput Label="Alchemy Level" Min=@alchemyLevelMin Max=@alchemyLevelMax Default=@alchemyLevelDefault Change=@((number) => state.ChangeAlchemyLevel(number)) />
-    <NumericInput Label="Fortify Alchemy %" Step=@fortifyAlchemyStep Default=@fortifyAlchemyDefault Change=@((number) => state.ChangeFortifyAlchemy(number)) />
+    <NumericInput bind-Label="Alchemy Level" bind-Min=@alchemyLevelMin bind-Max=@alchemyLevelMax bind-Default=@alchemyLevelDefault bind-Change=@((number) => state.ChangeAlchemyLevel(number)) />
+    <NumericInput bind-Label="Fortify Alchemy %" bind-Step=@fortifyAlchemyStep bind-Default=@fortifyAlchemyDefault bind-Change=@((number) => state.ChangeFortifyAlchemy(number)) />
 
-    <AlchemistDropdown Change=@((rank) => state.ChangeAlchemistRank(rank)) />
-    <PerkCheckbox Label="Physician" Change=@((hasPerk) => state.ChangeHasPhysician(hasPerk)) />
-    <PerkCheckbox Label="Benefactor" Change=@((hasPerk) => state.ChangeHasBenefactor(hasPerk)) />
-    <PerkCheckbox Label="Poisoner" Change=@((hasPerk) => state.ChangeHasPoisoner(hasPerk)) />
-    <PerkCheckbox Label="Purity" Change=@((hasPerk) => state.ChangeHasPurity(hasPerk)) />
+    <AlchemistDropdown bind-Change=@((rank) => state.ChangeAlchemistRank(rank)) />
+    <PerkCheckbox bind-Label="Physician" bind-Change=@((hasPerk) => state.ChangeHasPhysician(hasPerk)) />
+    <PerkCheckbox bind-Label="Benefactor" bind-Change=@((hasPerk) => state.ChangeHasBenefactor(hasPerk)) />
+    <PerkCheckbox bind-Label="Poisoner" bind-Change=@((hasPerk) => state.ChangeHasPoisoner(hasPerk)) />
+    <PerkCheckbox bind-Label="Purity" bind-Change=@((hasPerk) => state.ChangeHasPurity(hasPerk)) />
 </section>
 
 <button class="alchemy-input alchemy-button" onclick="@(async() => await state.CreatePotion())">Create Potion</button>
