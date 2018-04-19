@@ -5,7 +5,7 @@
         max="@(Max?.ToString() ?? string.Empty)"
         step="@(Step?.ToString() ?? string.Empty)"
         value="@(Default?.ToString() ?? string.Empty)"
-        @onchange((item) => Change((string)item)) />
+        onchange="@(e => Change((string)e.Value))" />
 </div>
 
 @functions

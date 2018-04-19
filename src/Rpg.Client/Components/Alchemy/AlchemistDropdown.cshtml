@@ -1,6 +1,6 @@
 <div class="alchemy-stats--alchemist">
     <span class="mdc-typography--body1">Alchemist Rank</span>
-    <select @onchange((item) => Change((string)item))>
+    <select onchange="@(e => Change((string)e.Value))">
         @for (var i=0; i <= 5; i++)
         {
             <option value="@i">@i</option>
