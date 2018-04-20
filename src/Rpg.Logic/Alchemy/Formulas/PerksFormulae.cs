@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Rpg.Models.Alchemy.Effects;
+using Rpg.Models.Common;
 using Rpg.Models.Perks;
 using Rpg.Models.Perks.Alchemy;
 using Rpg.Models.Skills.Stealth;
@@ -38,7 +39,7 @@ namespace Rpg.Logic.Alchemy.Formulas
                 AllAlchemyEffects.RestoreHealth,
                 AllAlchemyEffects.RestoreMagicka,
                 AllAlchemyEffects.RestoreStamina
-            }.Contains(effect);
+            }.Contains(effect, new IHasIdEqualityComparer());
 
             return hasPhysicianPerk && isRestoreAttributeEffect
                 ? 25
