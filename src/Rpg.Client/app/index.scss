@@ -1,0 +1,131 @@
+@import './_mixin';
+@import '~@material/theme/variables';
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: $mdc-theme-primary;
+    text-decoration: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+main {
+    display: grid;
+}
+
+.alchemy {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    grid-gap: 24px;
+    margin: 32px;
+
+    @include desktop {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: 
+        "ingredients ingredients ingredients ingredients stats stats stats stats potion potion potion potion"
+        "ingredients ingredients ingredients ingredients stats stats stats stats potion potion potion potion"
+        ". . . . . button button . . . . .";
+    }
+    @include tablet {
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas: 
+        "ingredients ingredients ingredients ingredients stats stats stats stats"
+        ". . button button button button . ."
+        ". . potion potion potion potion . . ";
+    }
+    @include phone {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+            "ingredients ingredients ingredients ingredients"
+            "stats stats stats stats"
+            ". . button button"
+            "potion potion potion potion";
+    }
+}
+
+.alchemy-potion {
+    & > *:first-child {
+        display: grid;
+        grid-row-gap: 24px;
+    }
+    & .alchemy-potion--cost {
+        & .alchemy-potion--cost__img {
+            background-image: url('./img/gold.png');
+            background-position-y: center;
+            background-repeat: no-repeat;
+            background-size: 15px;
+            padding-left: 22px;
+        }
+    }
+    & .alchemy-potion--effects {
+        display: grid;
+        grid-row-gap: 24px;
+    }
+}
+
+.alchemy-ingredients {
+    display: grid;
+    grid-area: ingredients;
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 24px;
+
+    & .alchemy-ingredients--inner {
+        & .alchemy-ingredients--select  {
+            flex-wrap: wrap;
+        }
+        & .alchemy-ingredients--info {
+            align-self: center;
+            justify-self: center;
+            display: none;
+
+            @include desktop-height  {
+                display: initial;
+            }
+        }
+    }
+}
+
+.alchemy-stats {
+    display: grid;
+    grid-area: stats;
+    grid-row-gap: 24px;
+
+    & .alchemy-stats--numeric {
+        & input {
+            width: 50px;
+        }
+    }
+}
+
+.alchemy-input {
+    & .alchemy-ingredients--select,
+        .alchemy-stats--perk,
+        .alchemy-stats--numeric,
+        .alchemy-stats--alchemist {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.alchemy-button {
+    grid-area: button;
+    width: 120px;
+
+    @include phone {
+        justify-self: right;
+    }
+    @include tablet {
+        justify-self: center;
+    }
+}
+
+.alchemy-potion {
+    grid-area: potion;
+}

@@ -1,0 +1,19 @@
+<div class="alchemy-ingredients--select">
+    <span class="mdc-typography--body1">@Label</span>
+    <select onchange="@(e => Change((string)e.Value))">
+        <option value=""></option>
+        @foreach (var ingredient in Ingredients)
+        {
+            <option value=@ingredient.Id label=@ingredient.Name>@ingredient.Name</option>
+        }
+    </select>
+</div>
+
+@functions
+{
+    public Ingredient[] Ingredients { get; set; }
+
+    public string Label { get; set; }
+
+    public Action<string> Change { get; set; }
+}

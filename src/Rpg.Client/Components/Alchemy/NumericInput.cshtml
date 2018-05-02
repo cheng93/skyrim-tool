@@ -1,0 +1,24 @@
+<div class="alchemy-stats--numeric">
+    <span class="mdc-typography--body1">@Label</span>
+    <input type="number" 
+        min="@(Min?.ToString() ?? string.Empty)"
+        max="@(Max?.ToString() ?? string.Empty)"
+        step="@(Step?.ToString() ?? string.Empty)"
+        value="@(Default?.ToString() ?? string.Empty)"
+        onchange="@(e => Change((string)e.Value))" />
+</div>
+
+@functions
+{
+    public decimal? Default { get; set; }
+
+    public string Label { get; set; }
+
+    public int? Min { get; set; }
+
+    public int? Max { get; set; }
+
+    public decimal? Step { get; set; }
+
+    public Action<string> Change { get; set; }
+}

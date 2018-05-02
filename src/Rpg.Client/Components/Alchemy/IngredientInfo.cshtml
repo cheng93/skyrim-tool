@@ -1,0 +1,16 @@
+@if (Ingredient != null)
+{
+    <div class="alchemy-ingredients--info">
+        <ul>
+            @foreach (var effect in Ingredient.Effects)
+            {
+                <li class="alchemy-effect mdc-typography--body1">@effect</li>
+            }
+        </ul>
+    </div>
+}
+
+@functions
+{
+    public Ingredient Ingredient { get; set; }
+}

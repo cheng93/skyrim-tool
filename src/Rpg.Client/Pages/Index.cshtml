@@ -1,0 +1,59 @@
+﻿@page "/"
+@inject AlchemyState state
+
+<div class="alchemy">
+<section class="alchemy-input alchemy-ingredients">
+    <div class="alchemy-ingredients--inner">
+        <IngredientSelect Label="1st Ingredient" Ingredients=@ingredients Change=@((id) => state.ChangeIngredientOne(id)) />
+        <IngredientInfo Ingredient=@state.IngredientOne />
+    </div>
+    <div class="alchemy-ingredients--inner">
+        <IngredientSelect Label="2nd Ingredient"  Ingredients=@ingredients Change=@((id) => state.ChangeIngredientTwo(id)) />
+        <IngredientInfo Ingredient=@state.IngredientTwo />
+    </div>
+    <div class="alchemy-ingredients--inner">
+        <IngredientSelect Label="3rd Ingredient" Ingredients=@ingredients Change=@((id) => state.ChangeIngredientThree(id)) />
+        <IngredientInfo Ingredient=@state.IngredientThree />
+    </div>
+</section>
+
+<section class="alchemy-input alchemy-stats">
+    <NumericInput Label="Alchemy Level" Min=@alchemyLevelMin Max=@alchemyLevelMax Default=@alchemyLevelDefault Change=@((number) => state.ChangeAlchemyLevel(number)) />
+    <NumericInput Label="Fortify Alchemy %" Step=@fortifyAlchemyStep Default=@fortifyAlchemyDefault Change=@((number) => state.ChangeFortifyAlchemy(number)) />
+
+    <AlchemistDropdown Change=@((rank) => state.ChangeAlchemistRank(rank)) />
+    <PerkCheckbox Label="Physician" Change=@((hasPerk) => state.ChangeHasPhysician(hasPerk)) />
+    <PerkCheckbox Label="Benefactor" Change=@((hasPerk) => state.ChangeHasBenefactor(hasPerk)) />
+    <PerkCheckbox Label="Poisoner" Change=@((hasPerk) => state.ChangeHasPoisoner(hasPerk)) />
+    <PerkCheckbox Label="Purity" Change=@((hasPerk) => state.ChangeHasPurity(hasPerk)) />
+</section>
+
+<button class="alchemy-input alchemy-button" onclick="@(async() => await state.CreatePotion())">Create Potion</button>
+
+<section class="alchemy-potion">
+    <PotionInfo Potion=@state.Potion></PotionInfo>
+</section>
+</div>
+
+@functions
+{
+    private int alchemyLevelMin = 15;
+    private int alchemyLevelMax = 100;
+    private decimal alchemyLevelDefault;
+    private decimal fortifyAlchemyStep = 0.01M;
+    private decimal fortifyAlchemyDefault;
+
+    private Ingredient[] ingredients = Array.Empty<Ingredient>();
+
+    protected override async Task OnInitAsync()
+    {
+        state.OnChange += StateHasChanged;
+
+        await state.LoadIngredients();
+
+        ingredients = state.Ingredients;
+
+        alchemyLevelDefault = state.AlchemyLevel;
+        fortifyAlchemyDefault = state.FortifyAlchemyPercent;
+    }
+}
