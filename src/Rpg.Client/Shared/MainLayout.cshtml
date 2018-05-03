@@ -1,4 +1,4 @@
-﻿@implements ILayoutComponent
+﻿@inherits BlazorLayoutComponent
 
 <div class="mdc-typography">
     <Toolbar Title="Skyrim Tool" />
@@ -6,7 +6,3 @@
         @Body
     </main>
 </div>
-
-@functions {
-    public RenderFragment Body { get; set; }
-}
