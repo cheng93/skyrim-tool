@@ -10,5 +10,6 @@
 
 @functions
 {
-    public Action<string> Change { get; set; }
+    [Parameter]
+    private Action<string> Change { get; set; }
 }

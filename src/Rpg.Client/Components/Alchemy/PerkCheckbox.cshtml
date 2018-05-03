@@ -10,7 +10,9 @@
 
 @functions
 {
-    public string Label { get; set; }
+    [Parameter]
+    private string Label { get; set; }
 
-    public Action<bool> Change { get; set; }
+    [Parameter]
+    private Action<bool> Change { get; set; }
 }

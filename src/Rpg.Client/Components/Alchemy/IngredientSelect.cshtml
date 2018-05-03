@@ -11,9 +11,12 @@
 
 @functions
 {
-    public Ingredient[] Ingredients { get; set; }
+    [Parameter]
+    private Ingredient[] Ingredients { get; set; }
 
-    public string Label { get; set; }
+    [Parameter]
+    private string Label { get; set; }
 
-    public Action<string> Change { get; set; }
+    [Parameter]
+    private Action<string> Change { get; set; }
 }
