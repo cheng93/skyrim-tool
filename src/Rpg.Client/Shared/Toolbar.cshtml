@@ -2,7 +2,7 @@
     <div class="mdc-toolbar__row">
         <div class="mdc-toolbar__section mdc-toolbar__section--align-start">
             <span class="mdc-toolbar__title">
-                <NavLink class="link mdc-theme--text-primary-on-primary" href="/">
+                <NavLink class="link mdc-theme--on-primary" href="/">
                     @Title
                 </NavLink>
             </span>
@@ -11,5 +11,6 @@
 </header>
 @functions
 {
-    public string Title { get; set;}
+    [Parameter]
+    string Title { get; set; }
 }

@@ -1,8 +1,8 @@
-FROM microsoft/dotnet:2.1.300-preview2-sdk
+FROM microsoft/dotnet:2.1.300-sdk
 
 WORKDIR /app
 
-ADD ./src/Rpg.Server/bin/Release/netcoreapp2.0/publish /app
+ADD ./src/Rpg.Server/bin/Release/netcoreapp2.1/publish /app
 
 EXPOSE 8080
 

@@ -1,6 +1,6 @@
 language: csharp
 mono: none
-dotnet: 2.1.300-preview2-008533
+dotnet: 2.1.300
 solution: Rpg.sln
 
 cache: yarn
@@ -22,7 +22,5 @@ script:
   - dotnet test ./tests/Rpg.Commands.Tests/Rpg.Commands.Tests.csproj --no-build --no-restore -c Release -v n
   - (cd ./src/Rpg.Client && yarn run build)
   - dotnet publish ./src/Rpg.Server/Rpg.Server.csproj --no-restore -c Release
-
-after_success:
   - docker build -t skyrim-tool .
   - bash ./scripts/travis_docker.sh
