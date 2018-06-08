@@ -34,7 +34,7 @@ namespace Rpg.Client.State
         public Ingredient IngredientThree { get; private set; }
 
         private IEnumerable<string> SelectedIngredientIds
-            => new []
+            => new[]
             {
                 IngredientOne,
                 IngredientTwo,
@@ -73,7 +73,7 @@ namespace Rpg.Client.State
         }
 
         public void ChangeIngredientOne(string ingredientId)
-        { 
+        {
             IngredientOne = GetIngredient(ingredientId);
             NotifyStateChanged();
         }
@@ -143,7 +143,7 @@ namespace Rpg.Client.State
             LoadingPotion = true;
             NotifyStateChanged();
 
-            var postData = new 
+            var postData = new
             {
                 AlchemistPerkRank = AlchemistPerkRank,
                 AlchemyLevel = AlchemyLevel,
@@ -155,7 +155,7 @@ namespace Rpg.Client.State
                 IngredientIds = SelectedIngredientIds
             };
 
-            var response = await client.PostJsonAsync<PotionResponse>("/api/alchemy/potion", postData);
+            var response = await client.PostJsonAsync<PotionResponse>("./api/alchemy/potion", postData);
             Potion = response.Potion;
 
             LoadingPotion = false;
