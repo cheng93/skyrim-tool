@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.1.300-sdk
+FROM microsoft/dotnet:2.1.1-aspnetcore-runtime-alpine
 
 WORKDIR /app
 
