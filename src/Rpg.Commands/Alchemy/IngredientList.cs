@@ -25,14 +25,14 @@ namespace Rpg.Commands.Alchemy
 
         public class CommandHandler : RequestHandler<Command, Response>
         {
-            protected override Response HandleCore(Command request)
+            protected override Response Handle(Command request)
             {
-                var ingredients = AllIngredients.List.Select(x => 
+                var ingredients = AllIngredients.List.Select(x =>
                     new IngredientViewModel
                     {
                         Id = x.Id,
                         Name = x.Name,
-                        Effects = new []
+                        Effects = new[]
                             {
                                 x.PrimaryEffect,
                                 x.SecondaryEffect,
@@ -40,7 +40,7 @@ namespace Rpg.Commands.Alchemy
                                 x.QuaternaryEffect
                             }
                             .Select(y => y.Description)
-                        
+
                     });
 
                 return new Response(ingredients);

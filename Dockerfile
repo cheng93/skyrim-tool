@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.1.1-aspnetcore-runtime-alpine
+FROM microsoft/dotnet:2.1.3-aspnetcore-runtime-alpine
 
 WORKDIR /app
 
