@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Blazor.Browser.Rendering;
-using Microsoft.AspNetCore.Blazor.Browser.Services;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using Rpg.Client.State;
+﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
 namespace Rpg.Client
 {
@@ -10,12 +6,11 @@ namespace Rpg.Client
     {
         static void Main(string[] args)
         {
-            var serviceProvider = new BrowserServiceProvider(services =>
-            {
-                services.AddSingleton<AlchemyState>();
-            });
-
-            new BrowserRenderer(serviceProvider).AddComponent<App>("app");
+            BuildWebHost(args).Run();
         }
+        public static IWebAssemblyHost BuildWebHost(string[] args) =>
+            BlazorWebAssemblyHost.CreateDefaultBuilder()
+                .UseBlazorStartup<Startup>()
+                .Build();
     }
 }
