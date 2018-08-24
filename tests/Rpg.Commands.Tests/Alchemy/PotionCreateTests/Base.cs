@@ -1,6 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
+using MediatR;
 using Moq;
 using Rpg.Commands.Alchemy;
 using Rpg.Logic.Alchemy;
@@ -44,7 +45,7 @@ namespace Rpg.Commands.Tests.Alchemy.PotionCreateTests
             Subject = new PotionCreate.CommandHandler(potionBuilderFactory.Object);
         }
 
-        protected PotionCreate.CommandHandler Subject;
+        protected IRequestHandler<PotionCreate.Command, PotionCreate.Response> Subject;
 
         protected PotionCreate.Command Request { get; } = new PotionCreate.Command();
 
@@ -93,7 +94,7 @@ namespace Rpg.Commands.Tests.Alchemy.PotionCreateTests
 
             response.Potion.Name.Should().Be(Name);
             response.Potion.Cost.Should().Be(Cost);
-            response.Potion.Effects.Should().BeEquivalentTo(new[] {Description});
+            response.Potion.Effects.Should().BeEquivalentTo(new[] { Description });
         }
     }
 }
