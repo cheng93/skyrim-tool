@@ -76,7 +76,7 @@ namespace Rpg.Commands.Alchemy
 
             private readonly IPotionBuilderFactory potionBuilderFactory;
 
-            protected override Response HandleCore(Command request)
+            protected override Response Handle(Command request)
             {
                 var ingredientDict = AllIngredients.List.ToDictionary(x => x.Id);
 
@@ -131,7 +131,7 @@ namespace Rpg.Commands.Alchemy
                         : null);
             }
 
-            private static readonly Dictionary<int, AlchemistPerk> alchemistMap 
+            private static readonly Dictionary<int, AlchemistPerk> alchemistMap
                 = new Dictionary<int, AlchemistPerk>()
             {
                 {0, null},
